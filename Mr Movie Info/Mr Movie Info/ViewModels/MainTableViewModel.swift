@@ -21,7 +21,7 @@ class MainTableViewModel {
             switch result {
             case .success(let response):
                 guard let searchResults = response as? SearchModel else { return }
-                self?.delegate?.didRetrieveData(searchResults)
+                self?.delegate?.refreshViewContent(searchResults)
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }

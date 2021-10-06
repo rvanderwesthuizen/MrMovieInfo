@@ -13,14 +13,12 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        
         viewModel.retrieveData(forTitle: "Thor")
     }
 }
 
 extension MainTableViewController: ViewModelDelegate {
-    func didRetrieveData(_ searchResults: SearchModel) {
+    func refreshViewContent(_ searchResults: SearchModel) {
         print(searchResults)
     }
     

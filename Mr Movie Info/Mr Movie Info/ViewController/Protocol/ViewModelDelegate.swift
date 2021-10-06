@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ViewModelDelegate: AnyObject {
-    func didRetrieveData(_ searchResults: SearchModel)
+    func refreshViewContent(_ searchResults: SearchModel)
     func didFailWithError(error: Error)
 }
