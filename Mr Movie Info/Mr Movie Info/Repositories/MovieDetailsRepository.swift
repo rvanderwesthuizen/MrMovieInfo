@@ -1,5 +1,5 @@
 //
-//  searchManager.swift
+//  MovieDetailsManager.swift
 //  Mr Movie Info
 //
 //  Created by Ruan van der Westhuizen on 2021/10/05.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct SearchManager: omdbAPIProtocol {
-    func performRequest(with title: String, completion: @escaping (Result<Any, Error>) -> Void) {
-        let urlString = "\(Constants.baseMoviesURL)&s=\(title)"
+struct MovieDetailsRepository: Repositable {
+    func performRequest(with title: String, completion: @escaping (Result<Any,Error>)-> Void ) {
+        let urlString = "\(Constants.baseMoviesURL)&t=\(title)"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, _, error in
@@ -17,8 +17,8 @@ struct SearchManager: omdbAPIProtocol {
                 completion(.failure(error!))
             }
             do {
-                let searchResults = try JSONDecoder().decode(SearchModel.self, from: data!)
-                completion(.success(searchResults))
+                let movieDetails = try JSONDecoder().decode(MovieDetails.self, from: data!)
+                completion(.success(movieDetails))
             } catch {
                 completion(.failure(error))
             }
