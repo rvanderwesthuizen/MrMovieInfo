@@ -20,8 +20,8 @@ class MainTableViewController: UITableViewController {
 }
 
 extension MainTableViewController: ViewModelDelegate {
-    func didRetrieveData() {
-        print(viewModel.searchResults!)
+    func didRetrieveData(_ searchResults: SearchModel) {
+        print(searchResults)
     }
     
     func didFailWithError(error: Error) {

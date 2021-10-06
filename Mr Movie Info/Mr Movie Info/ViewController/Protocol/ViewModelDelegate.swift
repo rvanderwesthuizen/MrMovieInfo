@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ViewModelDelegate {
-    func didRetrieveData()
+protocol ViewModelDelegate: AnyObject {
+    func didRetrieveData(_ searchResults: SearchModel)
     func didFailWithError(error: Error)
 }

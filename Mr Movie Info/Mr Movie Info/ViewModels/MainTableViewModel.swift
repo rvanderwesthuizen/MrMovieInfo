@@ -9,8 +9,7 @@ import Foundation
 
 class MainTableViewModel {
     private var repository: Repositable
-    private var delegate: ViewModelDelegate?
-    public var searchResults: SearchModel?
+    private weak var delegate: ViewModelDelegate?
     
     init(repository: Repositable, delegate: ViewModelDelegate) {
         self.repository = repository
@@ -19,12 +18,11 @@ class MainTableViewModel {
     
     public func retrieveData(forTitle title: String) {
         repository.performRequest(with: title) { [weak self] result in
-            do {
-                if let data = try result.get() as? SearchModel {
-                    self?.searchResults = data
-                    self?.delegate?.didRetrieveData()
-                }
-            } catch {
+            switch result {
+            case .success(let response):
+                guard let searchResults = response as? SearchModel else { return }
+                self?.delegate?.didRetrieveData(searchResults)
+            case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 struct MovieDetailsRepository: Repositable {
-    func performRequest(with title: String, completion: @escaping (Result<Any,Error>)-> Void ) {
+    func performRequest(with title: String, completion: @escaping repositoryResponseBlock) {
         let urlString = "\(Constants.baseMoviesURL)&t=\(title)"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
