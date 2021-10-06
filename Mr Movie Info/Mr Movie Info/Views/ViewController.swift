@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let service = Service(manager: SearchManager())
+    let service = Service(dependency: SearchManager())
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         //testing
-        service.retrieveData(title: "Thor") { result in
+        service.retrieveData(forTitle: "Thor") { result in
             do {
                 let response = try result.get() as! SearchModel
                 print(response)

@@ -6,17 +6,16 @@
 //
 
 import Foundation
-import UIKit
 
 class Service {
-    private var manager: omdbAPIProtocol
+    private var dependency: omdbAPIProtocol
     
-    init(manager: omdbAPIProtocol){
-        self.manager = manager
+    init(dependency: omdbAPIProtocol){
+        self.dependency = dependency
     }
     
-    public func retrieveData(title: String, completion: @escaping (Result<Any, Error>) -> Void) {
-        manager.performRequest(with: title) { result in
+    public func retrieveData(forTitle: String, completion: @escaping (Result<Any, Error>) -> Void) {
+        dependency.performRequest(with: title) { result in
             do {
                 let data = try result.get()
                 completion(.success(data))
