@@ -14,7 +14,7 @@ class Service {
         self.dependency = dependency
     }
     
-    public func retrieveData(forTitle: String, completion: @escaping (Result<Any, Error>) -> Void) {
+    public func retrieveData(forTitle title: String, completion: @escaping (Result<Any, Error>) -> Void) {
         dependency.performRequest(with: title) { result in
             do {
                 let data = try result.get()

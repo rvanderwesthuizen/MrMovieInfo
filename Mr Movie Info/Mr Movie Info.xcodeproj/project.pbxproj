@@ -21,7 +21,7 @@
 		C9C4E34C270C40A50065F822 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E34B270C40A50065F822 /* Constants.swift */; };
 		C9C4E34E270C47BC0065F822 /* MovieDetailsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E34D270C47BC0065F822 /* MovieDetailsManager.swift */; };
 		C9C4E351270C636D0065F822 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E350270C636D0065F822 /* Protocols.swift */; };
-		C9C4E353270C64BB0065F822 /* searchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E352270C64BB0065F822 /* searchManager.swift */; };
+		C9C4E353270C64BB0065F822 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E352270C64BB0065F822 /* SearchManager.swift */; };
 		C9C4E355270C64D20065F822 /* SearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E354270C64D20065F822 /* SearchModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,7 @@
 		C9C4E34B270C40A50065F822 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C9C4E34D270C47BC0065F822 /* MovieDetailsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsManager.swift; sourceTree = "<group>"; };
 		C9C4E350270C636D0065F822 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
-		C9C4E352270C64BB0065F822 /* searchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchManager.swift; sourceTree = "<group>"; };
+		C9C4E352270C64BB0065F822 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
 		C9C4E354270C64D20065F822 /* SearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,7 +166,7 @@
 				C9C4E34B270C40A50065F822 /* Constants.swift */,
 				C9C4E34D270C47BC0065F822 /* MovieDetailsManager.swift */,
 				C9C4E350270C636D0065F822 /* Protocols.swift */,
-				C9C4E352270C64BB0065F822 /* searchManager.swift */,
+				C9C4E352270C64BB0065F822 /* SearchManager.swift */,
 				C9C4E354270C64D20065F822 /* SearchModel.swift */,
 			);
 			path = Models;
@@ -308,7 +308,7 @@
 				C9C4E34A270C3F810065F822 /* Service.swift in Sources */,
 				C9C4E34E270C47BC0065F822 /* MovieDetailsManager.swift in Sources */,
 				C9C4E355270C64D20065F822 /* SearchModel.swift in Sources */,
-				C9C4E353270C64BB0065F822 /* searchManager.swift in Sources */,
+				C9C4E353270C64BB0065F822 /* SearchManager.swift in Sources */,
 				C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */,
 				C9C4E348270C34900065F822 /* MovieDetails.swift in Sources */,
 				C9C4E34C270C40A50065F822 /* Constants.swift in Sources */,
