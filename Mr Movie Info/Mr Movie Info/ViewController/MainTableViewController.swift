@@ -38,6 +38,9 @@ extension MainTableViewController: ViewModelDelegate {
     }
     
     func didFailWithError(error: Error) {
-        print(error)
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        
+        show(alert, sender: self)
     }
 }
