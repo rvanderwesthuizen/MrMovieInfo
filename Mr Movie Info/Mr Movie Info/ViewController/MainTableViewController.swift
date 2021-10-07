@@ -15,11 +15,26 @@ class MainTableViewController: UITableViewController {
         super.viewDidLoad()
         viewModel.retrieveData(forTitle: "Thor")
     }
+    
+    //MARK: - Tableview datasource methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRows
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = viewModel.fetchTitle(at: indexPath.row)
+        
+        return cell
+    }
 }
 
 extension MainTableViewController: ViewModelDelegate {
-    func refreshViewContent(_ searchResults: SearchModel) {
-        print(searchResults)
+    func refreshViewContent() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func didFailWithError(error: Error) {
