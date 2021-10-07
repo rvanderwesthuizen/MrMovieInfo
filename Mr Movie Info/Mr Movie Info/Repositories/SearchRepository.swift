@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct SearchRepository: Repositable {
-    func performRequest(with title: String, completion: @escaping repositoryResponseBlock) {
-        let urlString = "\(Constants.baseMoviesURL)&s=\(title)"
+struct SearchRepository: SearchRepositable {
+    func performRequestWith(title: String, pageNumber: Int, completion: @escaping repositoryResponseBlock) {
+        let urlString = "\(Constants.baseMoviesURL)&s=\(title)&page=\(pageNumber)"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, _, error in
