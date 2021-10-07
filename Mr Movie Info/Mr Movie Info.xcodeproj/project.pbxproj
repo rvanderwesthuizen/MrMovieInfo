@@ -24,6 +24,7 @@
 		C9C4E35B270D8E910065F822 /* Repositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E35A270D8E910065F822 /* Repositable.swift */; };
 		C9C4E35E270D8F590065F822 /* ViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E35D270D8F590065F822 /* ViewModelDelegate.swift */; };
 		C9C4E360270D971F0065F822 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E35F270D971F0065F822 /* Constants.swift */; };
+		C9C4E369270ED1440065F822 /* CollectionExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E368270ED1440065F822 /* CollectionExtention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		C9C4E35A270D8E910065F822 /* Repositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositable.swift; sourceTree = "<group>"; };
 		C9C4E35D270D8F590065F822 /* ViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDelegate.swift; sourceTree = "<group>"; };
 		C9C4E35F270D971F0065F822 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C9C4E368270ED1440065F822 /* CollectionExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionExtention.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +150,7 @@
 		C9C4E341270C31170065F822 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C9C4E367270ED1320065F822 /* Extentions */,
 				C9C4E356270D88AD0065F822 /* MainTableViewModel.swift */,
 			);
 			path = ViewModels;
@@ -197,6 +200,14 @@
 				C9C4E35D270D8F590065F822 /* ViewModelDelegate.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C9C4E367270ED1320065F822 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				C9C4E368270ED1440065F822 /* CollectionExtention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 			files = (
 				C9C4E35B270D8E910065F822 /* Repositable.swift in Sources */,
 				C9C4E360270D971F0065F822 /* Constants.swift in Sources */,
+				C9C4E369270ED1440065F822 /* CollectionExtention.swift in Sources */,
 				C9C4E35E270D8F590065F822 /* ViewModelDelegate.swift in Sources */,
 				C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */,
 				C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */,

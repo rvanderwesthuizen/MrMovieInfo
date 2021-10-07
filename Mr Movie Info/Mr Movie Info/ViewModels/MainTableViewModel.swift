@@ -10,6 +10,7 @@ import Foundation
 class MainTableViewModel {
     private var repository: Repositable
     private weak var delegate: ViewModelDelegate?
+    private var searchResults: SearchModel?
     
     init(repository: Repositable, delegate: ViewModelDelegate) {
         self.repository = repository
@@ -20,11 +21,22 @@ class MainTableViewModel {
         repository.performRequest(with: title) { [weak self] result in
             switch result {
             case .success(let response):
-                guard let searchResults = response as? SearchModel else { return }
-                self?.delegate?.refreshViewContent(searchResults)
+                guard let response = response as? SearchModel else { return }
+                self?.searchResults = response
+                self?.delegate?.refreshViewContent()
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }
         }
+    }
+}
+
+extension MainTableViewModel {
+    public var numberOfRows: Int {
+        searchResults?.results.count ?? 0
+    }
+    
+    func fetchTitle(at index: Int) -> String {
+        searchResults?.results[safe: index]?.title ?? ""
     }
 }
