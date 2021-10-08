@@ -12,8 +12,7 @@ class MainTableViewModel {
     private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
     private var pageNumber = 1
-    
-    public var searchResultsList: [Search] = []
+    private var searchResultsList: [Search] = []
     
     init(repository: SearchRepositable, delegate: ViewModelDelegate) {
         self.repository = repository
