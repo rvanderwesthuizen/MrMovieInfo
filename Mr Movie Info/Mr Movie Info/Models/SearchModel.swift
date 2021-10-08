@@ -9,7 +9,12 @@ import Foundation
 
 struct SearchModel: Codable {
     let results: [Search]
-    let totalResults: String
+    private let totalResults: String
+    
+    var numberOfPages: Int {
+        let number = (Int(totalResults) ?? 0)
+        return number > 0 ? ((number / 10) + 1) : 0
+    }
     
     private enum CodingKeys: String, CodingKey {
         case results = "Search"

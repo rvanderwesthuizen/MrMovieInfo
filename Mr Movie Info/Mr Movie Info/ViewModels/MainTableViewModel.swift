@@ -8,23 +8,59 @@
 import Foundation
 
 class MainTableViewModel {
-    private var repository: Repositable
+    private var repository: SearchRepositable
     private weak var delegate: ViewModelDelegate?
+    private var searchRepositoryResponse: SearchModel?
+    private var pageNumber = 1
+    private var searchResultsList: [Search] = []
     
-    init(repository: Repositable, delegate: ViewModelDelegate) {
+    init(repository: SearchRepositable, delegate: ViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
     }
     
     public func retrieveData(forTitle title: String) {
-        repository.performRequest(with: title) { [weak self] result in
+        repository.performRequestWith(title: title, pageNumber: 1) { [weak self] result in
             switch result {
             case .success(let response):
-                guard let searchResults = response as? SearchModel else { return }
-                self?.delegate?.refreshViewContent(searchResults)
+                self?.searchRepositoryResponse = response
+                self?.appendToSearchResults(results: response.results)
+                self?.delegate?.refreshViewContent()
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }
         }
+    }
+    
+    public func loadNextPage(forTitle title: String) {
+        guard let numberOfPages = searchRepositoryResponse?.numberOfPages else { return }
+        if pageNumber < numberOfPages {
+            pageNumber += 1
+            repository.performRequestWith(title: title, pageNumber: pageNumber) { [weak self] result in
+                switch result {
+                case .success(let response):
+                    self?.appendToSearchResults(results: response.results)
+                    self?.delegate?.refreshViewContent()
+                case .failure(let error):
+                    self?.delegate?.didFailWithError(error: error)
+                }
+            }
+        }
+    }
+    
+    private func appendToSearchResults(results: [Search]) {
+        searchResultsList.append(contentsOf: results)
+    }
+}
+
+extension MainTableViewModel {
+    
+    public var numberOfRows: Int {
+        searchResultsList.count
+    }
+    
+    
+    func fetchTitle(at index: Int) -> String {
+        searchResultsList[safe: index]?.title ?? ""
     }
 }

@@ -10,19 +10,40 @@ import UIKit
 class MainTableViewController: UITableViewController {
 
     private lazy var viewModel = MainTableViewModel(repository: SearchRepository(), delegate: self)
-    
+    private var titleForSearch = "Thor"
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.retrieveData(forTitle: "Thor")
+        viewModel.retrieveData(forTitle: titleForSearch)
+    }
+    
+    //MARK: - Tableview datasource methods
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.numberOfRows
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        cell.textLabel?.text = viewModel.fetchTitle(at: indexPath.row)
+        
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == (viewModel.numberOfRows - 1) {
+            viewModel.loadNextPage(forTitle: titleForSearch)
+        }
     }
 }
 
 extension MainTableViewController: ViewModelDelegate {
-    func refreshViewContent(_ searchResults: SearchModel) {
-        print(searchResults)
+    func refreshViewContent() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func didFailWithError(error: Error) {
-        print(error)
+        showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
     }
 }
