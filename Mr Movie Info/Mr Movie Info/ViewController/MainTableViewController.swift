@@ -11,11 +11,32 @@ class MainTableViewController: UITableViewController {
 
     private lazy var viewModel = MainTableViewModel(repository: SearchRepository(), delegate: self)
     private var titleForSearch = "the+rookie"
+    
+    @IBOutlet private weak var searchTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupTextField()
+        
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
-        viewModel.retrieveData(forTitle: titleForSearch)
+    }
+    
+    private func setupTextField() {
+        searchTextField.returnKeyType = .done
+        searchTextField.autocorrectionType = .no
+        searchTextField.becomeFirstResponder()
+        searchTextField.delegate = self
+    }
+    
+    @IBAction func didTapSearchButton(_ sender: UIButton) {
+        searchTextField.resignFirstResponder()
+        if let text = searchTextField.text {
+            titleForSearch = text
+            viewModel.retrieveData(forTitle: text)
+        } else {
+            showAlert(alertTitle: "No title provided", alertMessage: "Please provide a title for search", actionTitle: "OK")
+        }
     }
     
     //MARK: - Tableview datasource methods
@@ -36,6 +57,13 @@ class MainTableViewController: UITableViewController {
         if indexPath.row == (viewModel.numberOfRows - 1) {
             viewModel.loadNextPage(forTitle: titleForSearch)
         }
+    }
+}
+
+extension MainTableViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }
 
