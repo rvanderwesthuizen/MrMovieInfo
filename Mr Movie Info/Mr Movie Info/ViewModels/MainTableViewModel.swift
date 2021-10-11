@@ -20,6 +20,7 @@ class MainTableViewModel {
     }
     
     public func retrieveData(forTitle title: String) {
+        searchResultsList.removeAll()
         repository.performRequestWith(title: title, pageNumber: 1) { [weak self] result in
             switch result {
             case .success(let response):

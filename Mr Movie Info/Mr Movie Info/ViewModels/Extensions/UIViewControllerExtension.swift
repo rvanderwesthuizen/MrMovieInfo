@@ -14,6 +14,8 @@ extension UIViewController {
                                       message: alertMessage,
                                       preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: actionTitle, style: .default, handler: nil))
-        self.show(alert, sender: nil)
+        DispatchQueue.main.async {
+            self.show(alert, sender: nil)
+        }
     }
 }
