@@ -10,9 +10,11 @@ import UIKit
 class MainTableViewController: UITableViewController {
 
     private lazy var viewModel = MainTableViewModel(repository: SearchRepository(), delegate: self)
-    private var titleForSearch = "Thor"
+    private var titleForSearch = "the+rookie"
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
         viewModel.retrieveData(forTitle: titleForSearch)
     }
     
@@ -22,9 +24,10 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell else { return UITableViewCell() }
+        guard let searchResult = viewModel.fetchSearchResult(at: indexPath.row) else { return UITableViewCell() }
         
-        cell.textLabel?.text = viewModel.fetchTitle(at: indexPath.row)
+        cell.configure(with: searchResult)
         
         return cell
     }

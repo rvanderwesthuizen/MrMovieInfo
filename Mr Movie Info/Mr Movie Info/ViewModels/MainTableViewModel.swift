@@ -59,8 +59,7 @@ extension MainTableViewModel {
         searchResultsList.count
     }
     
-    
-    func fetchTitle(at index: Int) -> String {
-        searchResultsList[safe: index]?.title ?? ""
+    public func fetchSearchResult(at index: Int) -> Search? {
+        searchResultsList[safe: index]
     }
 }
