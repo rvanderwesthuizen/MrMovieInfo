@@ -32,7 +32,7 @@ class MainTableViewController: UITableViewController {
     @IBAction func didTapSearchButton(_ sender: UIButton) {
         searchTextField.resignFirstResponder()
         if let text = searchTextField.text {
-            titleForSearch = text.replacingOccurrences(of: " ", with: "+")
+            titleForSearch = text
             viewModel.retrieveData(forTitle: titleForSearch)
         } else {
             showAlert(alertTitle: "No title provided", alertMessage: "Please provide a title for search", actionTitle: "OK")
