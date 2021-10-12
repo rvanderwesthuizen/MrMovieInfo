@@ -20,7 +20,9 @@ class MainTableViewModel {
     }
     
     public func retrieveData(forTitle title: String) {
-        repository.performRequestWith(title: title, pageNumber: 1) { [weak self] result in
+        searchResultsList.removeAll()
+        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
+        repository.performRequestWith(title: titleForSearch, pageNumber: 1) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.searchRepositoryResponse = response

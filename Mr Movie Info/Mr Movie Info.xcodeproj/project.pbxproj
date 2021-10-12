@@ -158,7 +158,7 @@
 		C9C4E341270C31170065F822 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C9C4E367270ED1320065F822 /* Extentions */,
+				C9C4E367270ED1320065F822 /* Extensions */,
 				C9C4E356270D88AD0065F822 /* MainTableViewModel.swift */,
 			);
 			path = ViewModels;
@@ -212,13 +212,13 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		C9C4E367270ED1320065F822 /* Extentions */ = {
+		C9C4E367270ED1320065F822 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				C9C4E368270ED1440065F822 /* CollectionExtension.swift */,
 				C9C4E374270FFD820065F822 /* UIViewControllerExtension.swift */,
 			);
-			path = Extentions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		C9C4E38A27108E000065F822 /* Extensions */ = {
