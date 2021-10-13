@@ -21,7 +21,8 @@ class MainTableViewModelTests: XCTestCase {
         }
     }
     
-    func textLoadNextPage() {
+    func testLoadNextPage() {
+        implementationUnderTest.retrieveData(forTitle: "")
         implementationUnderTest.loadNextPage(forTitle: "")
         XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 1))
     }

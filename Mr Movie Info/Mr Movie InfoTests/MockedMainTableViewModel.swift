@@ -59,6 +59,7 @@ extension MockedMainTableViewModel {
     }
     
     public func fetchSearchResult(at index: Int) -> Search? {
-        searchResultsList[safe: index]
+        print(searchResultsList[safe: index])
+        return searchResultsList[safe: index]
     }
 }
