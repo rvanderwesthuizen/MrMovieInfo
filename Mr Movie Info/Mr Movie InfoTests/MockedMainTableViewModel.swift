@@ -1,22 +1,20 @@
 //
-//  MainTableViewModel.swift
+//  MockedMainTableViewModel.swift
 //  Mr Movie Info
 //
-//  Created by Ruan van der Westhuizen on 2021/10/06.
+//  Created by Ruan van der Westhuizen on 2021/10/13.
 //
 
 import Foundation
 
-class MainTableViewModel: MainTableViewModiable {
+class MockedMainTableViewModel: MainTableViewModiable {
     private var repository: SearchRepositable
-    private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
     private var pageNumber = 1
     private var searchResultsList: [Search] = []
     
-    init(repository: SearchRepositable, delegate: ViewModelDelegate) {
+    init(repository: SearchRepositable) {
         self.repository = repository
-        self.delegate = delegate
     }
     
     public func retrieveData(forTitle title: String) {
@@ -27,9 +25,8 @@ class MainTableViewModel: MainTableViewModiable {
             case .success(let response):
                 self?.searchRepositoryResponse = response
                 self?.appendToSearchResults(results: response.results)
-                self?.delegate?.refreshViewContent()
             case .failure(let error):
-                self?.delegate?.didFailWithError(error: error)
+                print(error)
             }
         }
     }
@@ -43,9 +40,8 @@ class MainTableViewModel: MainTableViewModiable {
                 switch result {
                 case .success(let response):
                     self?.appendToSearchResults(results: response.results)
-                    self?.delegate?.refreshViewContent()
                 case .failure(let error):
-                    self?.delegate?.didFailWithError(error: error)
+                    print(error)
                 }
             }
         }
@@ -56,7 +52,7 @@ class MainTableViewModel: MainTableViewModiable {
     }
 }
 
-extension MainTableViewModel {
+extension MockedMainTableViewModel {
     
     public var numberOfRows: Int {
         searchResultsList.count
