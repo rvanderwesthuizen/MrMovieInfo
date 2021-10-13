@@ -10,7 +10,6 @@
 		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
 		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
 		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
-		C982317127169A340094C1E5 /* MainTableViewModiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982317027169A340094C1E5 /* MainTableViewModiable.swift */; };
 		C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E311270C30EA0065F822 /* AppDelegate.swift */; };
 		C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E313270C30EA0065F822 /* SceneDelegate.swift */; };
 		C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E315270C30EA0065F822 /* MainTableViewController.swift */; };
@@ -56,7 +55,6 @@
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
-		C982317027169A340094C1E5 /* MainTableViewModiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModiable.swift; sourceTree = "<group>"; };
 		C9C4E30E270C30EA0065F822 /* Mr Movie Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Movie Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C4E311270C30EA0065F822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C4E313270C30EA0065F822 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,14 +107,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C982316F27169A010094C1E5 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				C982317027169A340094C1E5 /* MainTableViewModiable.swift */,
-			);
-			path = Protocol;
-			sourceTree = "<group>";
-		};
 		C9C4E305270C30EA0065F822 = {
 			isa = PBXGroup;
 			children = (
@@ -176,7 +166,6 @@
 		C9C4E341270C31170065F822 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				C982316F27169A010094C1E5 /* Protocol */,
 				C9C4E367270ED1320065F822 /* Extensions */,
 				C9C4E356270D88AD0065F822 /* MainTableViewModel.swift */,
 			);
@@ -401,7 +390,6 @@
 				C9C4E38C27108E700065F822 /* UIImageViewExtension.swift in Sources */,
 				C9C4E355270C64D20065F822 /* SearchModel.swift in Sources */,
 				C9C4E375270FFD820065F822 /* UIViewControllerExtension.swift in Sources */,
-				C982317127169A340094C1E5 /* MainTableViewModiable.swift in Sources */,
 				C9C4E39027108F4F0065F822 /* SearchResultTableViewCell.swift in Sources */,
 				C9C4E353270C64BB0065F822 /* SearchRepository.swift in Sources */,
 				C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */,
