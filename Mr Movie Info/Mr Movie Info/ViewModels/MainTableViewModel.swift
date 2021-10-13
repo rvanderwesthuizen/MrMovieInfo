@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainTableViewModel: MainTableViewModiable {
+class MainTableViewModel {
     private var repository: SearchRepositable
     private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
