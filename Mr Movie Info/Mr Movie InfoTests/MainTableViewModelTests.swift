@@ -9,16 +9,26 @@ import XCTest
 @testable import Mr_Movie_Info
 
 class MainTableViewModelTests: XCTestCase {
-    var implementationUnderTest: MainTableViewModiable!
+    private var implementationUnderTest: MainTableViewModiable!
+    private var mockRepository: MockedSearchRepository!
+    private var mockDelegate: MockDelegate!
+    
     override func setUp() {
-        implementationUnderTest = MockedMainTableViewModel(repository: MockedSearchRepository())
+        mockDelegate = MockDelegate()
+        mockRepository = MockedSearchRepository()
+        implementationUnderTest = MainTableViewModel(repository: mockRepository, delegate: mockDelegate)
     }
     
-    func testRetrieveData() {
+    func testRetrieveDataSuccess() {
         implementationUnderTest.retrieveData(forTitle: "the flash")
-        if let result = implementationUnderTest.fetchSearchResult(at: 0) {
-            XCTAssertEqual(result.title, "the+flash")
-        }
+        XCTAssertEqual(implementationUnderTest.fetchSearchResult(at: 0)?.title, "the+flash")
+        XCTAssertTrue(mockDelegate.refreshCalled)
+    }
+    
+    func testRetrieveDataFailure() {
+        mockRepository.shouldFail = true
+        implementationUnderTest.retrieveData(forTitle: "")
+        XCTAssertFalse(mockDelegate.didFailWithErrorCalled)
     }
     
     func testLoadNextPage() {
@@ -29,11 +39,25 @@ class MainTableViewModelTests: XCTestCase {
     
     func testFailureWhenIndexDoesNotExist() {
         implementationUnderTest.retrieveData(forTitle: "")
+        XCTAssertTrue(mockDelegate.refreshCalled)
         XCTAssertNil(implementationUnderTest.fetchSearchResult(at: -1))
     }
     
     func testSuccessWhenIndexDoesExist() {
         implementationUnderTest.retrieveData(forTitle: "")
+        XCTAssertTrue(mockDelegate.refreshCalled)
         XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 0))
+    }
+    
+    class MockDelegate: ViewModelDelegate {
+        var refreshCalled = false
+        var didFailWithErrorCalled = false
+        func refreshViewContent() {
+            refreshCalled = true
+        }
+        
+        func didFailWithError(error: Error) {
+            didFailWithErrorCalled = true
+        }
     }
 }
