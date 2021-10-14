@@ -9,7 +9,7 @@ import XCTest
 @testable import Mr_Movie_Info
 
 class MainTableViewModelTests: XCTestCase {
-    private var implementationUnderTest: MainTableViewModiable!
+    private var implementationUnderTest: MainTableViewModel!
     private var mockRepository: MockedSearchRepository!
     private var mockDelegate: MockDelegate!
     
@@ -27,16 +27,29 @@ class MainTableViewModelTests: XCTestCase {
     
     func testRetrieveDataFailure() {
         mockRepository.shouldFail = true
-        implementationUnderTest.retrieveData(forTitle: "")
-        XCTAssertFalse(mockDelegate.didFailWithErrorCalled)
+        implementationUnderTest.retrieveData(forTitle: " ")
+        XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
     }
     
-    func testLoadNextPage() {
+    func testNumberOfRows() {
+        implementationUnderTest.retrieveData(forTitle: "")
+        XCTAssertEqual(implementationUnderTest.numberOfRows, 1)
+    }
+    
+    func testLoadNextPageShouldSucceed() {
         implementationUnderTest.retrieveData(forTitle: "")
         implementationUnderTest.loadNextPage(forTitle: "")
+        XCTAssertTrue(mockDelegate.refreshCalled)
         XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 1))
     }
     
+    func testLoadNextPageShouldFail() {
+        implementationUnderTest.retrieveData(forTitle: "")
+        mockRepository.shouldFail = true
+        implementationUnderTest.loadNextPage(forTitle: "")
+        XCTAssertNil(implementationUnderTest.fetchSearchResult(at: 1))
+    }
+     
     func testFailureWhenIndexDoesNotExist() {
         implementationUnderTest.retrieveData(forTitle: "")
         XCTAssertTrue(mockDelegate.refreshCalled)
@@ -52,6 +65,7 @@ class MainTableViewModelTests: XCTestCase {
     class MockDelegate: ViewModelDelegate {
         var refreshCalled = false
         var didFailWithErrorCalled = false
+        
         func refreshViewContent() {
             refreshCalled = true
         }

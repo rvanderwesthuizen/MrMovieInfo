@@ -38,7 +38,7 @@ class SearchRepositoryTests: XCTestCase {
     }
     
     func testPageNumberIfTotalResultsMod10IsNot0() {
-        implementationUnderTests.mod10Is0 = false
+        implementationUnderTests.totalResultsMod10Is0 = false
         implementationUnderTests.performRequestWith(title: "", pageNumber: 1) { result in
             switch result {
             case .success(let response):

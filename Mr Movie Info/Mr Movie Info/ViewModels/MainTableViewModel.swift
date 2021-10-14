@@ -19,7 +19,7 @@ class MainTableViewModel {
         self.delegate = delegate
     }
     
-    public func retrieveData(forTitle title: String) {
+    func retrieveData(forTitle title: String) {
         searchResultsList.removeAll()
         let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
         repository.performRequestWith(title: titleForSearch, pageNumber: 1) { [weak self] result in
@@ -34,7 +34,7 @@ class MainTableViewModel {
         }
     }
     
-    public func loadNextPage(forTitle title: String) {
+    func loadNextPage(forTitle title: String) {
         guard let numberOfPages = searchRepositoryResponse?.numberOfPages else { return }
         let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
         if pageNumber < numberOfPages {
@@ -58,11 +58,11 @@ class MainTableViewModel {
 
 extension MainTableViewModel {
     
-    public var numberOfRows: Int {
+    var numberOfRows: Int {
         searchResultsList.count
     }
     
-    public func fetchSearchResult(at index: Int) -> Search? {
+    func fetchSearchResult(at index: Int) -> Search? {
         searchResultsList[safe: index]
     }
 }

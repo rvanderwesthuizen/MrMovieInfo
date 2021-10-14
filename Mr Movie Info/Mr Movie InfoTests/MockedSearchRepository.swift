@@ -8,13 +8,13 @@
 import Foundation
 @testable import Mr_Movie_Info
 
-struct MockedSearchRepository: SearchRepositable {
+class MockedSearchRepository: SearchRepositable {
     var shouldFail = false
-    var mod10Is0 = true
+    var totalResultsMod10Is0 = true
     
     func performRequestWith(title: String, pageNumber: Int, completion: @escaping repositoryResponseBlock) {
         if !shouldFail {
-            if mod10Is0 {
+            if totalResultsMod10Is0 {
                 let model = SearchModel(results: [Search(title: title, year: "", imdbID: "", type: "", poster: "")], totalResults: "20")
                 completion(.success(model))
             } else {
