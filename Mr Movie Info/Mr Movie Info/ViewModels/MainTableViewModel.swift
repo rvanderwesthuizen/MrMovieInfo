@@ -44,7 +44,8 @@ class MainTableViewModel {
     }
     
     func getCurrentSearchInfo(title: String) -> (title: String, pageNumber: Int) {
-        if let numberOfPages = searchRepositoryResponse?.numberOfPages, pageNumber < numberOfPages {
+        if let numberOfPages = searchRepositoryResponse?.numberOfPages,
+            pageNumber < numberOfPages {
             pageNumber += 1
         }
         let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
