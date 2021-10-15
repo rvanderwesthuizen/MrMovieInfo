@@ -11,7 +11,7 @@ class MainTableViewModel {
     private var repository: SearchRepositable
     private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
-    private var pageNumber = 1
+    private(set) var pageNumber = 1
     private var searchResultsList: [Search] = []
     
     init(repository: SearchRepositable, delegate: ViewModelDelegate) {
@@ -44,10 +44,8 @@ class MainTableViewModel {
     }
     
     func getCurrentSearchInfo(title: String) -> (title: String, pageNumber: Int) {
-        if let numberOfPages = searchRepositoryResponse?.numberOfPages {
-            if pageNumber < numberOfPages {
-                pageNumber += 1
-            }
+        if let numberOfPages = searchRepositoryResponse?.numberOfPages, pageNumber < numberOfPages {
+            pageNumber += 1
         }
         let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
         return (title: titleForSearch, pageNumber: pageNumber)
