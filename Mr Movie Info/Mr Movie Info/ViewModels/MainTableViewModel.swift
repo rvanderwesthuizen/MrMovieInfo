@@ -11,7 +11,7 @@ class MainTableViewModel {
     private var repository: SearchRepositable
     private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
-    private var pageNumber = 1
+    private(set) var pageNumber = 1
     private var searchResultsList: [Search] = []
     
     init(repository: SearchRepositable, delegate: ViewModelDelegate) {
@@ -19,10 +19,8 @@ class MainTableViewModel {
         self.delegate = delegate
     }
     
-    public func retrieveData(forTitle title: String) {
-        searchResultsList.removeAll()
-        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
-        repository.performRequestWith(title: titleForSearch, pageNumber: 1) { [weak self] result in
+    func retrieveData(forTitle title: String, page: Int) {
+        repository.performRequestWith(title: title, pageNumber: page) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.searchRepositoryResponse = response
@@ -34,20 +32,24 @@ class MainTableViewModel {
         }
     }
     
-    public func loadNextPage(forTitle title: String) {
-        guard let numberOfPages = searchRepositoryResponse?.numberOfPages else { return }
-        if pageNumber < numberOfPages {
+    func initialSearch(forTitle title: String) {
+        searchResultsList.removeAll()
+        pageNumber = 1
+        search(forTitle: title)
+    }
+    
+    func search(forTitle title: String) {
+        let currentSearch = getCurrentSearchInfo(title: title)
+        retrieveData(forTitle: currentSearch.title, page: currentSearch.pageNumber)
+    }
+    
+    func getCurrentSearchInfo(title: String) -> (title: String, pageNumber: Int) {
+        if let numberOfPages = searchRepositoryResponse?.numberOfPages,
+            pageNumber < numberOfPages {
             pageNumber += 1
-            repository.performRequestWith(title: title, pageNumber: pageNumber) { [weak self] result in
-                switch result {
-                case .success(let response):
-                    self?.appendToSearchResults(results: response.results)
-                    self?.delegate?.refreshViewContent()
-                case .failure(let error):
-                    self?.delegate?.didFailWithError(error: error)
-                }
-            }
         }
+        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
+        return (title: titleForSearch, pageNumber: pageNumber)
     }
     
     private func appendToSearchResults(results: [Search]) {
@@ -57,11 +59,11 @@ class MainTableViewModel {
 
 extension MainTableViewModel {
     
-    public var numberOfRows: Int {
+    var numberOfRows: Int {
         searchResultsList.count
     }
     
-    public func fetchSearchResult(at index: Int) -> Search? {
+    func fetchSearchResult(at index: Int) -> Search? {
         searchResultsList[safe: index]
     }
 }

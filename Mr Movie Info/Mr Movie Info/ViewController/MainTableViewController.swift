@@ -32,10 +32,12 @@ class MainTableViewController: UITableViewController {
     @IBAction func didTapSearchButton(_ sender: UIButton) {
         searchTextField.resignFirstResponder()
         if let text = searchTextField.text {
-            titleForSearch = text
-            viewModel.retrieveData(forTitle: titleForSearch)
-        } else {
-            showAlert(alertTitle: "No title provided", alertMessage: "Please provide a title for search", actionTitle: "OK")
+            if text.isEmpty {
+                showAlert(alertTitle: "No title provided", alertMessage: "Please provide a title for search", actionTitle: "OK")
+            } else {
+                titleForSearch = text
+                viewModel.initialSearch(forTitle: titleForSearch)
+            }
         }
     }
     
@@ -55,7 +57,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == (viewModel.numberOfRows - 1) {
-            viewModel.loadNextPage(forTitle: titleForSearch)
+            viewModel.search(forTitle: titleForSearch)
         }
     }
 }

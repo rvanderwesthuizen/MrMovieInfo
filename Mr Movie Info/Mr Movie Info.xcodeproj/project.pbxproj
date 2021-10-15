@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
+		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
+		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
 		C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E311270C30EA0065F822 /* AppDelegate.swift */; };
 		C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E313270C30EA0065F822 /* SceneDelegate.swift */; };
 		C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E315270C30EA0065F822 /* MainTableViewController.swift */; };
 		C9C4E319270C30EA0065F822 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C4E317270C30EA0065F822 /* Main.storyboard */; };
 		C9C4E31B270C30EB0065F822 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9C4E31A270C30EB0065F822 /* Assets.xcassets */; };
 		C9C4E31E270C30EB0065F822 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9C4E31C270C30EB0065F822 /* LaunchScreen.storyboard */; };
-		C9C4E329270C30EC0065F822 /* Mr_Movie_InfoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E328270C30EC0065F822 /* Mr_Movie_InfoTests.swift */; };
 		C9C4E333270C30EC0065F822 /* Mr_Movie_InfoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E332270C30EC0065F822 /* Mr_Movie_InfoUITests.swift */; };
 		C9C4E335270C30EC0065F822 /* Mr_Movie_InfoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E334270C30EC0065F822 /* Mr_Movie_InfoUITestsLaunchTests.swift */; };
 		C9C4E348270C34900065F822 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E347270C34900065F822 /* MovieDetails.swift */; };
@@ -49,6 +51,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie InfoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
+		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
+		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
 		C9C4E30E270C30EA0065F822 /* Mr Movie Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Movie Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C4E311270C30EA0065F822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C4E313270C30EA0065F822 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,7 +64,6 @@
 		C9C4E31D270C30EB0065F822 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C9C4E31F270C30EB0065F822 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9C4E324270C30EC0065F822 /* Mr Movie InfoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mr Movie InfoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C9C4E328270C30EC0065F822 /* Mr_Movie_InfoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr_Movie_InfoTests.swift; sourceTree = "<group>"; };
 		C9C4E32E270C30EC0065F822 /* Mr Movie InfoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mr Movie InfoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C4E332270C30EC0065F822 /* Mr_Movie_InfoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr_Movie_InfoUITests.swift; sourceTree = "<group>"; };
 		C9C4E334270C30EC0065F822 /* Mr_Movie_InfoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mr_Movie_InfoUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -141,7 +146,10 @@
 		C9C4E327270C30EC0065F822 /* Mr Movie InfoTests */ = {
 			isa = PBXGroup;
 			children = (
-				C9C4E328270C30EC0065F822 /* Mr_Movie_InfoTests.swift */,
+				C982316427168E420094C1E5 /* MockedSearchRepository.swift */,
+				C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */,
+				C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */,
+				C982316D271696280094C1E5 /* MainTableViewModelTests.swift */,
 			);
 			path = "Mr Movie InfoTests";
 			sourceTree = "<group>";
@@ -309,6 +317,7 @@
 					};
 					C9C4E323270C30EC0065F822 = {
 						CreatedOnToolsVersion = 13.0;
+						LastSwiftMigration = 1300;
 						TestTargetID = C9C4E30D270C30EA0065F822;
 					};
 					C9C4E32D270C30EC0065F822 = {
@@ -392,7 +401,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9C4E329270C30EC0065F822 /* Mr_Movie_InfoTests.swift in Sources */,
+				C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */,
+				C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */,
+				C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -617,6 +628,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HDT7RV6K9;
@@ -631,6 +643,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Movie Info.app/Mr Movie Info";
@@ -642,6 +656,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HDT7RV6K9;
@@ -656,6 +671,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Movie Info.app/Mr Movie Info";
