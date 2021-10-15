@@ -20,46 +20,62 @@ class MainTableViewModelTests: XCTestCase {
     }
     
     func testRetrieveDataSuccess() {
-        implementationUnderTest.retrieveData(forTitle: "the flash")
-        XCTAssertEqual(implementationUnderTest.fetchSearchResult(at: 0)?.title, "the+flash")
+        implementationUnderTest.retrieveData(forTitle: "the flash", page: 1)
+        XCTAssertEqual(implementationUnderTest.fetchSearchResult(at: 0)!.title, "the flash")
         XCTAssertTrue(mockDelegate.refreshCalled)
     }
     
     func testRetrieveDataFailure() {
         mockRepository.shouldFail = true
-        implementationUnderTest.retrieveData(forTitle: " ")
+        implementationUnderTest.retrieveData(forTitle: " ", page: 1)
         XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
     }
     
     func testNumberOfRows() {
-        implementationUnderTest.retrieveData(forTitle: "")
+        implementationUnderTest.retrieveData(forTitle: "", page: 1)
         XCTAssertEqual(implementationUnderTest.numberOfRows, 1)
     }
     
-    func testLoadNextPageShouldSucceed() {
-        implementationUnderTest.retrieveData(forTitle: "")
-        implementationUnderTest.loadNextPage(forTitle: "")
-        XCTAssertTrue(mockDelegate.refreshCalled)
-        XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 1))
+    func testNumberOfRowsReturn0WhenListIsEmpty() {
+        XCTAssertEqual(implementationUnderTest.numberOfRows,0)
     }
     
-    func testLoadNextPageShouldFail() {
-        implementationUnderTest.retrieveData(forTitle: "")
+    func testSearchShouldSucceed() {
+        implementationUnderTest.search(forTitle: "")
+        XCTAssertTrue(mockDelegate.refreshCalled)
+        XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 0))
+    }
+    
+    func testSearchShouldFail() {
         mockRepository.shouldFail = true
-        implementationUnderTest.loadNextPage(forTitle: "")
-        XCTAssertNil(implementationUnderTest.fetchSearchResult(at: 1))
+        implementationUnderTest.search(forTitle: "")
+        XCTAssertNil(implementationUnderTest.fetchSearchResult(at: 0))
+        XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
     }
      
     func testFailureWhenIndexDoesNotExist() {
-        implementationUnderTest.retrieveData(forTitle: "")
+        implementationUnderTest.retrieveData(forTitle: "", page: 1)
         XCTAssertTrue(mockDelegate.refreshCalled)
         XCTAssertNil(implementationUnderTest.fetchSearchResult(at: -1))
     }
     
     func testSuccessWhenIndexDoesExist() {
-        implementationUnderTest.retrieveData(forTitle: "")
+        implementationUnderTest.retrieveData(forTitle: "", page: 1)
         XCTAssertTrue(mockDelegate.refreshCalled)
         XCTAssertNotNil(implementationUnderTest.fetchSearchResult(at: 0))
+    }
+    
+    func testgetCurrentSearchInfoReturn1ForPageNumberWhenNoCallHasBeenMade() {
+        let currentSearchInfo = implementationUnderTest.getCurrentSearchInfo(title: "the flash")
+        XCTAssertEqual(1, currentSearchInfo.pageNumber)
+        XCTAssertEqual("the+flash", currentSearchInfo.title)
+    }
+    
+    func testgetCurrentSearchInfoReturn2ForPageNumberWhenOneCallHasBeenMade() {
+        let title = "the flash"
+        implementationUnderTest.search(forTitle: title)
+        let currentSearchInfo = implementationUnderTest.getCurrentSearchInfo(title: title)
+        XCTAssertEqual(currentSearchInfo.pageNumber, 2)
     }
     
     class MockDelegate: ViewModelDelegate {

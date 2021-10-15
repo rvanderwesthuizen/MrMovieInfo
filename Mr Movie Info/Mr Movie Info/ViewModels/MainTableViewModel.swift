@@ -19,10 +19,8 @@ class MainTableViewModel {
         self.delegate = delegate
     }
     
-    func retrieveData(forTitle title: String) {
-        searchResultsList.removeAll()
-        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
-        repository.performRequestWith(title: titleForSearch, pageNumber: 1) { [weak self] result in
+    func retrieveData(forTitle title: String, page: Int) {
+        repository.performRequestWith(title: title, pageNumber: page) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.searchRepositoryResponse = response
@@ -34,21 +32,25 @@ class MainTableViewModel {
         }
     }
     
-    func loadNextPage(forTitle title: String) {
-        guard let numberOfPages = searchRepositoryResponse?.numberOfPages else { return }
-        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
-        if pageNumber < numberOfPages {
-            pageNumber += 1
-            repository.performRequestWith(title: titleForSearch, pageNumber: pageNumber) { [weak self] result in
-                switch result {
-                case .success(let response):
-                    self?.appendToSearchResults(results: response.results)
-                    self?.delegate?.refreshViewContent()
-                case .failure(let error):
-                    self?.delegate?.didFailWithError(error: error)
-                }
+    func initialSearch(forTitle title: String) {
+        searchResultsList.removeAll()
+        pageNumber = 1
+        search(forTitle: title)
+    }
+    
+    func search(forTitle title: String) {
+        let currentSearch = getCurrentSearchInfo(title: title)
+        retrieveData(forTitle: currentSearch.title, page: currentSearch.pageNumber)
+    }
+    
+    func getCurrentSearchInfo(title: String) -> (title: String, pageNumber: Int) {
+        if let numberOfPages = searchRepositoryResponse?.numberOfPages {
+            if pageNumber < numberOfPages {
+                pageNumber += 1
             }
         }
+        let titleForSearch = title.replacingOccurrences(of: " ", with: "+")
+        return (title: titleForSearch, pageNumber: pageNumber)
     }
     
     private func appendToSearchResults(results: [Search]) {
