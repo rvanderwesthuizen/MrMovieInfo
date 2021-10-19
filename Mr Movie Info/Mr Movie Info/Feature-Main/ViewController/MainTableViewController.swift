@@ -9,7 +9,7 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
 
-    private lazy var viewModel = MainTableViewModel(repository: SearchRepository(), delegate: self)
+    private lazy var viewModel = MainTableViewModel(searchRepository: SearchRepository(), delegate: self, movieDetailsRepository: MovieDetailsRepository())
     private var titleForSearch = "the+rookie"
     
     @IBOutlet private weak var searchTextField: UITextField!
@@ -41,6 +41,11 @@ class MainTableViewController: UITableViewController {
         }
     }
     
+    private func navigateToMovieDetailsView(with details: MovieDetails) {
+        let destination = MovieDetailsViewController(movieDetails: details)
+        show(destination, sender: self)
+    }
+    
     //MARK: - Tableview datasource methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows
@@ -55,10 +60,17 @@ class MainTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - Tableview delegate methods
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == (viewModel.numberOfRows - 1) {
             viewModel.search(forTitle: titleForSearch)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.retrieveMovieDetails(at: indexPath.row)
+        guard let movieDetails = viewModel.movieDetails else { return }
+        navigateToMovieDetailsView(with: movieDetails)
     }
 }
 
