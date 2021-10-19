@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct MovieDetailsRepository {
-    func performRequest(with title: String, completion: @escaping ((Result<MovieDetails,Error>) -> Void)) {
-        let urlString = "\(Constants.baseMoviesURL)&t=\(title)"
+struct MovieDetailsRepository: MovieDetailRepositable {
+    
+    func performRequestWith(imdbID: String, completion: @escaping movieDetailsRepositoryResponseBlock) {
+        let urlString = "\(Constants.baseMoviesURL)&i=\(imdbID)"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, _, error in

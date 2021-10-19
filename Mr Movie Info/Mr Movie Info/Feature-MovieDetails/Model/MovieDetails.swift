@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MovieDetails: Codable {
+@objcMembers class MovieDetails: NSObject, Codable {
     let title: String
     let year: String
     let rated: String
