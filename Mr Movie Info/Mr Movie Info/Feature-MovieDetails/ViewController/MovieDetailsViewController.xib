@@ -22,7 +22,6 @@
                 <outlet property="ratedLabel" destination="wC9-Xr-c0T" id="vsh-XH-0jN"/>
                 <outlet property="releaseLabel" destination="ARQ-Xk-H3L" id="VS3-aW-47i"/>
                 <outlet property="runtimeLabel" destination="fpM-CD-Zda" id="dQ7-88-EZe"/>
-                <outlet property="scrollView" destination="3cp-hA-TPb" id="q00-pq-slo"/>
                 <outlet property="titleLabel" destination="OIN-MM-aZz" id="fsR-xG-WhR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="writersLabel" destination="TxL-6g-9aF" id="Dh5-xH-XLP"/>

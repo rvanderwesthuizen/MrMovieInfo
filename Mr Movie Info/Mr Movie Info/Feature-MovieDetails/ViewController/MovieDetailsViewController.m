@@ -43,6 +43,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViewModel];
+    [self setupView];
 }
 
 -(void)setupViewModel {
