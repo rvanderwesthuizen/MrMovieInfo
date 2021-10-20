@@ -11,10 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MovieDetailsViewController : UIViewController
-
-@property(weak, nonatomic) MovieDetails *movieDetails;
-
-- (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails;
+-(void)set:(MovieDetails *)movieDetails;
 
 @end
 

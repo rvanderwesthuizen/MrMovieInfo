@@ -13,16 +13,16 @@
     IBOutlet UILabel *titleLabel;
     IBOutlet UIImageView *posterImageView;
     IBOutlet UILabel *yearLabel;
-    IBOutlet UILabel *releaseLabel;
+    IBOutlet UILabel *releasedLabel;
     IBOutlet UILabel *ratedLabel;
     IBOutlet UILabel *runtimeLabel;
     IBOutlet UILabel *plotLabel;
+    IBOutlet UILabel *directorsLabel;
+    IBOutlet UILabel *writersLabel;
+    IBOutlet UILabel *actorsLabel;
+    IBOutlet UILabel *productionLabel;
     IBOutlet UILabel *languageLabel;
     IBOutlet UILabel *genreLabel;
-    IBOutlet UILabel *writersLabel;
-    IBOutlet UILabel *directorLabel;
-    IBOutlet UILabel *actorsLabel;
-    IBOutlet UILabel *productionStudioLabel;
     IBOutlet UILabel *imdbRatingLabel;
     IBOutlet UILabel *boxOfficeLabel;
     IBOutlet UILabel *awardsLabel;
@@ -32,40 +32,30 @@
 
 @implementation MovieDetailsViewController
 
-- (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails {
-    self = [super init];
-    if (self) {
-        self.movieDetails = movieDetails;
-    }
-    return self;
+-(void)set:(MovieDetails *) movieDetails {
+        _viewModel = [[MovieDetailsViewModel alloc] initWithMovieDetails:movieDetails];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupViewModel];
+    self.navigationItem.title = @"Movie Details";
     [self setupView];
 }
 
--(void)setupViewModel {
-    if (!_viewModel) {
-        _viewModel = [[MovieDetailsViewModel alloc] initWithMovieDetails:_movieDetails];
-    }
-}
-
 -(void)setupView {
-    [posterImageView loadImageWithUrlString:_viewModel.posterURL];
+    [posterImageView loadImageWithUrlString: _viewModel.posterURL];
     titleLabel.text = _viewModel.title;
-    yearLabel.text = _viewModel.year;
-    releaseLabel.text = _viewModel.released;
+    yearLabel.text = [NSString stringWithFormat:@"Year: %@", _viewModel.year];
+    releasedLabel.text = [NSString stringWithFormat:@"Release data: %@", _viewModel.released];
     ratedLabel.text = _viewModel.rated;
     runtimeLabel.text = _viewModel.runtime;
     plotLabel.text = _viewModel.plot;
+    directorsLabel.text = _viewModel.directors;
+    writersLabel.text = _viewModel.writer;
+    actorsLabel.text = _viewModel.actors;
+    productionLabel.text = _viewModel.productionStudio;
     languageLabel.text = _viewModel.language;
     genreLabel.text = _viewModel.genre;
-    writersLabel.text = _viewModel.writer;
-    directorLabel.text = _viewModel.directors;
-    actorsLabel.text = _viewModel.actors;
-    productionStudioLabel.text = _viewModel.productionStudio;
     imdbRatingLabel.text = _viewModel.imdbRating;
     boxOfficeLabel.text = _viewModel.boxOffice;
     awardsLabel.text = _viewModel.awards;

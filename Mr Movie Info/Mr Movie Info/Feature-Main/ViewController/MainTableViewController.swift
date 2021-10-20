@@ -16,7 +16,7 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Search"
         setupTextField()
         
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
@@ -42,7 +42,8 @@ class MainTableViewController: UITableViewController {
     }
     
     private func navigateToMovieDetailsView(with details: MovieDetails) {
-        let destination = MovieDetailsViewController(movieDetails: details)
+        let destination = MovieDetailsViewController()
+        destination.set(details)
         show(destination, sender: self)
     }
     

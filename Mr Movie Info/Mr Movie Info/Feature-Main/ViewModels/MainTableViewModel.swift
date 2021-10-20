@@ -49,6 +49,7 @@ class MainTableViewModel {
     }
     
     func initialSearch(forTitle title: String) {
+        searchRepositoryResponse = nil
         searchResultsList.removeAll()
         pageNumber = 1
         search(forTitle: title)

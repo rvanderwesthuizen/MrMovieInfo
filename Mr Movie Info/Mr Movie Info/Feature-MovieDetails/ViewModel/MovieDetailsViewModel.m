@@ -7,7 +7,7 @@
 
 #import "MovieDetailsViewModel.h"
 
-@implementation MovieDetailsViewModel 
+@implementation MovieDetailsViewModel
 
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails {
     self = [super init];
