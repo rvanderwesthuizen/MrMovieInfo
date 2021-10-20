@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIImageView {
+@objc extension UIImageView {
     func loadImage(urlString: String) {
         self.image = UIImage(named: "noImageFound")
         

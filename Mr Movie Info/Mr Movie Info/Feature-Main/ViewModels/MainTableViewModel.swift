@@ -8,19 +8,35 @@
 import Foundation
 
 class MainTableViewModel {
-    private var repository: SearchRepositable
+    private var movieDetailsRepository: MovieDetailRepositable
+    private var searchRepository: SearchRepositable
     private weak var delegate: ViewModelDelegate?
     private var searchRepositoryResponse: SearchModel?
     private(set) var pageNumber = 1
     private var searchResultsList: [Search] = []
     
-    init(repository: SearchRepositable, delegate: ViewModelDelegate) {
-        self.repository = repository
+    var movieDetails: MovieDetails?
+    
+    init(searchRepository: SearchRepositable, delegate: ViewModelDelegate, movieDetailsRepository: MovieDetailRepositable) {
+        self.searchRepository = searchRepository
         self.delegate = delegate
+        self.movieDetailsRepository = movieDetailsRepository
+    }
+    
+    func retrieveMovieDetails(at index: Int) {
+        guard let imdbID = fetchSelectedImdbID(at: index) else { return }
+        movieDetailsRepository.performRequestWith(imdbID: imdbID) {[weak self] result in
+            switch result {
+            case .success(let response):
+                self?.movieDetails = response
+            case .failure(let error):
+                self?.delegate?.didFailWithError(error: error)
+            }
+        }
     }
     
     func retrieveData(forTitle title: String, page: Int) {
-        repository.performRequestWith(title: title, pageNumber: page) { [weak self] result in
+        searchRepository.performRequestWith(title: title, pageNumber: page) { [weak self] result in
             switch result {
             case .success(let response):
                 self?.searchRepositoryResponse = response
@@ -33,6 +49,7 @@ class MainTableViewModel {
     }
     
     func initialSearch(forTitle title: String) {
+        searchRepositoryResponse = nil
         searchResultsList.removeAll()
         pageNumber = 1
         search(forTitle: title)
@@ -54,6 +71,10 @@ class MainTableViewModel {
     
     private func appendToSearchResults(results: [Search]) {
         searchResultsList.append(contentsOf: results)
+    }
+    
+    private func fetchSelectedImdbID(at index: Int) -> String? {
+        searchResultsList[safe: index]?.imdbID
     }
 }
 
