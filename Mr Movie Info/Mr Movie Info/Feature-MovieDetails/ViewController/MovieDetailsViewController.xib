@@ -101,7 +101,7 @@
                         <constraint firstItem="OP9-vd-guM" firstAttribute="centerX" secondItem="JNi-ok-XvN" secondAttribute="centerX" id="fol-T2-Vxz"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0wz-hz-ysJ">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wz-hz-ysJ">
                     <rect key="frame" x="0.0" y="482" width="414" height="380"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BlH-p5-P1V">
@@ -233,7 +233,9 @@
                     <constraints>
                         <constraint firstItem="gk6-aG-bvO" firstAttribute="trailing" secondItem="BlH-p5-P1V" secondAttribute="trailing" id="0dm-9f-RiO"/>
                         <constraint firstAttribute="bottom" secondItem="BlH-p5-P1V" secondAttribute="bottom" constant="5" id="325-oS-SrE"/>
+                        <constraint firstItem="BlH-p5-P1V" firstAttribute="leading" secondItem="zUA-cy-9El" secondAttribute="leading" id="3Tg-6M-lV5"/>
                         <constraint firstItem="gk6-aG-bvO" firstAttribute="trailing" secondItem="BlH-p5-P1V" secondAttribute="trailing" id="69m-ly-LLk"/>
+                        <constraint firstItem="BlH-p5-P1V" firstAttribute="trailing" secondItem="zUA-cy-9El" secondAttribute="trailing" constant="414" id="6K2-IW-o3J"/>
                         <constraint firstItem="BlH-p5-P1V" firstAttribute="leading" secondItem="gk6-aG-bvO" secondAttribute="leading" id="KGi-nv-z39"/>
                         <constraint firstItem="BlH-p5-P1V" firstAttribute="top" secondItem="0wz-hz-ysJ" secondAttribute="top" id="jTw-N8-r1k"/>
                         <constraint firstItem="BlH-p5-P1V" firstAttribute="leading" secondItem="gk6-aG-bvO" secondAttribute="leading" id="wAI-cS-ZlM"/>
