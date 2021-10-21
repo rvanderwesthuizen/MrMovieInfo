@@ -18,18 +18,19 @@ typealias databaseRepositoryResponseBlock = ((Result<MovieDetails, Error>) -> Vo
         self.database = Database.database().reference()
     }
     
-    func addMovieToWatchlist(imdbID: String, details: MovieDetails) {
-        database.child(imdbID).setValue(details)
+    func addMovieToWatchlist(details: MovieDetails) {
+        let object = ["BoxOffice" : details.boxOffice, "Title" : details.title]
+        database.child(details.imdbID).setValue(object)
     }
     
     func removeMovieFromWatchlist(imdbID: String) {
         database.child(imdbID).removeValue()
     }
     
-    func retrieveWatchlist(completion: @escaping databaseRepositoryResponseBlock) {
-        database.observe(.value) { snapshot in
-            if let details = snapshot.value as? MovieDetails {
-                completion(.success(details))
+    func retrieveWatchlist() {
+        database.child("id").observeSingleEvent(of: .value) { snapshot in
+            if let details = snapshot.value as? [String:String] {
+                print("\n\n\(details)\n\n")
             }
         }
     }

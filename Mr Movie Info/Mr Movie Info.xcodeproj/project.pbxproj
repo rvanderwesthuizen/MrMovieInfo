@@ -14,9 +14,9 @@
 		C98AE975271E75FD00DAC9E6 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AE973271E75FD00DAC9E6 /* MovieDetailsViewController.xib */; };
 		C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE979271E80EE00DAC9E6 /* MovieDetailsViewModel.m */; };
 		C98AE97D271E812400DAC9E6 /* MovieDetailsRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AE97C271E812400DAC9E6 /* MovieDetailsRepositable.swift */; };
-		C98AE9812721874B00DAC9E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98AE9802721874B00DAC9E6 /* GoogleService-Info.plist */; };
 		C98AE984272187D900DAC9E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C98AE983272187D900DAC9E6 /* FirebaseDatabase */; };
 		C98AE98827218CA300DAC9E6 /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */; };
+		C98AE98A2721AF9000DAC9E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98AE9892721AF8F00DAC9E6 /* GoogleService-Info.plist */; };
 		C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E311270C30EA0065F822 /* AppDelegate.swift */; };
 		C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E313270C30EA0065F822 /* SceneDelegate.swift */; };
 		C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E315270C30EA0065F822 /* MainTableViewController.swift */; };
@@ -69,8 +69,8 @@
 		C98AE978271E80EE00DAC9E6 /* MovieDetailsViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewModel.h; sourceTree = "<group>"; };
 		C98AE979271E80EE00DAC9E6 /* MovieDetailsViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewModel.m; sourceTree = "<group>"; };
 		C98AE97C271E812400DAC9E6 /* MovieDetailsRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRepositable.swift; sourceTree = "<group>"; };
-		C98AE9802721874B00DAC9E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
+		C98AE9892721AF8F00DAC9E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9C4E30E270C30EA0065F822 /* Mr Movie Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Movie Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C4E311270C30EA0065F822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C4E313270C30EA0065F822 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 				C9C4E311270C30EA0065F822 /* AppDelegate.swift */,
 				C9C4E313270C30EA0065F822 /* SceneDelegate.swift */,
 				C9C4E31A270C30EB0065F822 /* Assets.xcassets */,
+				C98AE9892721AF8F00DAC9E6 /* GoogleService-Info.plist */,
 				C9C4E31F270C30EB0065F822 /* Info.plist */,
-				C98AE9802721874B00DAC9E6 /* GoogleService-Info.plist */,
 				C9C4E38827108DE00065F822 /* Constants.swift */,
 				C9C4E317270C30EA0065F822 /* Main.storyboard */,
 				C9C4E31C270C30EB0065F822 /* LaunchScreen.storyboard */,
@@ -461,7 +461,7 @@
 				C9C4E39127108F4F0065F822 /* SearchResultTableViewCell.xib in Resources */,
 				C9C4E319270C30EA0065F822 /* Main.storyboard in Resources */,
 				C98AE975271E75FD00DAC9E6 /* MovieDetailsViewController.xib in Resources */,
-				C98AE9812721874B00DAC9E6 /* GoogleService-Info.plist in Resources */,
+				C98AE98A2721AF9000DAC9E6 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
