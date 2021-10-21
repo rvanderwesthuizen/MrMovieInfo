@@ -71,7 +71,9 @@ class MainTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.retrieveMovieDetails(at: indexPath.row)
         guard let movieDetails = viewModel.movieDetails else { return }
-        navigateToMovieDetailsView(with: movieDetails)
+        let rep = DatabaseRepository()
+        rep.addMovieToWatchlist(imdbID: movieDetails.title, details: movieDetails)
+//        navigateToMovieDetailsView(with: movieDetails)
     }
 }
 
