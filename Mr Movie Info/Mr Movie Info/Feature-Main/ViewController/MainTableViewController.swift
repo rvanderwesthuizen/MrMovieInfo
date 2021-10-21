@@ -42,9 +42,11 @@ class MainTableViewController: UITableViewController {
     }
     
     private func navigateToMovieDetailsView(with details: MovieDetails) {
-        let destination = MovieDetailsViewController()
-        destination.set(details)
-        show(destination, sender: self)
+        DispatchQueue.main.async {
+            let destination = MovieDetailsViewController()
+            destination.set(details)
+            self.show(destination, sender: self)
+        }
     }
     
     //MARK: - Tableview datasource methods
@@ -72,7 +74,7 @@ class MainTableViewController: UITableViewController {
         viewModel.retrieveMovieDetails(at: indexPath.row)
         guard let movieDetails = viewModel.movieDetails else { return }
         let rep = DatabaseRepository()
-        rep.addMovieToWatchlist(imdbID: movieDetails.title, details: movieDetails)
+        rep.addMovieToWatchlist(details: movieDetails)
 //        navigateToMovieDetailsView(with: movieDetails)
     }
 }

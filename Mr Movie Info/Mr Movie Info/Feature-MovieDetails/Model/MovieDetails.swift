@@ -24,6 +24,7 @@ import Foundation
     let poster: String
     let ratings: [Rating]
     let imdbRating: String
+    let imdbID: String
     let boxOffice: String
     let productionStudio: String
     
@@ -44,6 +45,7 @@ import Foundation
         case poster = "Poster"
         case ratings = "Ratings"
         case imdbRating
+        case imdbID
         case productionStudio = "Production"
         case boxOffice = "BoxOffice"
     }
