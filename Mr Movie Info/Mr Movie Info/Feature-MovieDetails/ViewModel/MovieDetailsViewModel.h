@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(weak, nonatomic) MovieDetails *movieDetails;
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails;
 
+-(void) addToWatchlist:(NSString *)imdbID movieDetails:(MovieDetails *)movieDetails;
 -(NSString *) title;
 -(NSString *) year;
 -(NSString *) posterURL;

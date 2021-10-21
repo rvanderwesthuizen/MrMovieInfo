@@ -6,8 +6,9 @@
 //
 
 #import "MovieDetailsViewModel.h"
+@class DatabaseRepository;
 
-@implementation MovieDetailsViewModel
+@implementation MovieDetailsViewModel 
 
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails {
     self = [super init];
@@ -16,6 +17,10 @@
     }
     
     return self;
+}
+
+- (void)addToWatchlist:(NSString *)imdbID movieDetails:(MovieDetails *)movieDetails {
+    [[DatabaseRepository alloc] addMovieToWatchlistWithImdbID:imdbID details:movieDetails];
 }
 
 -(NSString *) title {

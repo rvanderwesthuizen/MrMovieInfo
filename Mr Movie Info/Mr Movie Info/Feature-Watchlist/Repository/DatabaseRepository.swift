@@ -10,27 +10,24 @@ import Firebase
 
 typealias databaseRepositoryResponseBlock = ((Result<MovieDetails, Error>) -> Void)
 
-final class DatabaseRepository {
+@objcMembers final class DatabaseRepository: NSObject {
     
     private var database: DatabaseReference
-    private var watchListRef: DatabaseReference {
-        database.child("WatchList")
-    }
     
-    init() {
+    override init() {
         self.database = Database.database().reference()
     }
     
     func addMovieToWatchlist(imdbID: String, details: MovieDetails) {
-        watchListRef.setValue(details)
+        database.child(imdbID).setValue(details)
     }
     
     func removeMovieFromWatchlist(imdbID: String) {
-        watchListRef.removeValue()
+        database.child(imdbID).removeValue()
     }
     
     func retrieveWatchlist(completion: @escaping databaseRepositoryResponseBlock) {
-        watchListRef.observe( .value) { snapshot in
+        database.observe(.value) { snapshot in
             if let details = snapshot.value as? MovieDetails {
                 completion(.success(details))
             }
