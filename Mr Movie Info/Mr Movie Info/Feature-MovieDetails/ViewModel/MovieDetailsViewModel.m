@@ -19,8 +19,8 @@
     return self;
 }
 
-- (void)addToWatchlist:(NSString *)imdbID movieDetails:(MovieDetails *)movieDetails {
-    [[DatabaseRepository alloc] addMovieToWatchlistWithImdbID:imdbID details:movieDetails];
+- (void)addToWatchlist {
+    [[DatabaseRepository alloc] addMovieToWatchlistWithDetails:_movieDetails];
 }
 
 -(NSString *) title {

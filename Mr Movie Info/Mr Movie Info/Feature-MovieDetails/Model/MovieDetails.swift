@@ -22,9 +22,10 @@ import Foundation
     let country: String
     let awards: String
     let poster: String
-    let ratings: [Rating]
+    let ratings: [Bullshit]
     let imdbRating: String
     let imdbID: String
+    let type: String
     let boxOffice: String
     let productionStudio: String
     
@@ -46,12 +47,13 @@ import Foundation
         case ratings = "Ratings"
         case imdbRating
         case imdbID
+        case type = "Type"
         case productionStudio = "Production"
         case boxOffice = "BoxOffice"
     }
 }
 
-struct Rating: Codable {
+struct Bullshit: Codable {
     let source: String
     let value: String
     

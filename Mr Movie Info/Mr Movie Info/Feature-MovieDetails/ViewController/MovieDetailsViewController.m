@@ -61,7 +61,7 @@
     awardsLabel.text = _viewModel.awards;
 }
 - (IBAction)didTapAddButton:(UIButton *)sender {
-    [_viewModel addToWatchlist:@"12345" movieDetails:_viewModel.movieDetails];
+    [_viewModel addToWatchlist];
 }
 
 @end

@@ -42,11 +42,9 @@ class MainTableViewController: UITableViewController {
     }
     
     private func navigateToMovieDetailsView(with details: MovieDetails) {
-        DispatchQueue.main.async {
             let destination = MovieDetailsViewController()
             destination.set(details)
             self.show(destination, sender: self)
-        }
     }
     
     //MARK: - Tableview datasource methods

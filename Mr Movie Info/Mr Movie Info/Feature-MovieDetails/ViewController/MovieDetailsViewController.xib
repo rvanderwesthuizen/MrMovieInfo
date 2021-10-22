@@ -91,11 +91,11 @@
                             </subviews>
                         </stackView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vk0-Kd-XwW">
-                            <rect key="frame" x="360" y="10" width="24" height="24"/>
+                            <rect key="frame" x="356" y="10" width="28" height="28"/>
                             <color key="backgroundColor" name="DarkPrimaryColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="24" id="Axl-tf-PDs"/>
-                                <constraint firstAttribute="width" constant="24" id="smE-f1-eVt"/>
+                                <constraint firstAttribute="height" constant="28" id="Axl-tf-PDs"/>
+                                <constraint firstAttribute="width" constant="28" id="smE-f1-eVt"/>
                             </constraints>
                             <state key="normal" title="Button"/>
                             <buttonConfiguration key="configuration" style="plain" image="plus" catalog="system">
@@ -103,7 +103,7 @@
                             </buttonConfiguration>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="12"/>
+                                    <integer key="value" value="14"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                             <connections>

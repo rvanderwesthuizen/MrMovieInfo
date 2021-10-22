@@ -19,7 +19,9 @@ struct MovieDetailsRepository: MovieDetailRepositable {
             }
             do {
                 let movieDetails = try JSONDecoder().decode(MovieDetails.self, from: data!)
-                completion(.success(movieDetails))
+                DispatchQueue.main.async {
+                    completion(.success(movieDetails))
+                }
             } catch {
                 completion(.failure(error))
             }

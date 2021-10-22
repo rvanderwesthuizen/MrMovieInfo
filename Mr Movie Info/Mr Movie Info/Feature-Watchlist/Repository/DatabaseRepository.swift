@@ -29,7 +29,7 @@ typealias databaseRepositoryResponseBlock = ((Result<MovieDetails, Error>) -> Vo
     
     func retrieveWatchlist() {
         database.child("id").observeSingleEvent(of: .value) { snapshot in
-            if let details = snapshot.value as? [String:String] {
+            if let details = snapshot.value as? [String : String] {
                 print("\n\n\(details)\n\n")
             }
         }
