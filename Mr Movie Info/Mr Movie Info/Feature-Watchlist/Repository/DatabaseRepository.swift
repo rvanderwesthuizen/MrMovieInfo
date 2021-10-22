@@ -17,22 +17,17 @@ typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>)
         return database.child("Watchlist")
     }
     
-    init() {
+    override init() {
         self.database = Database.database().reference()
     }
     
     func addMovieToWatchlist(details: MovieDetails) {
         watchlistRef.observeSingleEvent(of: .value) { snapshot in
             let count = snapshot.childrenCount
-            print(count)
-            self.setValue(details, child: "\(count)")
-        }
-    }
-    
-    private func setValue(_ details: MovieDetails, child: String) {
-        watchlistRef.child(child).setValue(details.dictionary) { error, _ in
-            if error != nil {
-                print(error!.localizedDescription)
+            self.watchlistRef.child("\(count)").setValue(details.dictionary) { error, _ in
+                if error != nil {
+                    print(error!.localizedDescription)
+                }
             }
         }
     }

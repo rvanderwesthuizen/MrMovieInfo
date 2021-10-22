@@ -22,7 +22,8 @@
 }
 
 - (void)addToWatchlist {
-    [[DatabaseRepository alloc] addMovieToWatchlistWithDetails:_movieDetails];
+    DatabaseRepository* repository = [[DatabaseRepository alloc] init];
+    [repository addMovieToWatchlistWithDetails:_movieDetails];
 }
 
 -(NSString *) title {
