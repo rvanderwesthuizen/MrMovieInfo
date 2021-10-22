@@ -74,7 +74,7 @@ class MainTableViewController: UITableViewController {
         viewModel.retrieveMovieDetails(at: indexPath.row)
         guard let movieDetails = viewModel.movieDetails else { return }
         let rep = DatabaseRepository()
-        rep.addMovieToWatchlist(details: movieDetails)
+        rep.retrieveWatchlist()
 //        navigateToMovieDetailsView(with: movieDetails)
     }
 }
