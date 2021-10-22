@@ -8,12 +8,14 @@
 #import "MovieDetailsViewModel.h"
 @class DatabaseRepository;
 
-@implementation MovieDetailsViewModel 
+@implementation MovieDetailsViewModel  {
+    MovieDetails* _movieDetails;
+}
 
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails {
     self = [super init];
     if (self) {
-        self.movieDetails = movieDetails;
+        _movieDetails = movieDetails;
     }
     
     return self;

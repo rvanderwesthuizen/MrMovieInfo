@@ -11,7 +11,6 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MovieDetailsViewModel : NSObject
-@property(weak, nonatomic) MovieDetails *movieDetails;
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails;
 
 -(void) addToWatchlist;
