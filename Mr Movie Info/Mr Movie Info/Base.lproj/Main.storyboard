@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MZI-Mc-INK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cMf-ET-QVg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -70,12 +70,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwz-nA-Pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="679.71014492753625" y="61.607142857142854"/>
+            <point key="canvasLocation" x="1171" y="-227"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Item-->
         <scene sceneID="MOt-gr-wtd">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="MZI-Mc-INK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="49x-jN-dQ8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="emj-EK-ldd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -88,21 +89,76 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AP7-dz-0WO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-230.43478260869566" y="61.607142857142854"/>
+            <point key="canvasLocation" x="-187" y="-227"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3PH-iq-2an">
+            <objects>
+                <tabBarController id="cMf-ET-QVg" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZZf-IR-Czz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MZI-Mc-INK" kind="relationship" relationship="viewControllers" id="XMk-A5-gmW"/>
+                        <segue destination="Md8-6C-kYc" kind="relationship" relationship="viewControllers" id="fyj-Ih-kQe"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nym-F0-eyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1336" y="9"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="sbO-6d-mfn">
+            <objects>
+                <navigationController id="Md8-6C-kYc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="SaZ-K0-eUm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q27-qC-frd">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bQN-2A-Q3v" kind="relationship" relationship="rootViewController" id="RaO-ef-HPm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MT2-Az-3tp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-188" y="436"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="U2n-0V-a2E">
+            <objects>
+                <tableViewController id="bQN-2A-Q3v" customClass="WatchlistTableViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="EvM-l7-sIN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="DarkPrimaryColor"/>
+                        <connections>
+                            <outlet property="dataSource" destination="bQN-2A-Q3v" id="g0j-wk-Zyl"/>
+                            <outlet property="delegate" destination="bQN-2A-Q3v" id="Md3-j4-9SA"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="Zja-Dv-6d7"/>
+                    <navigationItem key="navigationItem" id="GIt-SG-HlW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H2M-4J-jJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1170" y="436"/>
         </scene>
     </scenes>
     <resources>
         <namedColor name="AccentColor">
-            <color red="1" green="0.60379483203054019" blue="0.011870453837149908" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="DarkPrimaryColor">
-            <color red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.17599999904632568" green="0.17599999904632568" blue="0.17599999904632568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryColor">
-            <color red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.37999999523162842" green="0.37999999523162842" blue="0.37999999523162842" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryTextColor">
-            <color red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
