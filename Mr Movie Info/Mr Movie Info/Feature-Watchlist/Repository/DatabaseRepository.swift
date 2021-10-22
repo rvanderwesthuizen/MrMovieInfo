@@ -19,8 +19,7 @@ final class DatabaseRepository {
     }
     
     func addMovieToWatchlist(details: MovieDetails) {
-        let object = ["BoxOffice" : details.boxOffice, "Title" : details.title]
-        database.child(details.imdbID).setValue(object)
+        database.child(details.imdbID).setValue(details.dictionary)
     }
     
     func removeMovieFromWatchlist(imdbID: String) {
