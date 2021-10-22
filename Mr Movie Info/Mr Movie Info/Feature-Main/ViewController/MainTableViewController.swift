@@ -8,7 +8,7 @@
 import UIKit
 
 class MainTableViewController: UITableViewController {
-
+    
     private lazy var viewModel = MainTableViewModel(searchRepository: SearchRepository(), delegate: self, movieDetailsRepository: MovieDetailsRepository())
     private var titleForSearch = "the+rookie"
     
