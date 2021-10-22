@@ -109,11 +109,11 @@
             </objects>
             <point key="canvasLocation" x="-1336" y="9"/>
         </scene>
-        <!--Item-->
+        <!--Watchlist-->
         <scene sceneID="sbO-6d-mfn">
             <objects>
                 <navigationController id="Md8-6C-kYc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="SaZ-K0-eUm"/>
+                    <tabBarItem key="tabBarItem" title="Watchlist" id="SaZ-K0-eUm"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q27-qC-frd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

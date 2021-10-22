@@ -8,7 +8,7 @@
 import UIKit
 
 class WatchlistTableViewController: UITableViewController {
-    private lazy var viewmodel = WatchlistTableViewModel(databaseRepository: DatabaseRepository(), delegate: self)
+    private lazy var viewModel = WatchlistTableViewModel(databaseRepository: DatabaseRepository(), delegate: self)
     
     
     override func viewDidLoad() {
@@ -17,15 +17,20 @@ class WatchlistTableViewController: UITableViewController {
         
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.retrieveWatchlist()
+    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewmodel.numberOfRows
+        viewModel.numberOfRows
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell else { return UITableViewCell() }
-        guard let movieToDisplay = viewmodel.fetchMovie(at: indexPath.row) else { return UITableViewCell() }
+        guard let movieToDisplay = viewModel.fetchMovie(at: indexPath.row) else { return UITableViewCell() }
         
         cell.configure(with: movieToDisplay)
         
@@ -41,6 +46,6 @@ extension WatchlistTableViewController: ViewModelDelegate {
     }
     
     func didFailWithError(error: Error) {
-        
+        showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
     }
 }

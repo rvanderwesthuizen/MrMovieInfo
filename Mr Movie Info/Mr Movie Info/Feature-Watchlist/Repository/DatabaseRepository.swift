@@ -32,8 +32,12 @@ typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>)
         }
     }
     
-    func removeMovieFromWatchlist(at index: Int) {
-        watchlistRef.child("\(index)").removeValue()
+    func removeMovieFromWatchlist(at index: Int, failure: @escaping (Error)->Void) {
+        watchlistRef.child("\(index)").removeValue { error, _ in
+            if error != nil {
+                failure(error!)
+            }
+        }
     }
     
     func retrieveWatchlist(completion: @escaping databaseRepositoryFetchResponseBlock) {

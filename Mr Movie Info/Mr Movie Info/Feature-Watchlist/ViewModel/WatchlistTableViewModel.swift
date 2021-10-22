@@ -18,13 +18,32 @@ class WatchlistTableViewModel {
     }
     
     func retrieveWatchlist() {
-        databaseRepository.retrieveWatchlist()
-        delegate?.refreshViewContent()
+        databaseRepository.retrieveWatchlist() {[weak self] result in
+            switch result {
+            case .success(let response):
+                self?.databaseResponse = response
+                self?.delegate?.refreshViewContent()
+            case .failure(let error):
+                self?.delegate?.didFailWithError(error: error)
+            }
+        }
     }
     
-    func removeFromWatchList(imdbID: String) {
-        databaseRepository.removeMovieFromWatchlist(imdbID: imdbID)
-        delegate?.refreshViewContent()
+    func removeFromWatchList(at index: Int) {
+        databaseRepository.removeMovieFromWatchlist(at: index) { error in
+            self.delegate?.didFailWithError(error: error)
+            return
+        }
+        
+        databaseRepository.retrieveWatchlist() {[weak self] result in
+            switch result {
+            case .success(let response):
+                self?.databaseResponse = response
+                self?.delegate?.refreshViewContent()
+            case .failure(let error):
+                self?.delegate?.didFailWithError(error: error)
+            }
+        }
     }
 }
 
