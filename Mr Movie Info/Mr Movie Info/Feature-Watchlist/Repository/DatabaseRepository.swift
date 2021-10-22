@@ -8,29 +8,58 @@
 import Foundation
 import Firebase
 
-typealias databaseRepositoryResponseBlock = ((Result<MovieDetails, Error>) -> Void)
+typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>) -> Void
 
 @objcMembers final class DatabaseRepository: NSObject {
     
     private var database: DatabaseReference
+    private var watchlistRef: DatabaseReference {
+        return database.child("Watchlist")
+    }
     
-    override init() {
+    init() {
         self.database = Database.database().reference()
     }
     
     func addMovieToWatchlist(details: MovieDetails) {
-        database.child(details.imdbID).setValue(details.dictionary)
+        watchlistRef.observeSingleEvent(of: .value) { snapshot in
+            let count = snapshot.childrenCount
+            print(count)
+            self.setValue(details, child: "\(count)")
+        }
     }
     
-    func removeMovieFromWatchlist(imdbID: String) {
-        database.child(imdbID).removeValue()
-    }
-    
-    func retrieveWatchlist() {
-        database.child("id").observeSingleEvent(of: .value) { snapshot in
-            if let details = snapshot.value as? [String : String] {
-                print("\n\n\(details)\n\n")
+    private func setValue(_ details: MovieDetails, child: String) {
+        watchlistRef.child(child).setValue(details.dictionary) { error, _ in
+            if error != nil {
+                print(error!.localizedDescription)
             }
         }
+    }
+    
+    func removeMovieFromWatchlist(at index: Int) {
+        watchlistRef.child("\(index)").removeValue()
+    }
+    
+    func retrieveWatchlist(completion: @escaping databaseRepositoryFetchResponseBlock) {
+        let urlString = "https://\(Constants.projectID).firebasedatabase.app/Watchlist/.json"
+        guard let url = URL(string: urlString) else { return }
+        
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, _, error in
+            guard let data = data else { return }
+            print(data)
+            do {
+                let decodedData = try JSONDecoder().decode([MovieDetails].self, from: data)
+                DispatchQueue.main.async {
+                    completion(.success(decodedData))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
+            }
+        }.resume()
     }
 }
