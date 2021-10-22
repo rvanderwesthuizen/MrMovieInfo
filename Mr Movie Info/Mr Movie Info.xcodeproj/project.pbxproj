@@ -17,6 +17,8 @@
 		C98AE984272187D900DAC9E6 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C98AE983272187D900DAC9E6 /* FirebaseDatabase */; };
 		C98AE98827218CA300DAC9E6 /* DatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */; };
 		C98AE98A2721AF9000DAC9E6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98AE9892721AF8F00DAC9E6 /* GoogleService-Info.plist */; };
+		C98AE98F272273C200DAC9E6 /* WatchlistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AE98E272273C200DAC9E6 /* WatchlistTableViewController.swift */; };
+		C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98AE9912722775B00DAC9E6 /* WatchlistTableViewModel.swift */; };
 		C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E311270C30EA0065F822 /* AppDelegate.swift */; };
 		C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E313270C30EA0065F822 /* SceneDelegate.swift */; };
 		C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E315270C30EA0065F822 /* MainTableViewController.swift */; };
@@ -71,6 +73,8 @@
 		C98AE97C271E812400DAC9E6 /* MovieDetailsRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRepositable.swift; sourceTree = "<group>"; };
 		C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepository.swift; sourceTree = "<group>"; };
 		C98AE9892721AF8F00DAC9E6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C98AE98E272273C200DAC9E6 /* WatchlistTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewController.swift; sourceTree = "<group>"; };
+		C98AE9912722775B00DAC9E6 /* WatchlistTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewModel.swift; sourceTree = "<group>"; };
 		C9C4E30E270C30EA0065F822 /* Mr Movie Info.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mr Movie Info.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9C4E311270C30EA0065F822 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9C4E313270C30EA0065F822 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 		C98AE98527218C7900DAC9E6 /* Feature-Watchlist */ = {
 			isa = PBXGroup;
 			children = (
+				C98AE98C272272B600DAC9E6 /* ViewController */,
+				C98AE98B272272AB00DAC9E6 /* ViewModel */,
 				C98AE98627218C8900DAC9E6 /* Repository */,
 			);
 			path = "Feature-Watchlist";
@@ -205,6 +211,22 @@
 				C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		C98AE98B272272AB00DAC9E6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C98AE9912722775B00DAC9E6 /* WatchlistTableViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C98AE98C272272B600DAC9E6 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C98AE98E272273C200DAC9E6 /* WatchlistTableViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C9C4E305270C30EA0065F822 = {
@@ -504,7 +526,9 @@
 				C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */,
 				C9C4E353270C64BB0065F822 /* SearchRepository.swift in Sources */,
 				C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */,
+				C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */,
 				C9C4E348270C34900065F822 /* MovieDetails.swift in Sources */,
+				C98AE98F272273C200DAC9E6 /* WatchlistTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
