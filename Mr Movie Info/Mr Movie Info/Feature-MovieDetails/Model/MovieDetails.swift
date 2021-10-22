@@ -19,15 +19,35 @@ import Foundation
     let actors: String
     let plot: String
     let language: String
-    let country: String
     let awards: String
     let poster: String
-    let ratings: [Bullshit]
     let imdbRating: String
     let imdbID: String
-    let type: String
     let boxOffice: String
+    let type: String
     let productionStudio: String
+    
+    var dictionary: [String: String] {
+        return ["Title": title,
+                "Year": year,
+                "Rated": rated,
+                "Runtime": runtime,
+                "Released": released,
+                "Genre": genre,
+                "Director": director,
+                "Writer": writer,
+                "Actors": actors,
+                "Plot": plot,
+                "Language": language,
+                "Awards": awards,
+                "Poster": poster,
+                "imdbRating": imdbRating,
+                "imdbID": imdbID,
+                "Type": type,
+                "Production": productionStudio,
+                "BoxOffice": boxOffice
+                ]
+    }
     
     private enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -41,24 +61,12 @@ import Foundation
         case actors = "Actors"
         case plot = "Plot"
         case language = "Language"
-        case country = "Country"
         case awards = "Awards"
         case poster = "Poster"
-        case ratings = "Ratings"
         case imdbRating
         case imdbID
         case type = "Type"
         case productionStudio = "Production"
         case boxOffice = "BoxOffice"
-    }
-}
-
-struct Bullshit: Codable {
-    let source: String
-    let value: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case source = "Source"
-        case value = "Value"
     }
 }
