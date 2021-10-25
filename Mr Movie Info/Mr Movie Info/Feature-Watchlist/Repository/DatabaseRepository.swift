@@ -35,7 +35,6 @@ typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>)
                                 print(error!.localizedDescription)
                             }
                         }
-                        
                     }
                 }
             case .failure(let error):
