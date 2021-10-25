@@ -23,7 +23,9 @@ struct MovieDetailsRepository: MovieDetailRepositable {
                     completion(.success(movieDetails))
                 }
             } catch {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }
         task.resume()

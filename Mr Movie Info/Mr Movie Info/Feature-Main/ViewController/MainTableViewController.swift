@@ -84,9 +84,7 @@ extension MainTableViewController: UITextFieldDelegate {
 
 extension MainTableViewController: ViewModelDelegate {
     func refreshViewContent() {
-        DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
     }
     
     func didFailWithError(error: Error) {

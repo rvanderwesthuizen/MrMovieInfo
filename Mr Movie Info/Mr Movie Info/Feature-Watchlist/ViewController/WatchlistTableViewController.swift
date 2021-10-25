@@ -40,9 +40,7 @@ class WatchlistTableViewController: UITableViewController {
 
 extension WatchlistTableViewController: ViewModelDelegate {
     func refreshViewContent() {
-        DispatchQueue.main.async {
             self.tableView.reloadData()
-        }
     }
     
     func didFailWithError(error: Error) {

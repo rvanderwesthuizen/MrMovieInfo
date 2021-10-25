@@ -6,7 +6,6 @@
 //
 
 #import "MovieDetailsViewModel.h"
-@class DatabaseRepository;
 
 @implementation MovieDetailsViewModel  {
     MovieDetails* _movieDetails;
