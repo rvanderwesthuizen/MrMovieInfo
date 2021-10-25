@@ -7,15 +7,22 @@
 
 #import "MovieDetailsViewModel.h"
 
-@implementation MovieDetailsViewModel
+@implementation MovieDetailsViewModel  {
+    MovieDetails* _movieDetails;
+}
 
 - (instancetype)initWithMovieDetails:(MovieDetails *)movieDetails {
     self = [super init];
     if (self) {
-        self.movieDetails = movieDetails;
+        _movieDetails = movieDetails;
     }
     
     return self;
+}
+
+- (void)addToWatchlist {
+    DatabaseRepository* repository = [[DatabaseRepository alloc] init];
+    [repository addMovieToWatchlistWithDetails:_movieDetails];
 }
 
 -(NSString *) title {

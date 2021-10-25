@@ -23,4 +23,11 @@ class SearchResultTableViewCell: UITableViewCell {
         yearLabel.text = model.year
         posterImageView.loadImage(urlString: model.poster)
     }
+    
+    public func configure(with model: MovieDetails) {
+        titleLabel.text = model.title
+        typeLabel.text = model.type
+        yearLabel.text = model.year
+        posterImageView.loadImage(urlString: model.poster)
+    }
 }

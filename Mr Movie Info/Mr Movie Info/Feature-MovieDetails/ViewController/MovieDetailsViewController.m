@@ -60,5 +60,8 @@
     boxOfficeLabel.text = _viewModel.boxOffice;
     awardsLabel.text = _viewModel.awards;
 }
+- (IBAction)didTapAddButton:(UIButton *)sender {
+    [_viewModel addToWatchlist];
+}
 
 @end

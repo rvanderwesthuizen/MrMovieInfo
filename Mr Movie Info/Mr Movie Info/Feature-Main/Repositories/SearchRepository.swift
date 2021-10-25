@@ -14,13 +14,19 @@ struct SearchRepository: SearchRepositable {
         let session = URLSession(configuration: .default)
         let task = session.dataTask(with: url) { data, _, error in
             if error != nil {
-                completion(.failure(error!))
+                DispatchQueue.main.async {
+                    completion(.failure(error!))
+                }
             }
             do {
                 let searchResults = try JSONDecoder().decode(SearchModel.self, from: data!)
-                completion(.success(searchResults))
+                DispatchQueue.main.async {
+                    completion(.success(searchResults))
+                }
             } catch {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }
         task.resume()
