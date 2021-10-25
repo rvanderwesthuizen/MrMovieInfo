@@ -1,15 +1,19 @@
 # MrMovieInfo
 
 ## Summary
-Mr Movie Info is an app to go to for information on movies, search by title for your favourite movie and make a list of movies you have watched with your own opinion in then
+Mr Movie Info is an app to go to for information on movies and series, search by title for your favourites and keep track of those you have watched.
 
 ## Core Features
 
-- Favourites List
-- Enables the user to search for movies by title and year
+- Watchlist to keep track of movies and/or series the user have watched
+- Enables the user to search for movies or series by title 
+- Provides the user with some relevant details on the movie or series selected
 
 ## Technologies and Principles Applied 
 
 - Getting data from restful API (OMDB API - http://www.omdbapi.com/)
 - MVVM Architecture
 - Swift
+- Firebase (Realtime database)
+- Unit testing
+- Objective-c
