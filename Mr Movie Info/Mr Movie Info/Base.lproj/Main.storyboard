@@ -58,6 +58,10 @@
                                 <constraint firstItem="9Ak-7D-dvL" firstAttribute="leading" secondItem="mZx-8l-bEH" secondAttribute="leading" constant="10" id="yUx-mP-xwH"/>
                             </constraints>
                         </view>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="4oE-vA-K5S">
+                            <rect key="frame" x="0.0" y="105" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </activityIndicatorView>
                         <connections>
                             <outlet property="dataSource" destination="4Oy-zD-9hm" id="Qvx-1Q-fLB"/>
                             <outlet property="delegate" destination="4Oy-zD-9hm" id="GwL-ho-LBH"/>
@@ -65,6 +69,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="ny4-0N-0hH"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="4oE-vA-K5S" id="fmw-Nr-H8R"/>
                         <outlet property="searchTextField" destination="192-JD-sZE" id="Gxs-9R-6N0"/>
                     </connections>
                 </tableViewController>

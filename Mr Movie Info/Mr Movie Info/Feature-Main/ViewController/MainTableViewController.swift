@@ -13,12 +13,13 @@ class MainTableViewController: UITableViewController {
     private var titleForSearch = "the+rookie"
     
     @IBOutlet private weak var searchTextField: UITextField!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
         setupTextField()
-        
+        activityIndicator.isHidden = true
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
     }
     
@@ -35,10 +36,16 @@ class MainTableViewController: UITableViewController {
             if text.isEmpty {
                 showAlert(alertTitle: "No title provided", alertMessage: "Please provide a title for search", actionTitle: "OK")
             } else {
+                activateActivityIndicator()
                 titleForSearch = text
                 viewModel.initialSearch(forTitle: titleForSearch)
             }
         }
+    }
+    
+    private func activateActivityIndicator() {
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
     }
     
     private func navigateToMovieDetailsView(with details: MovieDetails) {
@@ -69,9 +76,11 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.retrieveMovieDetails(at: indexPath.row)
-        guard let movieDetails = viewModel.movieDetails else { return }
-        navigateToMovieDetailsView(with: movieDetails)
+        activityIndicator.startAnimating()
+        viewModel.retrieveMovieDetails(at: indexPath.row) { [weak self] movieDetails in
+            self?.activityIndicator.stopAnimating()
+            self?.navigateToMovieDetailsView(with: movieDetails)
+        }
     }
 }
 
@@ -84,7 +93,8 @@ extension MainTableViewController: UITextFieldDelegate {
 
 extension MainTableViewController: ViewModelDelegate {
     func refreshViewContent() {
-            self.tableView.reloadData()
+        tableView.reloadData()
+        activityIndicator.stopAnimating()
     }
     
     func didFailWithError(error: Error) {
