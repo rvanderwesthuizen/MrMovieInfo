@@ -22,7 +22,7 @@ class WatchlistTableViewModel {
             switch result {
             case .success(let response):
                 self?.databaseResponse = response
-                self?.delegate?.refreshViewContent()
+                self?.delegate?.refreshViewContent(navigateToMovieDetailsFlag: false)
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }

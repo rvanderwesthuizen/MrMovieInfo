@@ -15,18 +15,21 @@ class MainTableViewModel {
     private(set) var pageNumber = 1
     private var searchResultsList: [Search] = []
     
+    var movieDetails: MovieDetails?
+    
     init(searchRepository: SearchRepositable, delegate: ViewModelDelegate, movieDetailsRepository: MovieDetailRepositable) {
         self.searchRepository = searchRepository
         self.delegate = delegate
         self.movieDetailsRepository = movieDetailsRepository
     }
     
-    func retrieveMovieDetails(at index: Int, success: @escaping (MovieDetails) -> Void) {
+    func retrieveMovieDetails(at index: Int) {
         guard let imdbID = fetchSelectedImdbID(at: index) else { return }
         movieDetailsRepository.performRequestWith(imdbID: imdbID) {[weak self] result in
             switch result {
             case .success(let response):
-                success(response)
+                self?.movieDetails = response
+                self?.delegate?.refreshViewContent(navigateToMovieDetailsFlag: true)
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }
@@ -39,7 +42,7 @@ class MainTableViewModel {
             case .success(let response):
                 self?.searchRepositoryResponse = response
                 self?.appendToSearchResults(results: response.results)
-                self?.delegate?.refreshViewContent()
+                self?.delegate?.refreshViewContent(navigateToMovieDetailsFlag: false)
             case .failure(let error):
                 self?.delegate?.didFailWithError(error: error)
             }

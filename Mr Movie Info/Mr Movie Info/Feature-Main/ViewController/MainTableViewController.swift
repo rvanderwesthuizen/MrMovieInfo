@@ -77,10 +77,7 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         activityIndicator.startAnimating()
-        viewModel.retrieveMovieDetails(at: indexPath.row) { [weak self] movieDetails in
-            self?.activityIndicator.stopAnimating()
-            self?.navigateToMovieDetailsView(with: movieDetails)
-        }
+        viewModel.retrieveMovieDetails(at: indexPath.row)
     }
 }
 
@@ -92,9 +89,14 @@ extension MainTableViewController: UITextFieldDelegate {
 }
 
 extension MainTableViewController: ViewModelDelegate {
-    func refreshViewContent() {
-        tableView.reloadData()
+    func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
         activityIndicator.stopAnimating()
+        if navigateToMovieDetailsFlag {
+            guard let movieDetails = viewModel.movieDetails else { return }
+            navigateToMovieDetailsView(with: movieDetails)
+        } else {
+            tableView.reloadData()
+        }
     }
     
     func didFailWithError(error: Error) {

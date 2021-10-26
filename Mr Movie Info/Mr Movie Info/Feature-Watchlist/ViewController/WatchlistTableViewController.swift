@@ -39,8 +39,8 @@ class WatchlistTableViewController: UITableViewController {
 }
 
 extension WatchlistTableViewController: ViewModelDelegate {
-    func refreshViewContent() {
-            self.tableView.reloadData()
+    func refreshViewContent(navigateToMovieDetailsFlag _: Bool) {
+        self.tableView.reloadData()
     }
     
     func didFailWithError(error: Error) {
