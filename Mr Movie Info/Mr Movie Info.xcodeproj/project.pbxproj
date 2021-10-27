@@ -48,6 +48,7 @@
 		C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */; };
 		C9F68BE3272997A100210BBF /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BE2272997A100210BBF /* OnboardingSlide.swift */; };
 		C9F68BE52729A10700210BBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BE42729A10700210BBF /* OnboardingViewController.swift */; };
+		C9F68BE82729E5C200210BBF /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BE72729E5C200210BBF /* OnboardingCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepositable.swift; sourceTree = "<group>"; };
 		C9F68BE2272997A100210BBF /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		C9F68BE42729A10700210BBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		C9F68BE72729E5C200210BBF /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -418,6 +420,7 @@
 		C9F68BE02729976D00210BBF /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C9F68BE62729E59200210BBF /* CollectionViewCell */,
 				C9F68BE42729A10700210BBF /* OnboardingViewController.swift */,
 			);
 			path = ViewController;
@@ -428,6 +431,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		C9F68BE62729E59200210BBF /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C9F68BE72729E5C200210BBF /* OnboardingCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -584,6 +595,7 @@
 				C98AE98827218CA300DAC9E6 /* DatabaseRepository.swift in Sources */,
 				C98AE97D271E812400DAC9E6 /* MovieDetailsRepositable.swift in Sources */,
 				C9C4E38927108DE00065F822 /* Constants.swift in Sources */,
+				C9F68BE82729E5C200210BBF /* OnboardingCollectionViewCell.swift in Sources */,
 				C9F68BE3272997A100210BBF /* OnboardingSlide.swift in Sources */,
 				C9C4E38C27108E700065F822 /* UIImageViewExtension.swift in Sources */,
 				C9C4E355270C64D20065F822 /* SearchModel.swift in Sources */,
