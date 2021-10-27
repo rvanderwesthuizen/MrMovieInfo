@@ -8,6 +8,6 @@
 import Foundation
 
 protocol ViewModelDelegate: AnyObject {
-    func refreshViewContent()
+    func refreshViewContent(navigateToMovieDetailsFlag: Bool)
     func didFailWithError(error: Error)
 }

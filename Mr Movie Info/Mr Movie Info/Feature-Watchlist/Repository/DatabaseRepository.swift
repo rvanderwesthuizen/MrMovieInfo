@@ -22,12 +22,23 @@ typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>)
     }
     
     func addMovieToWatchlist(details: MovieDetails) {
-        watchlistRef.observeSingleEvent(of: .value) { snapshot in
-            let count = snapshot.childrenCount
-            self.watchlistRef.child("\(count)").setValue(details.dictionary) { error, _ in
-                if error != nil {
-                    print(error!.localizedDescription)
+        retrieveWatchlist { result in
+            switch result {
+            case .success(let response):
+                let count = response.count
+                for item in response {
+                    if item.imdbID == details.imdbID {
+                        return
+                    } else {
+                        self.watchlistRef.child("\(count)").setValue(details.dictionary) { error, _ in
+                            if error != nil {
+                                print(error!.localizedDescription)
+                            }
+                        }
+                    }
                 }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
