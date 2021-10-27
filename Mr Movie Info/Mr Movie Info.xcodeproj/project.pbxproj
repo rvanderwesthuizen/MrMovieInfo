@@ -46,6 +46,8 @@
 		C9C4E39127108F4F0065F822 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C4E38F27108F4F0065F822 /* SearchResultTableViewCell.xib */; };
 		C9F68BDA27298FCE00210BBF /* WatchlistTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */; };
 		C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */; };
+		C9F68BE3272997A100210BBF /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BE2272997A100210BBF /* OnboardingSlide.swift */; };
+		C9F68BE52729A10700210BBF /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BE42729A10700210BBF /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +114,8 @@
 		C9C4E38F27108F4F0065F822 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
 		C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewModelTests.swift; sourceTree = "<group>"; };
 		C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepositable.swift; sourceTree = "<group>"; };
+		C9F68BE2272997A100210BBF /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		C9F68BE42729A10700210BBF /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -265,6 +269,7 @@
 		C9C4E310270C30EA0065F822 /* Mr Movie Info */ = {
 			isa = PBXGroup;
 			children = (
+				C9F68BDE2729975400210BBF /* Feature-Onboarding */,
 				C98AE98527218C7900DAC9E6 /* Feature-Watchlist */,
 				C98AE96B271E6D5000DAC9E6 /* Feature-MovieDetails */,
 				C98AE96A271E6D4500DAC9E6 /* Feature-Main */,
@@ -390,6 +395,39 @@
 				C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */,
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C9F68BDE2729975400210BBF /* Feature-Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C9F68BE12729978700210BBF /* ViewModel */,
+				C9F68BE02729976D00210BBF /* ViewController */,
+				C9F68BDF2729976300210BBF /* Model */,
+			);
+			path = "Feature-Onboarding";
+			sourceTree = "<group>";
+		};
+		C9F68BDF2729976300210BBF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C9F68BE2272997A100210BBF /* OnboardingSlide.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C9F68BE02729976D00210BBF /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C9F68BE42729A10700210BBF /* OnboardingViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C9F68BE12729978700210BBF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -546,12 +584,14 @@
 				C98AE98827218CA300DAC9E6 /* DatabaseRepository.swift in Sources */,
 				C98AE97D271E812400DAC9E6 /* MovieDetailsRepositable.swift in Sources */,
 				C9C4E38927108DE00065F822 /* Constants.swift in Sources */,
+				C9F68BE3272997A100210BBF /* OnboardingSlide.swift in Sources */,
 				C9C4E38C27108E700065F822 /* UIImageViewExtension.swift in Sources */,
 				C9C4E355270C64D20065F822 /* SearchModel.swift in Sources */,
 				C9C4E375270FFD820065F822 /* UIViewControllerExtension.swift in Sources */,
 				C9C4E39027108F4F0065F822 /* SearchResultTableViewCell.swift in Sources */,
 				C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */,
 				C9C4E353270C64BB0065F822 /* SearchRepository.swift in Sources */,
+				C9F68BE52729A10700210BBF /* OnboardingViewController.swift in Sources */,
 				C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */,
 				C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */,
 				C9C4E348270C34900065F822 /* MovieDetails.swift in Sources */,
