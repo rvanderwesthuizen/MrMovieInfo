@@ -149,7 +149,6 @@
                                 <color key="backgroundColor" name="DarkPrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="RUX-aY-OEi"/>
-                                    <constraint firstAttribute="width" constant="150" id="p45-9r-nsM"/>
                                 </constraints>
                                 <color key="tintColor" name="AccentColor"/>
                                 <state key="normal" title="Button"/>
@@ -173,13 +172,14 @@
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
                             <constraint firstItem="q2B-Ix-wZ3" firstAttribute="top" secondItem="eqL-di-o7b" secondAttribute="bottom" id="1UF-fv-TFh"/>
-                            <constraint firstItem="h9G-rD-Rxr" firstAttribute="centerX" secondItem="D4N-DK-RIP" secondAttribute="centerX" id="2FS-XM-oHc"/>
                             <constraint firstItem="eqL-di-o7b" firstAttribute="leading" secondItem="woC-5j-23h" secondAttribute="leading" id="2gA-2G-gUV"/>
                             <constraint firstItem="q2B-Ix-wZ3" firstAttribute="centerX" secondItem="D4N-DK-RIP" secondAttribute="centerX" id="3PT-CR-Cee"/>
                             <constraint firstItem="eqL-di-o7b" firstAttribute="top" secondItem="woC-5j-23h" secondAttribute="top" id="78U-Ma-l0q"/>
                             <constraint firstItem="woC-5j-23h" firstAttribute="bottom" secondItem="h9G-rD-Rxr" secondAttribute="bottom" constant="40" id="DOj-BK-pZ6"/>
                             <constraint firstItem="eqL-di-o7b" firstAttribute="trailing" secondItem="woC-5j-23h" secondAttribute="trailing" id="JTV-tO-zw9"/>
+                            <constraint firstItem="h9G-rD-Rxr" firstAttribute="leading" secondItem="woC-5j-23h" secondAttribute="leading" constant="132" id="QpX-X2-vkG"/>
                             <constraint firstItem="h9G-rD-Rxr" firstAttribute="top" secondItem="q2B-Ix-wZ3" secondAttribute="bottom" constant="16" id="wNZ-Zk-65f"/>
+                            <constraint firstItem="woC-5j-23h" firstAttribute="trailing" secondItem="h9G-rD-Rxr" secondAttribute="trailing" constant="132" id="x2O-Sg-yjm"/>
                         </constraints>
                     </view>
                     <connections>
