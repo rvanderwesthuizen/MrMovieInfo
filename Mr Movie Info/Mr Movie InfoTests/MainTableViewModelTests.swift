@@ -10,13 +10,15 @@ import XCTest
 
 class MainTableViewModelTests: XCTestCase {
     private var implementationUnderTest: MainTableViewModel!
-    private var mockRepository: MockedSearchRepository!
+    private var mockSearchRepository: MockedSearchRepository!
+    private var mockedMovieDetailsRepo: MockedMovieDetailsRepository!
     private var mockDelegate: MockDelegate!
     
     override func setUp() {
         mockDelegate = MockDelegate()
-        mockRepository = MockedSearchRepository()
-        implementationUnderTest = MainTableViewModel(repository: mockRepository, delegate: mockDelegate)
+        mockSearchRepository = MockedSearchRepository()
+        mockedMovieDetailsRepo = MockedMovieDetailsRepository()
+        implementationUnderTest = MainTableViewModel(searchRepository: mockSearchRepository, delegate: mockDelegate, movieDetailsRepository: mockedMovieDetailsRepo)
     }
     
     func testRetrieveDataSuccess() {
@@ -26,7 +28,7 @@ class MainTableViewModelTests: XCTestCase {
     }
     
     func testRetrieveDataFailure() {
-        mockRepository.shouldFail = true
+        mockSearchRepository.shouldFail = true
         implementationUnderTest.retrieveData(forTitle: " ", page: 1)
         XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
     }
@@ -47,7 +49,7 @@ class MainTableViewModelTests: XCTestCase {
     }
     
     func testSearchShouldFail() {
-        mockRepository.shouldFail = true
+        mockSearchRepository.shouldFail = true
         implementationUnderTest.search(forTitle: "")
         XCTAssertNil(implementationUnderTest.fetchSearchResult(at: 0))
         XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
@@ -78,11 +80,31 @@ class MainTableViewModelTests: XCTestCase {
         XCTAssertEqual(currentSearchInfo.pageNumber, 2)
     }
     
+    func testRetrieveMovieDetails() {
+        implementationUnderTest.search(forTitle: "")
+        implementationUnderTest.retrieveMovieDetails(at: 0)
+        XCTAssertNotNil(implementationUnderTest.movieDetails)
+        XCTAssertTrue(mockDelegate.refreshCalled)
+        XCTAssertTrue(mockDelegate.navigationTriggered)
+    }
+    
+    func testRetrieveMovieDetailsIfRepoFails() {
+        mockedMovieDetailsRepo.shouldFail = true
+        implementationUnderTest.search(forTitle: "")
+        implementationUnderTest.retrieveMovieDetails(at: 0)
+        XCTAssertTrue(mockDelegate.didFailWithErrorCalled)
+    }
+    
     class MockDelegate: ViewModelDelegate {
+        
         var refreshCalled = false
         var didFailWithErrorCalled = false
+        var navigationTriggered = false
         
-        func refreshViewContent() {
+        func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
+            if navigateToMovieDetailsFlag {
+                navigationTriggered = navigateToMovieDetailsFlag
+            }
             refreshCalled = true
         }
         

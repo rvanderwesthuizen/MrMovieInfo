@@ -9,10 +9,10 @@ import Foundation
 
 class WatchlistTableViewModel {
     private weak var delegate: ViewModelDelegate?
-    private var databaseRepository: DatabaseRepository
-    private var databaseResponse: [MovieDetails] = []
+    private var databaseRepository: DatabaseRepositable
+    private(set) var databaseResponse: [MovieDetails] = []
     
-    init(databaseRepository: DatabaseRepository, delegate: ViewModelDelegate) {
+    init(databaseRepository: DatabaseRepositable, delegate: ViewModelDelegate) {
         self.databaseRepository = databaseRepository
         self.delegate = delegate
     }

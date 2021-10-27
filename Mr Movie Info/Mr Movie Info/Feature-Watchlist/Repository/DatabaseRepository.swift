@@ -10,7 +10,7 @@ import Firebase
 
 typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>) -> Void
 
-@objcMembers final class DatabaseRepository: NSObject {
+@objcMembers final class DatabaseRepository: NSObject, DatabaseRepositable {
     
     private var database: DatabaseReference
     private var watchlistRef: DatabaseReference {
