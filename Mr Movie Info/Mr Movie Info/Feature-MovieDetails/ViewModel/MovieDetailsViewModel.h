@@ -6,7 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Mr_Movie_Info-Swift.h"
+@class MovieDetails;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -3,3 +3,4 @@
 //
 
 #import "MovieDetailsViewController.h"
+#import "MovieDetailsViewModel.h"
