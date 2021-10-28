@@ -70,7 +70,6 @@
 		C954C82627294FCA005D7B09 /* MovieDetailsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRepositoryTests.swift; sourceTree = "<group>"; };
 		C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDatabaseRepository.swift; sourceTree = "<group>"; };
 		C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
-		C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie InfoTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -287,7 +286,6 @@
 				C954C82627294FCA005D7B09 /* MovieDetailsRepositoryTests.swift */,
 				C982316427168E420094C1E5 /* MockedSearchRepository.swift */,
 				C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */,
-				C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */,
 				C982316D271696280094C1E5 /* MainTableViewModelTests.swift */,
 				C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */,
 				C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */,
@@ -759,6 +757,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -790,6 +789,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -815,7 +815,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -843,7 +844,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Movie Info.app/Mr Movie Info";

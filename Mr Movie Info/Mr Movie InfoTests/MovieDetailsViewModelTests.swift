@@ -13,7 +13,7 @@ class MovieDetailsViewModelTests: XCTestCase {
     var implementationUnderTest: MovieDetailsViewModel!
     override func setUp() {
         mockMovieDetails = MovieDetails(title: "You", year: "2021", rated: "12", released: "132", runtime: "asdf", genre: "kasjdfl", director: "juhnmkiu", writer: "nhyujm", actors: "asdfl;kj", plot: "ythrge", language: "lokinj", awards: "athefo", poster: "poiuyt", imdbRating: "1978234", imdbID: "1234", boxOffice: "8967213", type: "uioewrq", productionStudio: "jklsdfa")
-        implementationUnderTest = MovieDetailsViewModel()
+        implementationUnderTest = MovieDetailsViewModel(movieDetails: mockMovieDetails)
     }
 
     func testTitleReturn() {
