@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C954C82527294F21005D7B09 /* MockedMovieDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82427294F21005D7B09 /* MockedMovieDetailsRepository.swift */; };
+		C954C82727294FCA005D7B09 /* MovieDetailsRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82627294FCA005D7B09 /* MovieDetailsRepositoryTests.swift */; };
+		C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */; };
+		C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */; };
 		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
 		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
 		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
@@ -40,6 +44,8 @@
 		C9C4E38C27108E700065F822 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E38B27108E700065F822 /* UIImageViewExtension.swift */; };
 		C9C4E39027108F4F0065F822 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C4E38E27108F4F0065F822 /* SearchResultTableViewCell.swift */; };
 		C9C4E39127108F4F0065F822 /* SearchResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C4E38F27108F4F0065F822 /* SearchResultTableViewCell.xib */; };
+		C9F68BDA27298FCE00210BBF /* WatchlistTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */; };
+		C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie InfoTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		C954C82427294F21005D7B09 /* MockedMovieDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedMovieDetailsRepository.swift; sourceTree = "<group>"; };
+		C954C82627294FCA005D7B09 /* MovieDetailsRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsRepositoryTests.swift; sourceTree = "<group>"; };
+		C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDatabaseRepository.swift; sourceTree = "<group>"; };
+		C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -100,6 +109,8 @@
 		C9C4E38B27108E700065F822 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		C9C4E38E27108F4F0065F822 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		C9C4E38F27108F4F0065F822 /* SearchResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultTableViewCell.xib; sourceTree = "<group>"; };
+		C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchlistTableViewModelTests.swift; sourceTree = "<group>"; };
+		C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseRepositable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +219,7 @@
 		C98AE98627218C8900DAC9E6 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C9F68BDB272990D200210BBF /* Protocol */,
 				C98AE98727218CA300DAC9E6 /* DatabaseRepository.swift */,
 			);
 			path = Repository;
@@ -270,10 +282,14 @@
 		C9C4E327270C30EC0065F822 /* Mr Movie InfoTests */ = {
 			isa = PBXGroup;
 			children = (
+				C954C82427294F21005D7B09 /* MockedMovieDetailsRepository.swift */,
+				C954C82627294FCA005D7B09 /* MovieDetailsRepositoryTests.swift */,
 				C982316427168E420094C1E5 /* MockedSearchRepository.swift */,
-				C982316327168E410094C1E5 /* Mr Movie InfoTests-Bridging-Header.h */,
 				C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */,
 				C982316D271696280094C1E5 /* MainTableViewModelTests.swift */,
+				C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */,
+				C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */,
+				C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */,
 			);
 			path = "Mr Movie InfoTests";
 			sourceTree = "<group>";
@@ -364,6 +380,14 @@
 				C9C4E38F27108F4F0065F822 /* SearchResultTableViewCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C9F68BDB272990D200210BBF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C9F68BDC272990EF00210BBF /* DatabaseRepositable.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -511,6 +535,7 @@
 				C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */,
 				C9C4E35B270D8E910065F822 /* SearchRepositable.swift in Sources */,
 				C9C4E369270ED1440065F822 /* CollectionExtension.swift in Sources */,
+				C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */,
 				C9C4E35E270D8F590065F822 /* ViewModelDelegate.swift in Sources */,
 				C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */,
 				C9C4E312270C30EA0065F822 /* AppDelegate.swift in Sources */,
@@ -537,8 +562,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */,
+				C954C82727294FCA005D7B09 /* MovieDetailsRepositoryTests.swift in Sources */,
 				C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */,
+				C9F68BDA27298FCE00210BBF /* WatchlistTableViewModelTests.swift in Sources */,
+				C954C82527294F21005D7B09 /* MockedMovieDetailsRepository.swift in Sources */,
 				C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */,
+				C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */,
+				C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +757,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -758,6 +789,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -783,7 +815,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -811,7 +844,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-InfoTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie InfoTests/Mr Movie InfoTests-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Mr Movie Info/Feature-MovieDetails/ViewController/Mr Movie Info-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(PROJECT_NAME)-Swift.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mr Movie Info.app/Mr Movie Info";

@@ -6,6 +6,7 @@
 //
 
 #import "MovieDetailsViewModel.h"
+#import "Mr Movie Info-Swift.h"
 
 @implementation MovieDetailsViewModel  {
     MovieDetails* _movieDetails;

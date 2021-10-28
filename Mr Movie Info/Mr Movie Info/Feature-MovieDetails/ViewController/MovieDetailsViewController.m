@@ -7,6 +7,7 @@
 
 #import "MovieDetailsViewModel.h"
 #import "MovieDetailsViewController.h"
+#import "Mr Movie Info-Swift.h"
 
 @interface MovieDetailsViewController () {
     MovieDetailsViewModel * _viewModel;
