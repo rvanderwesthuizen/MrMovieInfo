@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5ma-rI-9I6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EjC-dq-e2u">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,6 +79,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwz-nA-Pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1171" y="-227"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Maj-9I-Kjt">
+            <objects>
+                <viewController id="94w-Gc-gUA" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hXZ-UV-CLO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="bey-Gq-CSb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TG0-IN-oxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3645" y="135"/>
         </scene>
         <!--Onboarding View Controller-->
         <scene sceneID="JZh-gQ-2PE">
@@ -190,7 +206,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qcS-jB-cNm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2734.7826086956525" y="58.928571428571423"/>
+            <point key="canvasLocation" x="-2623" y="151"/>
         </scene>
         <!--Item-->
         <scene sceneID="MOt-gr-wtd">
@@ -293,6 +309,75 @@
             </objects>
             <point key="canvasLocation" x="-4640" y="-169"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="2ix-C3-vft">
+            <objects>
+                <viewController id="EjC-dq-e2u" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mUO-NR-WB3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C67-rs-KdV">
+                                <rect key="frame" x="10" y="84" width="394" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3NF-e0-dna">
+                                <rect key="frame" x="20" y="401.5" width="374" height="93"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R73-oV-Nmj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-pQ-xKg">
+                                        <rect key="frame" x="0.0" y="59" width="374" height="34"/>
+                                        <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="yes" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="klt-HA-J3O">
+                                <rect key="frame" x="107" y="731" width="200" height="31"/>
+                                <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Nhy-yA-qdk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="LOGIN">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="phR-61-Hfm"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="klt-HA-J3O" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="107" id="GcW-ub-Hd8"/>
+                            <constraint firstItem="3NF-e0-dna" firstAttribute="centerY" secondItem="mUO-NR-WB3" secondAttribute="centerY" id="IOU-Jn-G8s"/>
+                            <constraint firstItem="C67-rs-KdV" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="10" id="Iey-vp-oEA"/>
+                            <constraint firstItem="C67-rs-KdV" firstAttribute="top" secondItem="phR-61-Hfm" secondAttribute="top" constant="40" id="MHb-KJ-LIA"/>
+                            <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="3NF-e0-dna" secondAttribute="trailing" constant="20" id="PCz-E4-g47"/>
+                            <constraint firstItem="3NF-e0-dna" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="20" id="h1R-mr-Bcd"/>
+                            <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="klt-HA-J3O" secondAttribute="trailing" constant="107" id="hOT-bI-RP8"/>
+                            <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="C67-rs-KdV" secondAttribute="trailing" constant="10" id="t3r-v2-bex"/>
+                            <constraint firstItem="phR-61-Hfm" firstAttribute="bottom" secondItem="klt-HA-J3O" secondAttribute="bottom" constant="100" id="uyQ-u3-hnZ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4IF-i2-qQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3648" y="-506"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3PH-iq-2an">
             <objects>
@@ -362,5 +447,8 @@
         <namedColor name="PrimaryTextColor">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
