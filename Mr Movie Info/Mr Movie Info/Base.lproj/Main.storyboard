@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EjC-dq-e2u">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5ma-rI-9I6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,8 +86,62 @@
                     <view key="view" contentMode="scaleToFill" id="hXZ-UV-CLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0dn-je-a6y">
+                                <rect key="frame" x="10" y="84" width="394" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="50"/>
+                                <color key="textColor" name="PrimaryTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="lfk-n4-iAV">
+                                <rect key="frame" x="20" y="401.5" width="374" height="93"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dtV-QM-33r">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cac-n6-2Tf">
+                                        <rect key="frame" x="0.0" y="59" width="374" height="34"/>
+                                        <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" smartDashesType="yes" textContentType="password"/>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0a-da-1Ec">
+                                <rect key="frame" x="107" y="731" width="200" height="31"/>
+                                <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Wvc-d1-hN4"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="REGISTER">
+                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bey-Gq-CSb"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="PrimaryColor"/>
+                        <constraints>
+                            <constraint firstItem="I0a-da-1Ec" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="107" id="0Uv-ds-irN"/>
+                            <constraint firstItem="lfk-n4-iAV" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="20" id="2HW-pC-11n"/>
+                            <constraint firstItem="lfk-n4-iAV" firstAttribute="centerY" secondItem="hXZ-UV-CLO" secondAttribute="centerY" id="4np-8u-8p2"/>
+                            <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="lfk-n4-iAV" secondAttribute="trailing" constant="20" id="D19-XW-XZB"/>
+                            <constraint firstItem="0dn-je-a6y" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="10" id="Px5-U8-qh9"/>
+                            <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="I0a-da-1Ec" secondAttribute="trailing" constant="107" id="Xb0-MK-pNA"/>
+                            <constraint firstItem="bey-Gq-CSb" firstAttribute="bottom" secondItem="I0a-da-1Ec" secondAttribute="bottom" constant="100" id="alb-38-hER"/>
+                            <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="0dn-je-a6y" secondAttribute="trailing" constant="10" id="fXm-xc-bbb"/>
+                            <constraint firstItem="0dn-je-a6y" firstAttribute="top" secondItem="bey-Gq-CSb" secondAttribute="top" constant="40" id="jah-hv-XCX"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG0-IN-oxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -227,11 +280,11 @@
             </objects>
             <point key="canvasLocation" x="-187" y="-227"/>
         </scene>
-        <!--View Controller-->
+        <!--Welcome View Controller-->
         <scene sceneID="8K5-ss-J6S">
             <objects>
-                <viewController id="5ma-rI-9I6" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ULD-nj-9o9">
+                <viewController id="5ma-rI-9I6" customClass="WelcomeViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ULD-nj-9o9" customClass="Welcome">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -262,6 +315,9 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginNowTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="Tgl-IY-Q0F"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-gd-BOF">
                                 <rect key="frame" x="107" y="731" width="200" height="31"/>
@@ -283,6 +339,9 @@
                                         <real key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="JGc-Vu-gj2"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vnU-S3-7V4"/>
@@ -447,8 +506,5 @@
         <namedColor name="PrimaryTextColor">
             <color red="0.74099999666213989" green="0.74099999666213989" blue="0.74099999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

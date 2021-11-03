@@ -14,6 +14,7 @@
 		C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */; };
 		C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */; };
 		C96291C2273242900045187D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C1273242900045187D /* UIButtonExtension.swift */; };
+		C96291C527324DF30045187D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C427324DF30045187D /* WelcomeViewController.swift */; };
 		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
 		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
 		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
@@ -76,6 +77,7 @@
 		C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDatabaseRepository.swift; sourceTree = "<group>"; };
 		C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C96291C1273242900045187D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		C96291C427324DF30045187D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -152,9 +154,8 @@
 		C91CC8BC272C1F8200F40E28 /* Feature-Login */ = {
 			isa = PBXGroup;
 			children = (
+				C96291C327324DB10045187D /* Welcome */,
 				C96291C0273242720045187D /* UIButton-Extension */,
-				C91CC8BE272C1FAD00F40E28 /* ViewModel */,
-				C91CC8BD272C1F9400F40E28 /* ViewController */,
 			);
 			path = "Feature-Login";
 			sourceTree = "<group>";
@@ -162,15 +163,9 @@
 		C91CC8BD272C1F9400F40E28 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				C96291C427324DF30045187D /* WelcomeViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C91CC8BE272C1FAD00F40E28 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C96291C0273242720045187D /* UIButton-Extension */ = {
@@ -179,6 +174,14 @@
 				C96291C1273242900045187D /* UIButtonExtension.swift */,
 			);
 			path = "UIButton-Extension";
+			sourceTree = "<group>";
+		};
+		C96291C327324DB10045187D /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				C91CC8BD272C1F9400F40E28 /* ViewController */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		C98AE96A271E6D4500DAC9E6 /* Feature-Main */ = {
@@ -619,6 +622,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96291C527324DF30045187D /* WelcomeViewController.swift in Sources */,
 				C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */,
 				C9C4E35B270D8E910065F822 /* SearchRepositable.swift in Sources */,
 				C9C4E369270ED1440065F822 /* CollectionExtension.swift in Sources */,
