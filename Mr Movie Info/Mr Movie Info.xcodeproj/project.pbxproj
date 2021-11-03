@@ -15,6 +15,8 @@
 		C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */; };
 		C96291C2273242900045187D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C1273242900045187D /* UIButtonExtension.swift */; };
 		C96291C527324DF30045187D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C427324DF30045187D /* WelcomeViewController.swift */; };
+		C96291CA273251040045187D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C9273251040045187D /* LoginViewController.swift */; };
+		C96291CE2732517E0045187D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291CD2732517E0045187D /* RegisterViewController.swift */; };
 		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
 		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
 		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
@@ -78,6 +80,8 @@
 		C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C96291C1273242900045187D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		C96291C427324DF30045187D /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		C96291C9273251040045187D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C96291CD2732517E0045187D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 		C91CC8BC272C1F8200F40E28 /* Feature-Login */ = {
 			isa = PBXGroup;
 			children = (
+				C96291C7273250E90045187D /* Register */,
+				C96291C6273250DE0045187D /* Login */,
 				C96291C327324DB10045187D /* Welcome */,
 				C96291C0273242720045187D /* UIButton-Extension */,
 			);
@@ -182,6 +188,38 @@
 				C91CC8BD272C1F9400F40E28 /* ViewController */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		C96291C6273250DE0045187D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C96291C8273250F10045187D /* ViewController */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C96291C7273250E90045187D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				C96291CC273251630045187D /* ViewController */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		C96291C8273250F10045187D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C96291C9273251040045187D /* LoginViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C96291CC273251630045187D /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C96291CD2732517E0045187D /* RegisterViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		C98AE96A271E6D4500DAC9E6 /* Feature-Main */ = {
@@ -440,7 +478,6 @@
 		C9F68BDE2729975400210BBF /* Feature-Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				C9F68BE12729978700210BBF /* ViewModel */,
 				C9F68BE02729976D00210BBF /* ViewController */,
 				C9F68BDF2729976300210BBF /* Model */,
 			);
@@ -462,13 +499,6 @@
 				C9F68BE42729A10700210BBF /* OnboardingViewController.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C9F68BE12729978700210BBF /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		C9F68BE62729E59200210BBF /* CollectionViewCell */ = {
@@ -622,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96291CA273251040045187D /* LoginViewController.swift in Sources */,
 				C96291C527324DF30045187D /* WelcomeViewController.swift in Sources */,
 				C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */,
 				C9C4E35B270D8E910065F822 /* SearchRepositable.swift in Sources */,
@@ -649,6 +680,7 @@
 				C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */,
 				C9C4E348270C34900065F822 /* MovieDetails.swift in Sources */,
 				C98AE98F272273C200DAC9E6 /* WatchlistTableViewController.swift in Sources */,
+				C96291CE2732517E0045187D /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

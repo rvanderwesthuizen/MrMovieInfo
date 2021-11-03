@@ -13,11 +13,14 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    @IBAction func loginNowTapped(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction func registerTapped(_ sender: UIButton) {
-        
+    @IBAction func buttonTapped(_ sender: UIButton) {
+        var controller: UIViewController
+        if sender.tag == 1 {
+            controller = storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        } else {
+            controller = storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterViewController
+        }
+        controller.modalPresentationStyle = .fullScreen
+        present(controller, animated: true)
     }
 }

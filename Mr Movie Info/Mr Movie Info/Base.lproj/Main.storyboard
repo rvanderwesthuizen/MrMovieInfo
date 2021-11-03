@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1171" y="-227"/>
         </scene>
-        <!--View Controller-->
+        <!--Register View Controller-->
         <scene sceneID="Maj-9I-Kjt">
             <objects>
-                <viewController id="94w-Gc-gUA" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterVC" id="94w-Gc-gUA" customClass="RegisterViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hXZ-UV-CLO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,6 +127,9 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="registerButtonTapped:" destination="94w-Gc-gUA" eventType="touchUpInside" id="7Dd-Rm-7uR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bey-Gq-CSb"/>
@@ -151,7 +154,7 @@
         <!--Onboarding View Controller-->
         <scene sceneID="JZh-gQ-2PE">
             <objects>
-                <viewController id="WHo-VE-pJO" customClass="OnboardingViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="OnboardingVC" id="WHo-VE-pJO" customClass="OnboardingViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D4N-DK-RIP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -300,7 +303,7 @@
                                 <color key="textColor" name="PrimaryTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-cn-guQ">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-cn-guQ">
                                 <rect key="frame" x="107" y="685" width="200" height="31"/>
                                 <color key="backgroundColor" name="DarkPrimaryColor"/>
                                 <constraints>
@@ -316,7 +319,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginNowTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="Tgl-IY-Q0F"/>
+                                    <action selector="buttonTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="d03-kx-2ai"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-gd-BOF">
@@ -340,7 +343,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registerTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="JGc-Vu-gj2"/>
+                                    <action selector="buttonTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="FNq-Pt-JHs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -368,10 +371,10 @@
             </objects>
             <point key="canvasLocation" x="-4640" y="-169"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="2ix-C3-vft">
             <objects>
-                <viewController id="EjC-dq-e2u" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" id="EjC-dq-e2u" customClass="LoginViewController" customModule="Mr_Movie_Info" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mUO-NR-WB3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -416,11 +419,32 @@
                                         <real key="value" value="15"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="EjC-dq-e2u" eventType="touchUpInside" id="Bd0-wf-sJZ"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xwF-Wp-CeD">
+                                <rect key="frame" x="83.5" y="787" width="247" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Svg-Qs-DlG">
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="REGISTER" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3e-3f-T8t">
+                                        <rect key="frame" x="166" y="0.0" width="81" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" name="DarkPrimaryColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="phR-61-Hfm"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
+                            <constraint firstItem="xwF-Wp-CeD" firstAttribute="centerX" secondItem="mUO-NR-WB3" secondAttribute="centerX" id="7aF-Om-CGn"/>
                             <constraint firstItem="klt-HA-J3O" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="107" id="GcW-ub-Hd8"/>
                             <constraint firstItem="3NF-e0-dna" firstAttribute="centerY" secondItem="mUO-NR-WB3" secondAttribute="centerY" id="IOU-Jn-G8s"/>
                             <constraint firstItem="C67-rs-KdV" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="10" id="Iey-vp-oEA"/>
@@ -428,14 +452,18 @@
                             <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="3NF-e0-dna" secondAttribute="trailing" constant="20" id="PCz-E4-g47"/>
                             <constraint firstItem="3NF-e0-dna" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="20" id="h1R-mr-Bcd"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="klt-HA-J3O" secondAttribute="trailing" constant="107" id="hOT-bI-RP8"/>
+                            <constraint firstItem="xwF-Wp-CeD" firstAttribute="top" secondItem="klt-HA-J3O" secondAttribute="bottom" constant="25" id="jT6-vQ-WmF"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="C67-rs-KdV" secondAttribute="trailing" constant="10" id="t3r-v2-bex"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="bottom" secondItem="klt-HA-J3O" secondAttribute="bottom" constant="100" id="uyQ-u3-hnZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="registerStackView" destination="xwF-Wp-CeD" id="BBc-Sy-MLY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4IF-i2-qQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3648" y="-506"/>
+            <point key="canvasLocation" x="-3649.275362318841" y="-506.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="3PH-iq-2an">
