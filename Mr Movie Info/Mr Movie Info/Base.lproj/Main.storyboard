@@ -131,21 +131,45 @@
                                     <action selector="registerButtonTapped:" destination="94w-Gc-gUA" eventType="touchUpInside" id="7Dd-Rm-7uR"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-1s-LMN">
+                                <rect key="frame" x="91" y="787" width="232" height="20.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Already have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBV-Ec-eKm">
+                                        <rect key="frame" x="0.0" y="0.0" width="175.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" name="PrimaryTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOGIN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdg-NA-xdW">
+                                        <rect key="frame" x="180.5" y="0.0" width="51.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" name="DarkPrimaryColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bey-Gq-CSb"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
                             <constraint firstItem="I0a-da-1Ec" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="107" id="0Uv-ds-irN"/>
+                            <constraint firstItem="b1L-1s-LMN" firstAttribute="top" secondItem="I0a-da-1Ec" secondAttribute="bottom" constant="25" id="0l9-AN-Td9"/>
                             <constraint firstItem="lfk-n4-iAV" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="20" id="2HW-pC-11n"/>
                             <constraint firstItem="lfk-n4-iAV" firstAttribute="centerY" secondItem="hXZ-UV-CLO" secondAttribute="centerY" id="4np-8u-8p2"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="lfk-n4-iAV" secondAttribute="trailing" constant="20" id="D19-XW-XZB"/>
                             <constraint firstItem="0dn-je-a6y" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="10" id="Px5-U8-qh9"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="I0a-da-1Ec" secondAttribute="trailing" constant="107" id="Xb0-MK-pNA"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="bottom" secondItem="I0a-da-1Ec" secondAttribute="bottom" constant="100" id="alb-38-hER"/>
+                            <constraint firstItem="b1L-1s-LMN" firstAttribute="centerX" secondItem="hXZ-UV-CLO" secondAttribute="centerX" id="f0K-2c-lzw"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="0dn-je-a6y" secondAttribute="trailing" constant="10" id="fXm-xc-bbb"/>
                             <constraint firstItem="0dn-je-a6y" firstAttribute="top" secondItem="bey-Gq-CSb" secondAttribute="top" constant="40" id="jah-hv-XCX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="LoginStackView" destination="b1L-1s-LMN" id="dat-yc-dmC"/>
+                        <outlet property="emailTextField" destination="dtV-QM-33r" id="xdR-eQ-FFq"/>
+                        <outlet property="passwordTextField" destination="Cac-n6-2Tf" id="Yl8-fF-8kl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG0-IN-oxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -388,14 +412,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3NF-e0-dna">
                                 <rect key="frame" x="20" y="401.5" width="374" height="93"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R73-oV-Nmj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin@mrmoviedetails.com" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R73-oV-Nmj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <color key="backgroundColor" name="DarkPrimaryColor"/>
                                         <color key="textColor" name="PrimaryTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-pQ-xKg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="admin1" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-pQ-xKg">
                                         <rect key="frame" x="0.0" y="59" width="374" height="34"/>
                                         <color key="backgroundColor" name="DarkPrimaryColor"/>
                                         <color key="textColor" name="PrimaryTextColor"/>
@@ -458,6 +482,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailTextField" destination="R73-oV-Nmj" id="Puh-d5-FMG"/>
+                        <outlet property="passwordTextField" destination="tK0-pQ-xKg" id="UWh-5o-zYt"/>
                         <outlet property="registerStackView" destination="xwF-Wp-CeD" id="BBc-Sy-MLY"/>
                     </connections>
                 </viewController>
