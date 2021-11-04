@@ -21,6 +21,10 @@
 		C96291D4273370650045187D /* FirebaseAuthRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291D3273370650045187D /* FirebaseAuthRepositable.swift */; };
 		C96291D7273371F30045187D /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291D6273371F30045187D /* RegisterViewModel.swift */; };
 		C96291DA27337DC90045187D /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291D927337DC90045187D /* LoginViewModel.swift */; };
+		C96291DC2733915F0045187D /* MockFirebaseAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291DB2733915F0045187D /* MockFirebaseAuthRepository.swift */; };
+		C96291DE2733924C0045187D /* FirebaseAuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */; };
+		C96291E0273395630045187D /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291DF273395630045187D /* RegisterViewModelTests.swift */; };
+		C96291E3273398AD0045187D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291E2273398AD0045187D /* LoginViewModelTests.swift */; };
 		C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316427168E420094C1E5 /* MockedSearchRepository.swift */; };
 		C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */; };
 		C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C982316D271696280094C1E5 /* MainTableViewModelTests.swift */; };
@@ -90,6 +94,10 @@
 		C96291D3273370650045187D /* FirebaseAuthRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthRepositable.swift; sourceTree = "<group>"; };
 		C96291D6273371F30045187D /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C96291D927337DC90045187D /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C96291DB2733915F0045187D /* MockFirebaseAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFirebaseAuthRepository.swift; sourceTree = "<group>"; };
+		C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthRepositoryTests.swift; sourceTree = "<group>"; };
+		C96291DF273395630045187D /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
+		C96291E2273398AD0045187D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		C982316427168E420094C1E5 /* MockedSearchRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedSearchRepository.swift; sourceTree = "<group>"; };
 		C98231692716910B0094C1E5 /* SearchRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRepositoryTests.swift; sourceTree = "<group>"; };
 		C982316D271696280094C1E5 /* MainTableViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewModelTests.swift; sourceTree = "<group>"; };
@@ -419,6 +427,10 @@
 				C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */,
 				C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */,
 				C9F68BD927298FCE00210BBF /* WatchlistTableViewModelTests.swift */,
+				C96291DB2733915F0045187D /* MockFirebaseAuthRepository.swift */,
+				C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */,
+				C96291DF273395630045187D /* RegisterViewModelTests.swift */,
+				C96291E2273398AD0045187D /* LoginViewModelTests.swift */,
 			);
 			path = "Mr Movie InfoTests";
 			sourceTree = "<group>";
@@ -736,13 +748,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96291E3273398AD0045187D /* LoginViewModelTests.swift in Sources */,
+				C96291DE2733924C0045187D /* FirebaseAuthRepositoryTests.swift in Sources */,
 				C982316E271696280094C1E5 /* MainTableViewModelTests.swift in Sources */,
 				C954C82727294FCA005D7B09 /* MovieDetailsRepositoryTests.swift in Sources */,
 				C982316527168E420094C1E5 /* MockedSearchRepository.swift in Sources */,
 				C9F68BDA27298FCE00210BBF /* WatchlistTableViewModelTests.swift in Sources */,
 				C954C82527294F21005D7B09 /* MockedMovieDetailsRepository.swift in Sources */,
+				C96291DC2733915F0045187D /* MockFirebaseAuthRepository.swift in Sources */,
 				C982316A2716910B0094C1E5 /* SearchRepositoryTests.swift in Sources */,
 				C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */,
+				C96291E0273395630045187D /* RegisterViewModelTests.swift in Sources */,
 				C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
