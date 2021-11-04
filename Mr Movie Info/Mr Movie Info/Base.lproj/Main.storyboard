@@ -148,6 +148,12 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024x1024AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="DPH-Z9-v94">
+                                <rect key="frame" x="-51" y="164" width="516" height="217.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="DPH-Z9-v94" secondAttribute="height" multiplier="64:27" id="34k-ke-20f"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bey-Gq-CSb"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
@@ -156,8 +162,11 @@
                             <constraint firstItem="b1L-1s-LMN" firstAttribute="top" secondItem="I0a-da-1Ec" secondAttribute="bottom" constant="25" id="0l9-AN-Td9"/>
                             <constraint firstItem="lfk-n4-iAV" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="20" id="2HW-pC-11n"/>
                             <constraint firstItem="lfk-n4-iAV" firstAttribute="centerY" secondItem="hXZ-UV-CLO" secondAttribute="centerY" id="4np-8u-8p2"/>
+                            <constraint firstItem="DPH-Z9-v94" firstAttribute="centerX" secondItem="hXZ-UV-CLO" secondAttribute="centerX" id="B5a-ov-TnF"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="lfk-n4-iAV" secondAttribute="trailing" constant="20" id="D19-XW-XZB"/>
                             <constraint firstItem="0dn-je-a6y" firstAttribute="leading" secondItem="bey-Gq-CSb" secondAttribute="leading" constant="10" id="Px5-U8-qh9"/>
+                            <constraint firstItem="lfk-n4-iAV" firstAttribute="top" secondItem="DPH-Z9-v94" secondAttribute="bottom" constant="20" id="Rtm-aJ-MX7"/>
+                            <constraint firstItem="DPH-Z9-v94" firstAttribute="top" secondItem="0dn-je-a6y" secondAttribute="bottom" constant="20" id="VQ3-L1-OXN"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="trailing" secondItem="I0a-da-1Ec" secondAttribute="trailing" constant="107" id="Xb0-MK-pNA"/>
                             <constraint firstItem="bey-Gq-CSb" firstAttribute="bottom" secondItem="I0a-da-1Ec" secondAttribute="bottom" constant="100" id="alb-38-hER"/>
                             <constraint firstItem="b1L-1s-LMN" firstAttribute="centerX" secondItem="hXZ-UV-CLO" secondAttribute="centerX" id="f0K-2c-lzw"/>
@@ -328,7 +337,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HLg-cn-guQ">
-                                <rect key="frame" x="107" y="685" width="200" height="31"/>
+                                <rect key="frame" x="107" y="735" width="200" height="31"/>
                                 <color key="backgroundColor" name="DarkPrimaryColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="gFQ-lr-awg"/>
@@ -347,7 +356,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-gd-BOF">
-                                <rect key="frame" x="107" y="731" width="200" height="31"/>
+                                <rect key="frame" x="107" y="781" width="200" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31" id="aHh-Ay-sa1"/>
                                 </constraints>
@@ -370,6 +379,12 @@
                                     <action selector="buttonTapped:" destination="5ma-rI-9I6" eventType="touchUpInside" id="FNq-Pt-JHs"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MoviesAndSeries" translatesAutoresizingMaskIntoConstraints="NO" id="5r3-nc-c05">
+                                <rect key="frame" x="44" y="198" width="326.5" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="olb-tf-KCh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vnU-S3-7V4"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
@@ -379,12 +394,14 @@
                             <constraint firstItem="vnU-S3-7V4" firstAttribute="trailing" secondItem="7gc-dq-pKn" secondAttribute="trailing" constant="10" id="Cjx-Za-oea"/>
                             <constraint firstItem="vnU-S3-7V4" firstAttribute="trailing" secondItem="aWy-C0-RgO" secondAttribute="trailing" constant="10" id="Dv5-l1-8ae"/>
                             <constraint firstItem="vnU-S3-7V4" firstAttribute="trailing" secondItem="VUi-gd-BOF" secondAttribute="trailing" constant="107" id="J7G-pZ-K7M"/>
-                            <constraint firstItem="vnU-S3-7V4" firstAttribute="bottom" secondItem="VUi-gd-BOF" secondAttribute="bottom" constant="100" id="MN2-YA-qCL"/>
+                            <constraint firstItem="vnU-S3-7V4" firstAttribute="bottom" secondItem="VUi-gd-BOF" secondAttribute="bottom" constant="50" id="MN2-YA-qCL"/>
                             <constraint firstItem="vnU-S3-7V4" firstAttribute="trailing" secondItem="HLg-cn-guQ" secondAttribute="trailing" constant="107" id="OAT-ub-Lk3"/>
                             <constraint firstItem="VUi-gd-BOF" firstAttribute="centerX" secondItem="ULD-nj-9o9" secondAttribute="centerX" id="QeD-qK-yIF"/>
                             <constraint firstItem="7gc-dq-pKn" firstAttribute="leading" secondItem="vnU-S3-7V4" secondAttribute="leading" constant="10" id="Qm6-bb-2LK"/>
+                            <constraint firstItem="5r3-nc-c05" firstAttribute="centerX" secondItem="ULD-nj-9o9" secondAttribute="centerX" id="TlI-g3-Nta"/>
                             <constraint firstItem="aWy-C0-RgO" firstAttribute="leading" secondItem="vnU-S3-7V4" secondAttribute="leading" constant="10" id="XwY-Rp-T1c"/>
                             <constraint firstItem="HLg-cn-guQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vnU-S3-7V4" secondAttribute="leading" id="dba-te-nLA"/>
+                            <constraint firstItem="5r3-nc-c05" firstAttribute="centerY" secondItem="ULD-nj-9o9" secondAttribute="centerY" id="fhc-hu-Oek"/>
                             <constraint firstItem="HLg-cn-guQ" firstAttribute="centerX" secondItem="ULD-nj-9o9" secondAttribute="centerX" id="hWD-1z-wGE"/>
                             <constraint firstItem="7gc-dq-pKn" firstAttribute="top" secondItem="vnU-S3-7V4" secondAttribute="top" constant="40" id="mHk-3V-Oj9"/>
                             <constraint firstItem="VUi-gd-BOF" firstAttribute="top" secondItem="HLg-cn-guQ" secondAttribute="bottom" constant="15" id="oSC-jf-7xq"/>
@@ -393,7 +410,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwf-bS-rU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4640" y="-169"/>
+            <point key="canvasLocation" x="-4640.579710144928" y="-169.41964285714286"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="2ix-C3-vft">
@@ -464,11 +481,18 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1024x1024AppIcon" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-bq-E7C">
+                                <rect key="frame" x="-51" y="164" width="516" height="217.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="GAL-bq-E7C" secondAttribute="height" multiplier="64:27" id="m29-Ru-huH"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="phR-61-Hfm"/>
                         <color key="backgroundColor" name="PrimaryColor"/>
                         <constraints>
                             <constraint firstItem="xwF-Wp-CeD" firstAttribute="centerX" secondItem="mUO-NR-WB3" secondAttribute="centerX" id="7aF-Om-CGn"/>
+                            <constraint firstItem="GAL-bq-E7C" firstAttribute="top" secondItem="C67-rs-KdV" secondAttribute="bottom" constant="20" id="FEg-uh-oGg"/>
                             <constraint firstItem="klt-HA-J3O" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="107" id="GcW-ub-Hd8"/>
                             <constraint firstItem="3NF-e0-dna" firstAttribute="centerY" secondItem="mUO-NR-WB3" secondAttribute="centerY" id="IOU-Jn-G8s"/>
                             <constraint firstItem="C67-rs-KdV" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="10" id="Iey-vp-oEA"/>
@@ -477,8 +501,10 @@
                             <constraint firstItem="3NF-e0-dna" firstAttribute="leading" secondItem="phR-61-Hfm" secondAttribute="leading" constant="20" id="h1R-mr-Bcd"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="klt-HA-J3O" secondAttribute="trailing" constant="107" id="hOT-bI-RP8"/>
                             <constraint firstItem="xwF-Wp-CeD" firstAttribute="top" secondItem="klt-HA-J3O" secondAttribute="bottom" constant="25" id="jT6-vQ-WmF"/>
+                            <constraint firstItem="3NF-e0-dna" firstAttribute="top" secondItem="GAL-bq-E7C" secondAttribute="bottom" constant="20" id="ofH-eS-coD"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="trailing" secondItem="C67-rs-KdV" secondAttribute="trailing" constant="10" id="t3r-v2-bex"/>
                             <constraint firstItem="phR-61-Hfm" firstAttribute="bottom" secondItem="klt-HA-J3O" secondAttribute="bottom" constant="100" id="uyQ-u3-hnZ"/>
+                            <constraint firstItem="GAL-bq-E7C" firstAttribute="centerX" secondItem="mUO-NR-WB3" secondAttribute="centerX" id="zqN-Rh-MuZ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -548,6 +574,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1024x1024AppIcon" width="512" height="512"/>
+        <image name="MoviesAndSeries" width="326.5" height="800"/>
         <namedColor name="AccentColor">
             <color red="1" green="0.60399997234344482" blue="0.012000000104308128" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
