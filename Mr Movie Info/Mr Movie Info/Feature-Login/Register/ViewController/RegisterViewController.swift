@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController {
         present(controller, animated: true)
     }
     
-    @IBAction func registerButtonTapped(_ sender: UIButton) {
+    @IBAction private func registerButtonTapped(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {
             viewModel.registerNewUser(withEmail: email, password: password)
         } else {

@@ -10,8 +10,8 @@ import UIKit
 class LoginViewController: UIViewController {
     private lazy var viewModel = LoginViewModel(repository: FirebaseAuthRepository(), delegate: self)
 
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet private weak var passwordTextField: UITextField!
+    @IBOutlet private weak var emailTextField: UITextField!
     @IBOutlet private weak var registerStackView: UIStackView!
 
     override func viewDidLoad() {
@@ -20,13 +20,13 @@ class LoginViewController: UIViewController {
         registerStackView.addGestureRecognizer(tap)
     }
     
-    @objc func navigateToRegister() {
+    @objc private func navigateToRegister() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "RegisterVC") as! RegisterViewController
         controller.modalPresentationStyle = .fullScreen
         present(controller, animated: true)
     }
     
-    @IBAction func loginButtonTapped(_ sender: UIButton) {
+    @IBAction private func loginButtonTapped(_ sender: UIButton) {
         if let email = emailTextField.text, let password = passwordTextField.text {
                 viewModel.loginUser(withEmail: email, password: password)
         } else {
