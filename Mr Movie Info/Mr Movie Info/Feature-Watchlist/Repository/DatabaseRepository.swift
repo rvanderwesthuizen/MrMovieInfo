@@ -29,12 +29,11 @@ typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>)
                 for item in response {
                     if item.imdbID == details.imdbID {
                         return
-                    } else {
-                        self.watchlistRef.child("\(count)").setValue(details.dictionary) { error, _ in
-                            if error != nil {
-                                print(error!.localizedDescription)
-                            }
-                        }
+                    }
+                }
+                self.watchlistRef.child("\(count)").setValue(details.dictionary) { error, _ in
+                    if error != nil {
+                        print(error!.localizedDescription)
                     }
                 }
             case .failure(let error):
