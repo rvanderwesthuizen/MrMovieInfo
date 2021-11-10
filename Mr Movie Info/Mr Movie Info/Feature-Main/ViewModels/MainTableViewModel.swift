@@ -66,7 +66,7 @@ class MainTableViewModel {
             if pageNumber <= numberOfPages {
                 pageNumber += 1
             }
-            if pageNumber > numberOfPages{
+            if pageNumber > numberOfPages {
                 return nil
             }
         }
