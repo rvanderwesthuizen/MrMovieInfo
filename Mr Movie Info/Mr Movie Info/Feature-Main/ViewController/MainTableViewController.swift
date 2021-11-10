@@ -100,6 +100,7 @@ extension MainTableViewController: ViewModelDelegate {
     }
     
     func didFailWithError(error: Error) {
+        activityIndicator.stopAnimating()
         showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
     }
 }
