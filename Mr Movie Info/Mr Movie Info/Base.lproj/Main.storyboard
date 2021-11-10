@@ -63,6 +63,7 @@
                         <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="4oE-vA-K5S">
                             <rect key="frame" x="0.0" y="105" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" name="AccentColor"/>
                         </activityIndicatorView>
                         <connections>
                             <outlet property="dataSource" destination="4Oy-zD-9hm" id="Qvx-1Q-fLB"/>
@@ -563,6 +564,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="DarkPrimaryColor"/>
+                        <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="2Lz-Oe-OcU">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" name="AccentColor"/>
+                        </activityIndicatorView>
                         <connections>
                             <outlet property="dataSource" destination="bQN-2A-Q3v" id="g0j-wk-Zyl"/>
                             <outlet property="delegate" destination="bQN-2A-Q3v" id="Md3-j4-9SA"/>
@@ -570,6 +576,9 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Zja-Dv-6d7"/>
                     <navigationItem key="navigationItem" id="GIt-SG-HlW"/>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="2Lz-Oe-OcU" id="ApC-Qa-hBz"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2M-4J-jJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
