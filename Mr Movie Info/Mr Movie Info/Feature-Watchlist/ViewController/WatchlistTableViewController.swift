@@ -10,6 +10,7 @@ import UIKit
 class WatchlistTableViewController: UITableViewController {
     private lazy var viewModel = WatchlistTableViewModel(databaseRepository: DatabaseRepository(), delegate: self)
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,13 @@ class WatchlistTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        activateActivityIndicator()
         viewModel.retrieveWatchlist()
+    }
+    
+    private func activateActivityIndicator() {
+        activityIndicatorView.hidesWhenStopped = true
+        activityIndicatorView.startAnimating()
     }
 
     // MARK: - Table view data source
@@ -40,10 +47,12 @@ class WatchlistTableViewController: UITableViewController {
 
 extension WatchlistTableViewController: ViewModelDelegate {
     func refreshViewContent(navigateToMovieDetailsFlag _: Bool) {
-        self.tableView.reloadData()
+        activityIndicatorView.stopAnimating()
+        tableView.reloadData()
     }
     
     func didFailWithError(error: Error) {
+        activityIndicatorView.stopAnimating()
         showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
     }
 }
