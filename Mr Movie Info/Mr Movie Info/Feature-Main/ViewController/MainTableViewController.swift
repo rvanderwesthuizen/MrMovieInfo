@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SearchMDFramework
 
 class MainTableViewController: UITableViewController {
     
-    private lazy var viewModel = MainTableViewModel(searchRepository: SearchRepository(), delegate: self, movieDetailsRepository: MovieDetailsRepository())
+    private lazy var viewModel = SearchViewModel(delegate: self)
     private var titleForSearch = "the+rookie"
     
     @IBOutlet private weak var searchTextField: UITextField!
@@ -88,7 +89,7 @@ extension MainTableViewController: UITextFieldDelegate {
     }
 }
 
-extension MainTableViewController: ViewModelDelegate {
+extension MainTableViewController: PodViewModelDelegate {
     func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
         activityIndicator.stopAnimating()
         if navigateToMovieDetailsFlag {

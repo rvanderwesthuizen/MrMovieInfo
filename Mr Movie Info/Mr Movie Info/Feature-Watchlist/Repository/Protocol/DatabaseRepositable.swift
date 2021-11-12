@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SearchMDFramework
 
 protocol DatabaseRepositable {
     func addMovieToWatchlist(details: MovieDetails)

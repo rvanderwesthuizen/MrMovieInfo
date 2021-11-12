@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SearchMDFramework
 
 class SearchResultTableViewCell: UITableViewCell {
     

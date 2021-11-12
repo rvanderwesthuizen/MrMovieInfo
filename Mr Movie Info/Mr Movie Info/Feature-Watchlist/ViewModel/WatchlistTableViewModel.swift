@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SearchMDFramework
 
 class WatchlistTableViewModel {
     private weak var delegate: ViewModelDelegate?
