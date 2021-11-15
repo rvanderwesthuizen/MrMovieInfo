@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SearchMDFramework
 
 typealias databaseRepositoryFetchResponseBlock = (Result<[MovieDetails], Error>) -> Void
 

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import SearchMDFramework
 
 class MainTableViewController: UITableViewController {
     
-    private lazy var viewModel = MainTableViewModel(searchRepository: SearchRepository(), delegate: self, movieDetailsRepository: MovieDetailsRepository())
+    private lazy var viewModel = SearchViewModel(delegate: self)
     private var titleForSearch = "the+rookie"
     
     @IBOutlet private weak var searchTextField: UITextField!
@@ -49,9 +50,9 @@ class MainTableViewController: UITableViewController {
     }
     
     private func navigateToMovieDetailsView(with details: MovieDetails) {
-            let destination = MovieDetailsViewController()
-            destination.set(details)
-            self.show(destination, sender: self)
+        let destination = MovieDetailsViewController()
+        destination.set(details)
+        self.show(destination, sender: self)
     }
     
     //MARK: - Tableview datasource methods
@@ -88,7 +89,7 @@ extension MainTableViewController: UITextFieldDelegate {
     }
 }
 
-extension MainTableViewController: ViewModelDelegate {
+extension MainTableViewController: PodViewModelDelegate {
     func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
         activityIndicator.stopAnimating()
         if navigateToMovieDetailsFlag {

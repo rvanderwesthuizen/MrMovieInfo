@@ -1,0 +1,16 @@
+PODS:
+  - SearchMDFramework (0.0.1)
+
+DEPENDENCIES:
+  - SearchMDFramework (from `/Users/rvanderwesthuizen2/Documents/Development/Swift/MrMovieInfoSearchPod/OmdbSearchMovieDetails`)
+
+EXTERNAL SOURCES:
+  SearchMDFramework:
+    :path: "/Users/rvanderwesthuizen2/Documents/Development/Swift/MrMovieInfoSearchPod/OmdbSearchMovieDetails"
+
+SPEC CHECKSUMS:
+  SearchMDFramework: c3ce7d4d65769c857a6d20d8c3a1c278a6350885
+
+PODFILE CHECKSUM: 9e272bc198fd9b4a66bccc6e02b599c53d645de2
+
+COCOAPODS: 1.11.2

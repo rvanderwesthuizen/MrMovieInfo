@@ -6,6 +6,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SearchMDFramework-Swift.h"
 @class MovieDetails;
 
 NS_ASSUME_NONNULL_BEGIN
