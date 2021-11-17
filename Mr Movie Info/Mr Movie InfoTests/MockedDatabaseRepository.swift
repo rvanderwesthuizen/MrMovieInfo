@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SearchMDFramework
 @testable import Mr_Movie_Info
 
 class MockDatabaseRepository: DatabaseRepositable {
@@ -31,4 +32,8 @@ class MockDatabaseRepository: DatabaseRepositable {
             completion(.failure(customError.repositoryError("An error occurred while trying to retrieve data")))
         }
     }
+}
+
+enum customError: Error {
+    case repositoryError(String)
 }

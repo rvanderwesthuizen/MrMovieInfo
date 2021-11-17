@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import SearchMDFramework
 @testable import Mr_Movie_Info
 
 class WatchlistTableViewModelTests: XCTestCase {
