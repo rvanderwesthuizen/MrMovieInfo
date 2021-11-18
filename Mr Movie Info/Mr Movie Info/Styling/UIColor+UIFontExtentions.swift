@@ -27,7 +27,7 @@ extension UIColor {
 }
 
 extension UIFont {
-    static var title: UIFont {
+    static var myTitleFont: UIFont {
         UIFont.systemFont(ofSize: 50, weight: .medium)
     }
     
