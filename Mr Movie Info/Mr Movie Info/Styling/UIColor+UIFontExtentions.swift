@@ -10,19 +10,19 @@ import UIKit
 
 extension UIColor {
     static var primaryColor: UIColor {
-        UIColor(red: 97, green: 97, blue: 97, alpha: 1)
+        UIColor(named: "PrimaryColor") ?? .white
     }
     
     static var textColor: UIColor {
-        UIColor(red: 189, green: 189, blue: 189, alpha: 1)
+        UIColor(named: "PrimaryTextColor") ?? .label
     }
     
     static var darkPrimaryColor: UIColor {
-        return UIColor(red: 45, green: 45, blue: 45, alpha: 1)
+        UIColor(named: "DarkPrimaryColor") ?? .black
     }
     
     static var myOrangeColor: UIColor {
-        UIColor(red: 255, green: 154, blue: 3, alpha: 1)
+        UIColor(named: "AccentColor") ?? .systemBlue
     }
 }
 
@@ -49,6 +49,9 @@ extension UIFont {
     
     static var headingThreeSemiBold: UIFont {
         UIFont.systemFont(ofSize: 17, weight: .semibold)
+    }
+    static var largeText: UIFont {
+        UIFont.systemFont(ofSize: 16)
     }
     
     static var smallText: UIFont {

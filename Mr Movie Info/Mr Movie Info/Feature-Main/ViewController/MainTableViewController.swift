@@ -15,13 +15,32 @@ class MainTableViewController: UITableViewController {
     
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var searchButton: UIButton!
+    @IBOutlet private weak var searchFunctionalityView: UIView!
+    @IBOutlet private weak var searchBarTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
+        preformStyling()
         setupTextField()
         activityIndicator.isHidden = true
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
+    }
+    
+    private func preformStyling() {
+        activityIndicator.color = MyAppStyle.accentColor
+        
+        searchButton.backgroundColor = MyAppStyle.darkBackgroundColor
+        searchButton.tintColor = MyAppStyle.accentColor
+        searchButton.titleLabel?.font = MyAppStyle.buttonTextFont
+        
+        searchFunctionalityView.backgroundColor = MyAppStyle.backgroundColor
+        
+        searchBarTextField.tintColor = MyAppStyle.accentColor
+        searchBarTextField.backgroundColor = MyAppStyle.darkBackgroundColor
+        
+        tableView.backgroundColor = MyAppStyle.darkBackgroundColor
     }
     
     private func setupTextField() {

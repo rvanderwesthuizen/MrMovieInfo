@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MyAppStyle {
+@objcMembers class MyAppStyle: NSObject {
     //MARK: - Color
     static let titleColor = UIColor.textColor
     static let onboardingTitleColor = UIColor.darkPrimaryColor
@@ -24,6 +24,8 @@ class MyAppStyle {
     static let buttonTextFont = UIFont.paragraph
     static let headingThreeFont = UIFont.headingThreeSemiBold
     static let onboardingTitleFont = UIFont.headingOne
+    static let descriptionFont = UIFont.headingTwo
     static let movieDetailsTitleFont = UIFont.headingTwoBold
     static let movieDetailsParagraphHeadingsFont = UIFont.headingThreeBold
+    static let movieDetailsParagraphFont = UIFont.largeText
 }

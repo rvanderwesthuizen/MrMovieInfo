@@ -17,12 +17,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="DarkPrimaryColor"/>
-                        <color key="separatorColor" name="PrimaryTextColor"/>
+                        <color key="separatorColor" name="PrimaryColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="mZx-8l-bEH">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="192-JD-sZE">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="thor" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="192-JD-sZE">
                                     <rect key="frame" x="10" y="10" width="394" height="35"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="MRY-KW-zvS"/>
@@ -32,11 +32,11 @@
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-7D-dvL">
                                     <rect key="frame" x="10" y="55" width="394" height="30"/>
-                                    <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                    <color key="backgroundColor" name="AccentColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Mob-Aa-9GX"/>
                                     </constraints>
-                                    <color key="tintColor" name="AccentColor"/>
+                                    <color key="tintColor" name="PrimaryTextColor"/>
                                     <state key="normal" title="Button"/>
                                     <buttonConfiguration key="configuration" style="plain" title="Search"/>
                                     <userDefinedRuntimeAttributes>
@@ -73,6 +73,9 @@
                     <navigationItem key="navigationItem" id="ny4-0N-0hH"/>
                     <connections>
                         <outlet property="activityIndicator" destination="4oE-vA-K5S" id="fmw-Nr-H8R"/>
+                        <outlet property="searchBarTextField" destination="192-JD-sZE" id="JIc-XE-1f4"/>
+                        <outlet property="searchButton" destination="9Ak-7D-dvL" id="UWF-kH-f1E"/>
+                        <outlet property="searchFunctionalityView" destination="mZx-8l-bEH" id="d1m-NN-ZWK"/>
                         <outlet property="searchTextField" destination="192-JD-sZE" id="Gxs-9R-6N0"/>
                     </connections>
                 </tableViewController>
@@ -176,8 +179,12 @@
                     </view>
                     <connections>
                         <outlet property="LoginStackView" destination="b1L-1s-LMN" id="dat-yc-dmC"/>
+                        <outlet property="destinationLabel" destination="Pdg-NA-xdW" id="2Ps-XX-khO"/>
                         <outlet property="emailTextField" destination="dtV-QM-33r" id="xdR-eQ-FFq"/>
+                        <outlet property="navigationDescriptionLabel" destination="RBV-Ec-eKm" id="DVv-NB-ieu"/>
                         <outlet property="passwordTextField" destination="Cac-n6-2Tf" id="Yl8-fF-8kl"/>
+                        <outlet property="registerButton" destination="I0a-da-1Ec" id="aQy-S2-Bns"/>
+                        <outlet property="titleLabel" destination="0dn-je-a6y" id="7bD-bC-gIc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TG0-IN-oxQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -412,6 +419,12 @@
                             <constraint firstItem="VUi-gd-BOF" firstAttribute="top" secondItem="HLg-cn-guQ" secondAttribute="bottom" constant="15" id="oSC-jf-7xq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="aWy-C0-RgO" id="Q4C-LV-n49"/>
+                        <outlet property="loginButton" destination="HLg-cn-guQ" id="mkJ-Ya-vKh"/>
+                        <outlet property="registerButton" destination="VUi-gd-BOF" id="Ixt-mK-1Yt"/>
+                        <outlet property="titleLabel" destination="7gc-dq-pKn" id="uWr-KQ-5LA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xwf-bS-rU0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -434,14 +447,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="3NF-e0-dna">
                                 <rect key="frame" x="20" y="401.5" width="374" height="93"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R73-oV-Nmj">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1@2.com" borderStyle="roundedRect" placeholder="youremail@email.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R73-oV-Nmj">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
                                         <color key="backgroundColor" name="DarkPrimaryColor"/>
                                         <color key="textColor" name="PrimaryTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-pQ-xKg">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tK0-pQ-xKg">
                                         <rect key="frame" x="0.0" y="59" width="374" height="34"/>
                                         <color key="backgroundColor" name="DarkPrimaryColor"/>
                                         <color key="textColor" name="PrimaryTextColor"/>
@@ -512,9 +525,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="destinationLabel" destination="H3e-3f-T8t" id="Een-oZ-0vB"/>
                         <outlet property="emailTextField" destination="R73-oV-Nmj" id="Puh-d5-FMG"/>
+                        <outlet property="loginButton" destination="klt-HA-J3O" id="1xS-P7-w6e"/>
+                        <outlet property="navigationDescriptionLabel" destination="Svg-Qs-DlG" id="sD4-Ir-eFe"/>
                         <outlet property="passwordTextField" destination="tK0-pQ-xKg" id="UWh-5o-zYt"/>
                         <outlet property="registerStackView" destination="xwF-Wp-CeD" id="BBc-Sy-MLY"/>
+                        <outlet property="titleLabel" destination="C67-rs-KdV" id="8ur-Dw-Ecm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4IF-i2-qQN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

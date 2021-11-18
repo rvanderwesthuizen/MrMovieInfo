@@ -28,9 +28,20 @@ class OnboardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        styling()
         collectionView.delegate = self
         collectionView.dataSource = self
+    }
+    
+    private func styling() {
+        nextButton.backgroundColor = MyAppStyle.darkBackgroundColor
+        nextButton.tintColor = MyAppStyle.accentColor
+        nextButton.titleLabel?.font = MyAppStyle.buttonTextFont
+        
+        collectionView.backgroundColor = MyAppStyle.backgroundColor
+        
+        pageControl.tintColor = MyAppStyle.bodyTextColor
+        pageControl.currentPageIndicatorTintColor = MyAppStyle.accentColor
     }
     
     @IBAction func didTapNextButton(_ sender: UIButton) {

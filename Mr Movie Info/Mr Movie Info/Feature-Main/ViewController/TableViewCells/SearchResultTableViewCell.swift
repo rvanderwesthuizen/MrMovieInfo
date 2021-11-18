@@ -19,16 +19,22 @@ class SearchResultTableViewCell: UITableViewCell {
     static let nib = UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     
     public func configure(with model: Search) {
-        titleLabel.text = model.title
-        typeLabel.text = model.type
-        yearLabel.text = model.year
+        populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
+        populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
+        populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
         posterImageView.loadImage(urlString: model.poster)
     }
     
     public func configure(with model: MovieDetails) {
-        titleLabel.text = model.title
-        typeLabel.text = model.type
-        yearLabel.text = model.year
+        populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
+        populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
+        populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
         posterImageView.loadImage(urlString: model.poster)
+    }
+    
+    private func populateAndStyleLabel(_ label: UILabel,font: UIFont, color: UIColor, text: String) {
+        label.text = text
+        label.font = font
+        label.textColor = color
     }
 }

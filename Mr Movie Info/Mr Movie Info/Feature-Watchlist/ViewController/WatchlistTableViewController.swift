@@ -21,8 +21,14 @@ class WatchlistTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        styling()
         activateActivityIndicator()
         viewModel.retrieveWatchlist()
+    }
+    
+    private func styling() {
+        activityIndicatorView.color = MyAppStyle.accentColor
+        tableView.backgroundColor = MyAppStyle.darkBackgroundColor
     }
     
     private func activateActivityIndicator() {

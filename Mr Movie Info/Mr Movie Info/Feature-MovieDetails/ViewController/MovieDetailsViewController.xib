@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,12 +11,15 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieDetailsViewController">
             <connections>
                 <outlet property="actorsLabel" destination="tDS-F1-KzZ" id="NPa-1j-YAg"/>
+                <outlet property="addToWatchlistButton" destination="vk0-Kd-XwW" id="hyL-Ss-Nyi"/>
                 <outlet property="awardsLabel" destination="aGk-xt-1wb" id="s5R-Tv-yYQ"/>
                 <outlet property="boxOfficeLabel" destination="hvP-RY-gCD" id="lhI-Nb-YUz"/>
+                <outlet property="detailsScrollView" destination="0wz-hz-ysJ" id="T9g-5S-MWT"/>
                 <outlet property="directorsLabel" destination="EvU-6Q-eft" id="4Q0-lL-oGz"/>
                 <outlet property="genreLabel" destination="zBr-s7-612" id="Yrf-GU-2cV"/>
                 <outlet property="imdbRatingLabel" destination="NNp-Mo-9Th" id="DWO-3j-xpa"/>
                 <outlet property="languageLabel" destination="kL0-ug-GsI" id="Lv8-3r-rZx"/>
+                <outlet property="mainInfoView" destination="JNi-ok-XvN" id="j7m-bG-Hj7"/>
                 <outlet property="plotLabel" destination="e4M-Hu-HQY" id="PDY-NU-ubJ"/>
                 <outlet property="posterImageView" destination="yty-oa-Q54" id="PGs-T0-fsS"/>
                 <outlet property="productionLabel" destination="efH-Bp-e2t" id="9Kd-ws-qgq"/>
@@ -124,6 +127,11 @@
                         <constraint firstItem="yty-oa-Q54" firstAttribute="centerX" secondItem="JNi-ok-XvN" secondAttribute="centerX" id="odn-wX-baL"/>
                         <constraint firstItem="OIN-MM-aZz" firstAttribute="leading" secondItem="JNi-ok-XvN" secondAttribute="leading" constant="10" id="upX-zA-kDi"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0wz-hz-ysJ">
                     <rect key="frame" x="10" y="484" width="394" height="378"/>
@@ -267,6 +275,12 @@
                     </constraints>
                     <viewLayoutGuide key="contentLayoutGuide" id="zUA-cy-9El"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="gk6-aG-bvO"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
