@@ -83,6 +83,7 @@ class MainTableViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: SearchResultTableViewCell.identifier, for: indexPath) as? SearchResultTableViewCell else { return UITableViewCell() }
         guard let searchResult = viewModel.fetchSearchResult(at: indexPath.row) else { return UITableViewCell() }
         
+        cell.contentView.backgroundColor = MyAppStyle.backgroundColor
         cell.configure(with: searchResult)
         
         return cell
