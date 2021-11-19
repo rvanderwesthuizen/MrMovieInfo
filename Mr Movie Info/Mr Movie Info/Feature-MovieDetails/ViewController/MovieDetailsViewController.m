@@ -11,6 +11,9 @@
 
 @interface MovieDetailsViewController () {
     MovieDetailsViewModel * _viewModel;
+    IBOutlet UIScrollView *detailsScrollView;
+    IBOutlet UIView *mainInfoView;
+    IBOutlet UIButton *addToWatchlistButton;
     IBOutlet UILabel *titleLabel;
     IBOutlet UIImageView *posterImageView;
     IBOutlet UILabel *yearLabel;
@@ -44,23 +47,37 @@
 }
 
 -(void)setupView {
+    detailsScrollView.backgroundColor = MyAppStyle.backgroundColor;
+    mainInfoView.backgroundColor = MyAppStyle.backgroundColor;
+    self.view.backgroundColor = MyAppStyle.darkBackgroundColor;
+    addToWatchlistButton.backgroundColor = MyAppStyle.darkBackgroundColor;
+    addToWatchlistButton.tintColor = MyAppStyle.accentColor;
     [posterImageView loadImageWithUrlString: _viewModel.posterURL];
-    titleLabel.text = _viewModel.title;
-    yearLabel.text = [NSString stringWithFormat:@"Year: %@", _viewModel.year];
-    releasedLabel.text = [NSString stringWithFormat:@"Release data: %@", _viewModel.released];
-    ratedLabel.text = _viewModel.rated;
-    runtimeLabel.text = _viewModel.runtime;
-    plotLabel.text = _viewModel.plot;
-    directorsLabel.text = _viewModel.directors;
-    writersLabel.text = _viewModel.writer;
-    actorsLabel.text = _viewModel.actors;
-    productionLabel.text = _viewModel.productionStudio;
-    languageLabel.text = _viewModel.language;
-    genreLabel.text = _viewModel.genre;
-    imdbRatingLabel.text = _viewModel.imdbRating;
-    boxOfficeLabel.text = _viewModel.boxOffice;
-    awardsLabel.text = _viewModel.awards;
+    [self populateAndStyleLabel:titleLabel :MyAppStyle.movieDetailsTitleFont :MyAppStyle.bodyTextColor :_viewModel.title];
+    
+    [self populateAndStyleLabel:releasedLabel :MyAppStyle.bodyFont :MyAppStyle.bodyTextColor :_viewModel.released];
+    [self populateAndStyleLabel:yearLabel :MyAppStyle.bodyFont :MyAppStyle.bodyTextColor :_viewModel.year];
+    [self populateAndStyleLabel:ratedLabel :MyAppStyle.bodyFont :MyAppStyle.bodyTextColor :_viewModel.rated];
+    [self populateAndStyleLabel:runtimeLabel :MyAppStyle.bodyFont :MyAppStyle.bodyTextColor :_viewModel.runtime];
+    
+    [self populateAndStyleLabel:plotLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.plot];
+    [self populateAndStyleLabel:directorsLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.directors];
+    [self populateAndStyleLabel:writersLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.writer];
+    [self populateAndStyleLabel:actorsLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.actors];
+    [self populateAndStyleLabel:productionLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.productionStudio];
+    [self populateAndStyleLabel:languageLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.language];
+    [self populateAndStyleLabel:genreLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.genre];
+    [self populateAndStyleLabel:imdbRatingLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.imdbRating];
+    [self populateAndStyleLabel:boxOfficeLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.boxOffice];
+    [self populateAndStyleLabel:awardsLabel :MyAppStyle.movieDetailsParagraphFont :MyAppStyle.bodyTextColor :_viewModel.awards];
 }
+
+-(void)populateAndStyleLabel:(UILabel *)label : (UIFont *)font : (UIColor *)color : (NSString *)text {
+    label.text = text;
+    label.font = font;
+    label.textColor = color;
+}
+
 - (IBAction)didTapAddButton:(UIButton *)sender {
     [_viewModel addToWatchlist];
 }

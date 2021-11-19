@@ -18,7 +18,13 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     func configure(with slide: OnboardingSlide) {
         slideImageView.contentMode = .scaleAspectFit
         slideImageView.image = slide.image
-        slideTitleLabel.text = slide.title
-        slideDescriptionLabel.text = slide.description
+        populateAndStyle(slideTitleLabel, font: MyAppStyle.onboardingTitleFont, color: MyAppStyle.onboardingTitleColor, text: slide.title)
+        populateAndStyle(slideDescriptionLabel, font: MyAppStyle.bodyFont, color: MyAppStyle.bodyTextColor, text: slide.description)
+    }
+    
+    func populateAndStyle(_ label: UILabel, font: UIFont, color: UIColor, text: String) {
+        label.text = text
+        label.textColor = color
+        label.font = font
     }
 }

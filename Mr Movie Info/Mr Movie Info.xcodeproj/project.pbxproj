@@ -26,6 +26,8 @@
 		C96291DE2733924C0045187D /* FirebaseAuthRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */; };
 		C96291E0273395630045187D /* RegisterViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291DF273395630045187D /* RegisterViewModelTests.swift */; };
 		C96291E3273398AD0045187D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291E2273398AD0045187D /* LoginViewModelTests.swift */; };
+		C97D34E8274600690004FF27 /* UIColor+UIFontExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34E7274600690004FF27 /* UIColor+UIFontExtentions.swift */; };
+		C97D34EA274609250004FF27 /* MyAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34E9274609250004FF27 /* MyAppStyle.swift */; };
 		C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */; };
 		C98AE975271E75FD00DAC9E6 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AE973271E75FD00DAC9E6 /* MovieDetailsViewController.xib */; };
 		C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE979271E80EE00DAC9E6 /* MovieDetailsViewModel.m */; };
@@ -94,6 +96,8 @@
 		C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthRepositoryTests.swift; sourceTree = "<group>"; };
 		C96291DF273395630045187D /* RegisterViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModelTests.swift; sourceTree = "<group>"; };
 		C96291E2273398AD0045187D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
+		C97D34E7274600690004FF27 /* UIColor+UIFontExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+UIFontExtentions.swift"; sourceTree = "<group>"; };
+		C97D34E9274609250004FF27 /* MyAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppStyle.swift; sourceTree = "<group>"; };
 		C98AE970271E75FC00DAC9E6 /* Mr Movie Info-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie Info-Bridging-Header.h"; sourceTree = "<group>"; };
 		C98AE971271E75FD00DAC9E6 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
 		C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
@@ -288,6 +292,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		C97D34E6274600460004FF27 /* Styling */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34E7274600690004FF27 /* UIColor+UIFontExtentions.swift */,
+				C97D34E9274609250004FF27 /* MyAppStyle.swift */,
+			);
+			path = Styling;
+			sourceTree = "<group>";
+		};
 		C98AE96A271E6D4500DAC9E6 /* Feature-Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -386,6 +399,7 @@
 		C9C4E310270C30EA0065F822 /* Mr Movie Info */ = {
 			isa = PBXGroup;
 			children = (
+				C97D34E6274600460004FF27 /* Styling */,
 				C91CC8BC272C1F8200F40E28 /* Feature-Login */,
 				C9F68BDE2729975400210BBF /* Feature-Onboarding */,
 				C98AE98527218C7900DAC9E6 /* Feature-Watchlist */,
@@ -770,6 +784,7 @@
 				C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */,
 				C96291D7273371F30045187D /* RegisterViewModel.swift in Sources */,
 				C9C4E369270ED1440065F822 /* CollectionExtension.swift in Sources */,
+				C97D34E8274600690004FF27 /* UIColor+UIFontExtentions.swift in Sources */,
 				C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */,
 				C9C4E35E270D8F590065F822 /* ViewModelDelegate.swift in Sources */,
 				C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */,
@@ -786,6 +801,7 @@
 				C9F68BE52729A10700210BBF /* OnboardingViewController.swift in Sources */,
 				C96291C2273242900045187D /* UIButtonExtension.swift in Sources */,
 				C9C4E314270C30EA0065F822 /* SceneDelegate.swift in Sources */,
+				C97D34EA274609250004FF27 /* MyAppStyle.swift in Sources */,
 				C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */,
 				C96291D4273370650045187D /* FirebaseAuthRepositable.swift in Sources */,
 				C98AE98F272273C200DAC9E6 /* WatchlistTableViewController.swift in Sources */,
