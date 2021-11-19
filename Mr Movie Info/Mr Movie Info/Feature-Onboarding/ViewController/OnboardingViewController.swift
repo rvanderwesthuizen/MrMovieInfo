@@ -39,9 +39,10 @@ class OnboardingViewController: UIViewController {
         nextButton.titleLabel?.font = MyAppStyle.buttonTextFont
         
         collectionView.backgroundColor = MyAppStyle.backgroundColor
-        
         pageControl.tintColor = MyAppStyle.bodyTextColor
         pageControl.currentPageIndicatorTintColor = MyAppStyle.accentColor
+        
+        self.view.backgroundColor = MyAppStyle.backgroundColor
     }
     
     @IBAction func didTapNextButton(_ sender: UIButton) {
@@ -71,7 +72,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.identifier, for: indexPath) as? OnboardingCollectionViewCell else { return UICollectionViewCell()}
         cell.configure(with: slides[indexPath.row])
-        cell.backgroundColor = UIColor(named: "PrimaryColor")
+        cell.backgroundColor = MyAppStyle.backgroundColor
         return cell
     }
     
