@@ -22,13 +22,13 @@ class MainTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
-        preformStyling()
+        styling()
         setupTextField()
         activityIndicator.isHidden = true
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
     }
     
-    private func preformStyling() {
+    private func styling() {
         activityIndicator.color = MyAppStyle.accentColor
         
         searchButton.backgroundColor = MyAppStyle.darkBackgroundColor
