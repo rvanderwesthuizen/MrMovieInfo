@@ -260,7 +260,6 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" name="PrimaryColor"/>
                         </stackView>
                     </subviews>
                     <constraints>
