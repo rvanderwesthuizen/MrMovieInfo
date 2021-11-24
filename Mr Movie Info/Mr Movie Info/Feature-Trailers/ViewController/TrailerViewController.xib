@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrailerViewController" customModule="Mr_Movie_Info" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="3E1-E9-m3A" id="BKi-i0-Gep"/>
                 <outlet property="returnButton" destination="xTF-u5-Ndb" id="Bmy-M6-x1E"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="webView" destination="T3E-46-5uK" id="TrD-yM-azb"/>
@@ -42,12 +43,17 @@
                         <action selector="didTapReturnButton:" destination="-1" eventType="touchUpInside" id="Qoy-JD-KEa"/>
                     </connections>
                 </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3E1-E9-m3A">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="xTF-u5-Ndb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ao7-Uv-t8s"/>
+                <constraint firstItem="3E1-E9-m3A" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Elu-4X-UV6"/>
                 <constraint firstItem="xTF-u5-Ndb" firstAttribute="top" secondItem="T3E-46-5uK" secondAttribute="bottom" constant="40" id="NdH-Ws-jfi"/>
+                <constraint firstItem="3E1-E9-m3A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ReW-LV-C3Q"/>
                 <constraint firstItem="T3E-46-5uK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Uvz-s5-aGQ"/>
                 <constraint firstItem="T3E-46-5uK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kUL-vr-f1p"/>
             </constraints>

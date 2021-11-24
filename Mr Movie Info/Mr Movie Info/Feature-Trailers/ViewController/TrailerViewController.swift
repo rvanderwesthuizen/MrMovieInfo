@@ -11,6 +11,7 @@ import WebKit
 class TrailerViewController: UIViewController {
     @IBOutlet private weak var webView: WKWebView!
     @IBOutlet private weak var returnButton: UIButton!
+    @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
     private var viewModel: TrailerViewModel!
     
@@ -27,12 +28,17 @@ class TrailerViewController: UIViewController {
         super.viewDidLoad()
         viewModel.delegate = self
         styleButton()
+        
+        activityIndicator.color = MyAppStyle.accentColor
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
     }
     
     private func displayTrailer() {
         guard let id = viewModel.videoID else { return }
         guard let url = URL(string: "https://www.youtube.com/embed/\(id)") else { return }
         webView.load(URLRequest(url: url))
+        activityIndicator.stopAnimating()
     }
     
     private func styleButton() {
@@ -51,6 +57,7 @@ extension TrailerViewController: ViewModelDelegate {
     }
     
     func didFailWithError(error: Error) {
+        activityIndicator.stopAnimating()
         showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
     }
 }
