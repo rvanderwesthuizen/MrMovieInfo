@@ -28,6 +28,12 @@
 		C96291E3273398AD0045187D /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291E2273398AD0045187D /* LoginViewModelTests.swift */; };
 		C97D34E8274600690004FF27 /* UIColor+UIFontExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34E7274600690004FF27 /* UIColor+UIFontExtentions.swift */; };
 		C97D34EA274609250004FF27 /* MyAppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34E9274609250004FF27 /* MyAppStyle.swift */; };
+		C97D34F1274E0D770004FF27 /* YouTubeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34F0274E0D770004FF27 /* YouTubeModel.swift */; };
+		C97D34F4274EA2300004FF27 /* YoutubeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34F3274EA2300004FF27 /* YoutubeRepository.swift */; };
+		C97D34F7274EA33A0004FF27 /* YoutubeRepositable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34F6274EA33A0004FF27 /* YoutubeRepositable.swift */; };
+		C97D34FF274EAF960004FF27 /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34FD274EAF960004FF27 /* TrailerViewController.swift */; };
+		C97D3500274EAF960004FF27 /* TrailerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97D34FE274EAF960004FF27 /* TrailerViewController.xib */; };
+		C97D3505274EBBC60004FF27 /* TrailerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D3504274EBBC60004FF27 /* TrailerViewModel.swift */; };
 		C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */; };
 		C98AE975271E75FD00DAC9E6 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AE973271E75FD00DAC9E6 /* MovieDetailsViewController.xib */; };
 		C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE979271E80EE00DAC9E6 /* MovieDetailsViewModel.m */; };
@@ -98,6 +104,12 @@
 		C96291E2273398AD0045187D /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 		C97D34E7274600690004FF27 /* UIColor+UIFontExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+UIFontExtentions.swift"; sourceTree = "<group>"; };
 		C97D34E9274609250004FF27 /* MyAppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAppStyle.swift; sourceTree = "<group>"; };
+		C97D34F0274E0D770004FF27 /* YouTubeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeModel.swift; sourceTree = "<group>"; };
+		C97D34F3274EA2300004FF27 /* YoutubeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRepository.swift; sourceTree = "<group>"; };
+		C97D34F6274EA33A0004FF27 /* YoutubeRepositable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRepositable.swift; sourceTree = "<group>"; };
+		C97D34FD274EAF960004FF27 /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
+		C97D34FE274EAF960004FF27 /* TrailerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerViewController.xib; sourceTree = "<group>"; };
+		C97D3504274EBBC60004FF27 /* TrailerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewModel.swift; sourceTree = "<group>"; };
 		C98AE970271E75FC00DAC9E6 /* Mr Movie Info-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie Info-Bridging-Header.h"; sourceTree = "<group>"; };
 		C98AE971271E75FD00DAC9E6 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
 		C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
@@ -301,6 +313,67 @@
 			path = Styling;
 			sourceTree = "<group>";
 		};
+		C97D34ED274D08B40004FF27 /* Feature-Trailers */ = {
+			isa = PBXGroup;
+			children = (
+				C97D3501274EB04A0004FF27 /* ViewModel */,
+				C97D34F8274EAF2C0004FF27 /* ViewController */,
+				C97D34EE274E0D530004FF27 /* YoutubeAPI */,
+			);
+			path = "Feature-Trailers";
+			sourceTree = "<group>";
+		};
+		C97D34EE274E0D530004FF27 /* YoutubeAPI */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34F2274EA2030004FF27 /* Repository */,
+				C97D34EF274E0D5D0004FF27 /* Model */,
+			);
+			path = YoutubeAPI;
+			sourceTree = "<group>";
+		};
+		C97D34EF274E0D5D0004FF27 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34F0274E0D770004FF27 /* YouTubeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C97D34F2274EA2030004FF27 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34F5274EA3250004FF27 /* Protocol */,
+				C97D34F3274EA2300004FF27 /* YoutubeRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		C97D34F5274EA3250004FF27 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34F6274EA33A0004FF27 /* YoutubeRepositable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		C97D34F8274EAF2C0004FF27 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C97D34FD274EAF960004FF27 /* TrailerViewController.swift */,
+				C97D34FE274EAF960004FF27 /* TrailerViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C97D3501274EB04A0004FF27 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C97D3504274EBBC60004FF27 /* TrailerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		C98AE96A271E6D4500DAC9E6 /* Feature-Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +472,7 @@
 		C9C4E310270C30EA0065F822 /* Mr Movie Info */ = {
 			isa = PBXGroup;
 			children = (
+				C97D34ED274D08B40004FF27 /* Feature-Trailers */,
 				C97D34E6274600460004FF27 /* Styling */,
 				C91CC8BC272C1F8200F40E28 /* Feature-Login */,
 				C9F68BDE2729975400210BBF /* Feature-Onboarding */,
@@ -645,6 +719,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C97D3500274EAF960004FF27 /* TrailerViewController.xib in Resources */,
 				C9C4E31E270C30EB0065F822 /* LaunchScreen.storyboard in Resources */,
 				C9C4E31B270C30EB0065F822 /* Assets.xcassets in Resources */,
 				C9C4E39127108F4F0065F822 /* SearchResultTableViewCell.xib in Resources */,
@@ -781,10 +856,13 @@
 				C96291CA273251040045187D /* LoginViewController.swift in Sources */,
 				C96291C527324DF30045187D /* WelcomeViewController.swift in Sources */,
 				C96291DA27337DC90045187D /* LoginViewModel.swift in Sources */,
+				C97D34F4274EA2300004FF27 /* YoutubeRepository.swift in Sources */,
 				C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */,
 				C96291D7273371F30045187D /* RegisterViewModel.swift in Sources */,
 				C9C4E369270ED1440065F822 /* CollectionExtension.swift in Sources */,
 				C97D34E8274600690004FF27 /* UIColor+UIFontExtentions.swift in Sources */,
+				C97D34FF274EAF960004FF27 /* TrailerViewController.swift in Sources */,
+				C97D34F1274E0D770004FF27 /* YouTubeModel.swift in Sources */,
 				C9F68BDD272990EF00210BBF /* DatabaseRepositable.swift in Sources */,
 				C9C4E35E270D8F590065F822 /* ViewModelDelegate.swift in Sources */,
 				C9C4E316270C30EA0065F822 /* MainTableViewController.swift in Sources */,
@@ -797,6 +875,7 @@
 				C9C4E375270FFD820065F822 /* UIViewControllerExtension.swift in Sources */,
 				C9C4E39027108F4F0065F822 /* SearchResultTableViewCell.swift in Sources */,
 				C96291D127336FC00045187D /* FirebaseAuthRepository.swift in Sources */,
+				C97D3505274EBBC60004FF27 /* TrailerViewModel.swift in Sources */,
 				C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */,
 				C9F68BE52729A10700210BBF /* OnboardingViewController.swift in Sources */,
 				C96291C2273242900045187D /* UIButtonExtension.swift in Sources */,
@@ -805,6 +884,7 @@
 				C98AE9922722775B00DAC9E6 /* WatchlistTableViewModel.swift in Sources */,
 				C96291D4273370650045187D /* FirebaseAuthRepositable.swift in Sources */,
 				C98AE98F272273C200DAC9E6 /* WatchlistTableViewController.swift in Sources */,
+				C97D34F7274EA33A0004FF27 /* YoutubeRepositable.swift in Sources */,
 				C96291CE2732517E0045187D /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
