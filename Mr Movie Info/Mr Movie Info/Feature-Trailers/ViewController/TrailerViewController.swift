@@ -13,11 +13,11 @@ class TrailerViewController: UIViewController {
     @IBOutlet private weak var returnButton: UIButton!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     
-    private var viewModel: TrailerViewModel!
+    private lazy var viewModel = TrailerViewModel(repository: YoutubeRepository(), delegate: self)
     
     init(movieTitle: String) {
         super.init(nibName: nil, bundle: nil)
-        viewModel = TrailerViewModel(movieTitle: movieTitle, repository: YoutubeRepository(), delegate: self)
+        viewModel.setupWith(title: movieTitle)
     }
     
     required init?(coder: NSCoder) {

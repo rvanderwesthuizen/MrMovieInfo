@@ -9,20 +9,23 @@ import Foundation
 
 class TrailerViewModel {
     private weak var delegate: ViewModelDelegate?
-    private var movieTitle: String
+    private var movieTitle: String?
     private var repository: YoutubeRepositable
     public var videoID: String?
     
-    init(movieTitle: String, repository: YoutubeRepositable, delegate: ViewModelDelegate) {
-        self.movieTitle = movieTitle
+    init(repository: YoutubeRepositable, delegate: ViewModelDelegate) {
         self.repository = repository
         self.delegate = delegate
+    }
+    
+    func setupWith(title: String) {
+        movieTitle = title.replacingOccurrences(of: " ", with: "+")
         
         retrieveVideoID()
     }
     
     func retrieveVideoID() {
-        let title = movieTitle.replacingOccurrences(of: " ", with: "+")
+        guard let title = movieTitle else { return }
         repository.fetchVideoIDUsing(title: title) {[weak self] result in
             switch result {
             case .success(let id):
