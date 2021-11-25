@@ -16,8 +16,8 @@ class TrailerViewController: UIViewController {
     private var viewModel: TrailerViewModel!
     
     init(movieTitle: String) {
-        viewModel = TrailerViewModel(movieTitle: movieTitle, repository: YoutubeRepository())
         super.init(nibName: nil, bundle: nil)
+        viewModel = TrailerViewModel(movieTitle: movieTitle, repository: YoutubeRepository(), delegate: self)
     }
     
     required init?(coder: NSCoder) {
@@ -26,7 +26,6 @@ class TrailerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
         styleButton()
         
         activityIndicator.color = MyAppStyle.accentColor

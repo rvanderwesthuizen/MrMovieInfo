@@ -13,9 +13,10 @@ class TrailerViewModel {
     private var repository: YoutubeRepositable
     public var videoID: String?
     
-    init(movieTitle: String, repository: YoutubeRepositable) {
+    init(movieTitle: String, repository: YoutubeRepositable, delegate: ViewModelDelegate) {
         self.movieTitle = movieTitle
         self.repository = repository
+        self.delegate = delegate
         
         retrieveVideoID()
     }
