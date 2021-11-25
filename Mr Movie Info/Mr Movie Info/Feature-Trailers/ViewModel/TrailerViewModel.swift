@@ -8,7 +8,7 @@
 import Foundation
 
 class TrailerViewModel {
-    public weak var delegate: ViewModelDelegate?
+    private weak var delegate: ViewModelDelegate?
     private var movieTitle: String
     private var repository: YoutubeRepositable
     public var videoID: String?
