@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrailerViewController" customModule="Mr_Movie_Info" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="3E1-E9-m3A" id="BKi-i0-Gep"/>
+                <outlet property="returnButton" destination="xTF-u5-Ndb" id="Bmy-M6-x1E"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="T3E-46-5uK" id="TrD-yM-azb"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T3E-46-5uK">
+                    <rect key="frame" x="53.5" y="364.5" width="307" height="167"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="167" id="WUD-it-ZEH"/>
+                        <constraint firstAttribute="width" constant="307" id="dsd-Yb-OEO"/>
+                    </constraints>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xTF-u5-Ndb">
+                    <rect key="frame" x="53.5" y="571.5" width="307" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="307" id="fCK-Ph-qgO"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Return"/>
+                    <connections>
+                        <action selector="didTapReturnButton:" destination="-1" eventType="touchUpInside" id="Qoy-JD-KEa"/>
+                    </connections>
+                </button>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3E1-E9-m3A">
+                    <rect key="frame" x="197" y="438" width="20" height="20"/>
+                </activityIndicatorView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="xTF-u5-Ndb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ao7-Uv-t8s"/>
+                <constraint firstItem="3E1-E9-m3A" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Elu-4X-UV6"/>
+                <constraint firstItem="xTF-u5-Ndb" firstAttribute="top" secondItem="T3E-46-5uK" secondAttribute="bottom" constant="40" id="NdH-Ws-jfi"/>
+                <constraint firstItem="3E1-E9-m3A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ReW-LV-C3Q"/>
+                <constraint firstItem="T3E-46-5uK" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Uvz-s5-aGQ"/>
+                <constraint firstItem="T3E-46-5uK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kUL-vr-f1p"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+        </view>
+    </objects>
+</document>

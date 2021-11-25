@@ -100,6 +100,21 @@ class MainTableViewController: UITableViewController {
         activityIndicator.startAnimating()
         viewModel.retrieveMovieDetails(at: indexPath.row)
     }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let trailerAction = UITableViewRowAction(style: .default, title: "Trailer") {[weak self] _, indexPath in
+            guard let title = self?.viewModel.fetchSearchResult(at: indexPath.row)?.title else { return }
+            let destination = TrailerViewController(movieTitle: title)
+            self?.navigationController?.present(destination, animated: true)
+        }
+        trailerAction.backgroundColor = MyAppStyle.darkBackgroundColor
+        
+        return [trailerAction]
+    }
 }
 
 extension MainTableViewController: UITextFieldDelegate {
