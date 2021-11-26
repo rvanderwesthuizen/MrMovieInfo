@@ -34,6 +34,9 @@
 		C97D34FF274EAF960004FF27 /* TrailerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D34FD274EAF960004FF27 /* TrailerViewController.swift */; };
 		C97D3500274EAF960004FF27 /* TrailerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C97D34FE274EAF960004FF27 /* TrailerViewController.xib */; };
 		C97D3505274EBBC60004FF27 /* TrailerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D3504274EBBC60004FF27 /* TrailerViewModel.swift */; };
+		C97D350D274F7C590004FF27 /* MockYoutubeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D350C274F7C590004FF27 /* MockYoutubeRepository.swift */; };
+		C97D350F274F7C7C0004FF27 /* YoutubeRepositoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D350E274F7C7C0004FF27 /* YoutubeRepositoryTests.swift */; };
+		C97D3511274F7CBD0004FF27 /* TrailerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97D3510274F7CBD0004FF27 /* TrailerViewModelTests.swift */; };
 		C98AE974271E75FD00DAC9E6 /* MovieDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */; };
 		C98AE975271E75FD00DAC9E6 /* MovieDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98AE973271E75FD00DAC9E6 /* MovieDetailsViewController.xib */; };
 		C98AE97A271E80EE00DAC9E6 /* MovieDetailsViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C98AE979271E80EE00DAC9E6 /* MovieDetailsViewModel.m */; };
@@ -110,6 +113,9 @@
 		C97D34FD274EAF960004FF27 /* TrailerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewController.swift; sourceTree = "<group>"; };
 		C97D34FE274EAF960004FF27 /* TrailerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrailerViewController.xib; sourceTree = "<group>"; };
 		C97D3504274EBBC60004FF27 /* TrailerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewModel.swift; sourceTree = "<group>"; };
+		C97D350C274F7C590004FF27 /* MockYoutubeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockYoutubeRepository.swift; sourceTree = "<group>"; };
+		C97D350E274F7C7C0004FF27 /* YoutubeRepositoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRepositoryTests.swift; sourceTree = "<group>"; };
+		C97D3510274F7CBD0004FF27 /* TrailerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailerViewModelTests.swift; sourceTree = "<group>"; };
 		C98AE970271E75FC00DAC9E6 /* Mr Movie Info-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mr Movie Info-Bridging-Header.h"; sourceTree = "<group>"; };
 		C98AE971271E75FD00DAC9E6 /* MovieDetailsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieDetailsViewController.h; sourceTree = "<group>"; };
 		C98AE972271E75FD00DAC9E6 /* MovieDetailsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieDetailsViewController.m; sourceTree = "<group>"; };
@@ -501,6 +507,9 @@
 				C96291DD2733924C0045187D /* FirebaseAuthRepositoryTests.swift */,
 				C96291DF273395630045187D /* RegisterViewModelTests.swift */,
 				C96291E2273398AD0045187D /* LoginViewModelTests.swift */,
+				C97D350C274F7C590004FF27 /* MockYoutubeRepository.swift */,
+				C97D350E274F7C7C0004FF27 /* YoutubeRepositoryTests.swift */,
+				C97D3510274F7CBD0004FF27 /* TrailerViewModelTests.swift */,
 			);
 			path = "Mr Movie InfoTests";
 			sourceTree = "<group>";
@@ -897,7 +906,10 @@
 				C96291DE2733924C0045187D /* FirebaseAuthRepositoryTests.swift in Sources */,
 				C9F68BDA27298FCE00210BBF /* WatchlistTableViewModelTests.swift in Sources */,
 				C96291DC2733915F0045187D /* MockFirebaseAuthRepository.swift in Sources */,
+				C97D350F274F7C7C0004FF27 /* YoutubeRepositoryTests.swift in Sources */,
 				C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */,
+				C97D3511274F7CBD0004FF27 /* TrailerViewModelTests.swift in Sources */,
+				C97D350D274F7C590004FF27 /* MockYoutubeRepository.swift in Sources */,
 				C96291E0273395630045187D /* RegisterViewModelTests.swift in Sources */,
 				C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */,
 			);
