@@ -50,6 +50,23 @@ class WatchlistTableViewController: UITableViewController {
         
         return cell
     }
+    
+    //MARK: - Tableview Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        true
+    }
+    
+    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let trailerAction = UITableViewRowAction(style: .default, title: "Trailer") {[weak self] _, indexPath in
+            guard let title = self?.viewModel.fetchMovie(at: indexPath.row)?.title else { return }
+            let destination = TrailerViewController(movieTitle: title)
+            self?.navigationController?.present(destination, animated: true)
+        }
+        trailerAction.backgroundColor = MyAppStyle.darkBackgroundColor
+        
+        return [trailerAction]
+    }
 }
 
 extension WatchlistTableViewController: ViewModelDelegate {
