@@ -14,11 +14,13 @@ class SearchResultTableViewCell: UITableViewCell {
     @IBOutlet private weak var typeLabel: UILabel!
     @IBOutlet private weak var yearLabel: UILabel!
     @IBOutlet private weak var posterImageView: UIImageView!
-
+    @IBOutlet private weak var swipeInfoLabel: UILabel!
+    
     static let identifier = "SearchResultTableViewCell"
     static let nib = UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     
     public func configure(with model: Search) {
+        populateAndStyleLabel(swipeInfoLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: "Swipe left for trailers")
         populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
         populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
         populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
@@ -26,6 +28,7 @@ class SearchResultTableViewCell: UITableViewCell {
     }
     
     public func configure(with model: MovieDetails) {
+        populateAndStyleLabel(swipeInfoLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: "Swipe left for more options")
         populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
         populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
         populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
