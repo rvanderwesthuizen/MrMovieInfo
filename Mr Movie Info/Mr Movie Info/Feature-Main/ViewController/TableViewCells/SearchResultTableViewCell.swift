@@ -20,7 +20,7 @@ class SearchResultTableViewCell: UITableViewCell {
     static let nib = UINib(nibName: "SearchResultTableViewCell", bundle: nil)
     
     public func configure(with model: Search) {
-        populateAndStyleLabel(swipeInfoLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: "Swipe left for trailers")
+        populateAndStyleLabel(swipeInfoLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: "Swipe left to view trailer")
         populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
         populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
         populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
