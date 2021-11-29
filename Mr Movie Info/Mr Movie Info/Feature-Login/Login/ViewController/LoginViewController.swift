@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         styling()
         let tap = UITapGestureRecognizer(target: self, action: #selector(navigateToRegister))
+        emailTextField.becomeFirstResponder()
         registerStackView.addGestureRecognizer(tap)
     }
     

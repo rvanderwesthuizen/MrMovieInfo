@@ -30,29 +30,42 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="oII-Nd-hLl">
-                                <rect key="frame" x="110" y="0.0" width="245" height="53"/>
+                                <rect key="frame" x="110" y="0.0" width="137" height="53"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MfY-xw-nXE">
-                                        <rect key="frame" x="0.0" y="0.0" width="245" height="11"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="137" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fZ-DE-Hop">
-                                        <rect key="frame" x="0.0" y="16" width="245" height="16"/>
+                                        <rect key="frame" x="0.0" y="16" width="137" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Year" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XLB-9c-Icz">
-                                        <rect key="frame" x="0.0" y="37" width="245" height="16"/>
+                                        <rect key="frame" x="0.0" y="37" width="137" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" name="PrimaryTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86g-bg-oVt">
+                                <rect key="frame" x="275" y="0.0" width="80" height="194"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1h5-av-LXC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="86g-bg-oVt" firstAttribute="centerY" secondItem="MHO-8z-Cwp" secondAttribute="centerY" id="6XJ-sH-Rak"/>
+                            <constraint firstAttribute="trailing" secondItem="86g-bg-oVt" secondAttribute="trailing" id="oHe-5T-ar9"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -66,6 +79,7 @@
             <color key="backgroundColor" name="PrimaryColor"/>
             <connections>
                 <outlet property="posterImageView" destination="8fA-ms-Akq" id="nJw-aU-clC"/>
+                <outlet property="swipeInfoLabel" destination="86g-bg-oVt" id="VPJ-ki-Fr7"/>
                 <outlet property="titleLabel" destination="MfY-xw-nXE" id="2k6-z8-t29"/>
                 <outlet property="typeLabel" destination="1fZ-DE-Hop" id="xrW-7p-FWP"/>
                 <outlet property="yearLabel" destination="XLB-9c-Icz" id="k7u-sB-5Zx"/>
