@@ -12,6 +12,14 @@
 		979B7C3CBC3E0F59D43C1A79 /* Pods_Mr_Movie_Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C14E460531A427BDB4D9E65 /* Pods_Mr_Movie_Info.framework */; };
 		C91CC8B9272C1F6A00F40E28 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C91CC8B8272C1F6A00F40E28 /* FirebaseAuth */; };
 		C91CC8BB272C1F6A00F40E28 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C91CC8BA272C1F6A00F40E28 /* FirebaseDatabase */; };
+		C948FF0E275760E100E3FFCE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948FF0C275760E100E3FFCE /* Interface.storyboard */; };
+		C948FF10275760E300E3FFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948FF0F275760E300E3FFCE /* Assets.xcassets */; };
+		C948FF16275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = C948FF15275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		C948FF1B275760E300E3FFCE /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948FF1A275760E300E3FFCE /* InterfaceController.swift */; };
+		C948FF1D275760E300E3FFCE /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948FF1C275760E300E3FFCE /* ExtensionDelegate.swift */; };
+		C948FF1F275760E300E3FFCE /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C948FF1E275760E300E3FFCE /* ComplicationController.swift */; };
+		C948FF21275760E500E3FFCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948FF20275760E500E3FFCE /* Assets.xcassets */; };
+		C948FF25275760E500E3FFCE /* WatchSuggestionsApp.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C948FF0A275760E100E3FFCE /* WatchSuggestionsApp.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		C954C82927295554005D7B09 /* MockedDatabaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */; };
 		C954C82D2729581F005D7B09 /* MovieDetailsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */; };
 		C96291C2273242900045187D /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96291C1273242900045187D /* UIButtonExtension.swift */; };
@@ -67,6 +75,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		C948FF17275760E300E3FFCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9C4E306270C30EA0065F822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C948FF14275760E300E3FFCE;
+			remoteInfo = "WatchSuggestionsApp WatchKit Extension";
+		};
+		C948FF23275760E500E3FFCE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C9C4E306270C30EA0065F822 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C948FF09275760E100E3FFCE;
+			remoteInfo = WatchSuggestionsApp;
+		};
 		C9C4E325270C30EC0065F822 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C9C4E306270C30EA0065F822 /* Project object */;
@@ -83,6 +105,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		C948FF26275760E500E3FFCE /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C948FF25275760E500E3FFCE /* WatchSuggestionsApp.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948FF29275760E500E3FFCE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				C948FF16275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2FB264B17D9A7C069DFCD820 /* Pods-Mr Movie Info-Mr Movie InfoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mr Movie Info-Mr Movie InfoUITests.debug.xcconfig"; path = "Target Support Files/Pods-Mr Movie Info-Mr Movie InfoUITests/Pods-Mr Movie Info-Mr Movie InfoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		3E460FA10EDF022E8813E63B /* Pods-Mr Movie InfoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mr Movie InfoTests.debug.xcconfig"; path = "Target Support Files/Pods-Mr Movie InfoTests/Pods-Mr Movie InfoTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +138,15 @@
 		5B8E4D214CD0E10997554C6B /* Pods-Mr Movie Info.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mr Movie Info.release.xcconfig"; path = "Target Support Files/Pods-Mr Movie Info/Pods-Mr Movie Info.release.xcconfig"; sourceTree = "<group>"; };
 		8C14E460531A427BDB4D9E65 /* Pods_Mr_Movie_Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mr_Movie_Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95AFE37B9EF47D4265D4CC5 /* Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948FF0A275760E100E3FFCE /* WatchSuggestionsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchSuggestionsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948FF0D275760E100E3FFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		C948FF0F275760E300E3FFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C948FF15275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchSuggestionsApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C948FF1A275760E300E3FFCE /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		C948FF1C275760E300E3FFCE /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		C948FF1E275760E300E3FFCE /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		C948FF20275760E500E3FFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C948FF22275760E500E3FFCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C954C82827295554005D7B09 /* MockedDatabaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedDatabaseRepository.swift; sourceTree = "<group>"; };
 		C954C82C2729581F005D7B09 /* MovieDetailsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailsViewModelTests.swift; sourceTree = "<group>"; };
 		C96291C1273242900045187D /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
@@ -155,6 +211,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C948FF12275760E300E3FFCE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C4E30B270C30EA0065F822 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,6 +288,27 @@
 				C96291C427324DF30045187D /* WelcomeViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		C948FF0B275760E100E3FFCE /* WatchSuggestionsApp */ = {
+			isa = PBXGroup;
+			children = (
+				C948FF0C275760E100E3FFCE /* Interface.storyboard */,
+				C948FF0F275760E300E3FFCE /* Assets.xcassets */,
+			);
+			path = WatchSuggestionsApp;
+			sourceTree = "<group>";
+		};
+		C948FF19275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				C948FF1A275760E300E3FFCE /* InterfaceController.swift */,
+				C948FF1C275760E300E3FFCE /* ExtensionDelegate.swift */,
+				C948FF1E275760E300E3FFCE /* ComplicationController.swift */,
+				C948FF20275760E500E3FFCE /* Assets.xcassets */,
+				C948FF22275760E500E3FFCE /* Info.plist */,
+			);
+			path = "WatchSuggestionsApp WatchKit Extension";
 			sourceTree = "<group>";
 		};
 		C96291C0273242720045187D /* UIButton-Extension */ = {
@@ -459,6 +543,8 @@
 				C9C4E310270C30EA0065F822 /* Mr Movie Info */,
 				C9C4E327270C30EC0065F822 /* Mr Movie InfoTests */,
 				C9C4E331270C30EC0065F822 /* Mr Movie InfoUITests */,
+				C948FF0B275760E100E3FFCE /* WatchSuggestionsApp */,
+				C948FF19275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension */,
 				C9C4E30F270C30EA0065F822 /* Products */,
 				A7ADD56202674578AF27EC8B /* Pods */,
 				3F098CF5F055216E8AA2E2D2 /* Frameworks */,
@@ -471,6 +557,8 @@
 				C9C4E30E270C30EA0065F822 /* Mr Movie Info.app */,
 				C9C4E324270C30EC0065F822 /* Mr Movie InfoTests.xctest */,
 				C9C4E32E270C30EC0065F822 /* Mr Movie InfoUITests.xctest */,
+				C948FF0A275760E100E3FFCE /* WatchSuggestionsApp.app */,
+				C948FF15275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -613,6 +701,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C948FF09275760E100E3FFCE /* WatchSuggestionsApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C948FF2D275760E500E3FFCE /* Build configuration list for PBXNativeTarget "WatchSuggestionsApp" */;
+			buildPhases = (
+				C948FF08275760E100E3FFCE /* Resources */,
+				C948FF29275760E500E3FFCE /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C948FF18275760E300E3FFCE /* PBXTargetDependency */,
+			);
+			name = WatchSuggestionsApp;
+			productName = WatchSuggestionsApp;
+			productReference = C948FF0A275760E100E3FFCE /* WatchSuggestionsApp.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		C948FF14275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C948FF2C275760E500E3FFCE /* Build configuration list for PBXNativeTarget "WatchSuggestionsApp WatchKit Extension" */;
+			buildPhases = (
+				C948FF11275760E300E3FFCE /* Sources */,
+				C948FF12275760E300E3FFCE /* Frameworks */,
+				C948FF13275760E300E3FFCE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WatchSuggestionsApp WatchKit Extension";
+			productName = "WatchSuggestionsApp WatchKit Extension";
+			productReference = C948FF15275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		C9C4E30D270C30EA0065F822 /* Mr Movie Info */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9C4E338270C30EC0065F822 /* Build configuration list for PBXNativeTarget "Mr Movie Info" */;
@@ -622,10 +744,12 @@
 				C9C4E30B270C30EA0065F822 /* Frameworks */,
 				C9C4E30C270C30EA0065F822 /* Resources */,
 				1DA00EA2859C66DCD4F0276E /* [CP] Embed Pods Frameworks */,
+				C948FF26275760E500E3FFCE /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C948FF24275760E500E3FFCE /* PBXTargetDependency */,
 			);
 			name = "Mr Movie Info";
 			packageProductDependencies = (
@@ -682,9 +806,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					C948FF09275760E100E3FFCE = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C948FF14275760E300E3FFCE = {
+						CreatedOnToolsVersion = 13.1;
+					};
 					C9C4E30D270C30EA0065F822 = {
 						CreatedOnToolsVersion = 13.0;
 						LastSwiftMigration = 1300;
@@ -719,11 +849,30 @@
 				C9C4E30D270C30EA0065F822 /* Mr Movie Info */,
 				C9C4E323270C30EC0065F822 /* Mr Movie InfoTests */,
 				C9C4E32D270C30EC0065F822 /* Mr Movie InfoUITests */,
+				C948FF09275760E100E3FFCE /* WatchSuggestionsApp */,
+				C948FF14275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C948FF08275760E100E3FFCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948FF10275760E300E3FFCE /* Assets.xcassets in Resources */,
+				C948FF0E275760E100E3FFCE /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C948FF13275760E300E3FFCE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948FF21275760E500E3FFCE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C4E30C270C30EA0065F822 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -858,6 +1007,16 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C948FF11275760E300E3FFCE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C948FF1D275760E300E3FFCE /* ExtensionDelegate.swift in Sources */,
+				C948FF1B275760E300E3FFCE /* InterfaceController.swift in Sources */,
+				C948FF1F275760E300E3FFCE /* ComplicationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C9C4E30A270C30EA0065F822 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -927,6 +1086,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		C948FF18275760E300E3FFCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C948FF14275760E300E3FFCE /* WatchSuggestionsApp WatchKit Extension */;
+			targetProxy = C948FF17275760E300E3FFCE /* PBXContainerItemProxy */;
+		};
+		C948FF24275760E500E3FFCE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C948FF09275760E100E3FFCE /* WatchSuggestionsApp */;
+			targetProxy = C948FF23275760E500E3FFCE /* PBXContainerItemProxy */;
+		};
 		C9C4E326270C30EC0065F822 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = C9C4E30D270C30EA0065F822 /* Mr Movie Info */;
@@ -940,6 +1109,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C948FF0C275760E100E3FFCE /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C948FF0D275760E100E3FFCE /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		C9C4E317270C30EA0065F822 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -959,6 +1136,118 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C948FF27275760E500E3FFCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDT7RV6K9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchSuggestionsApp_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchSuggestionsApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.RuanJP.Mr-Movie-Info";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-Info.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		C948FF28275760E500E3FFCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDT7RV6K9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IBSC_MODULE = WatchSuggestionsApp_WatchKit_Extension;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchSuggestionsApp;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.RuanJP.Mr-Movie-Info";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-Info.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
+		C948FF2A275760E500E3FFCE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDT7RV6K9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchSuggestionsApp WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchSuggestionsApp WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-Info.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Debug;
+		};
+		C948FF2B275760E500E3FFCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8HDT7RV6K9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "WatchSuggestionsApp WatchKit Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WatchSuggestionsApp WatchKit Extension";
+				INFOPLIST_KEY_CLKComplicationPrincipalClass = "$(PRODUCT_MODULE_NAME).ComplicationController";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_WKExtensionDelegateClassName = "$(PRODUCT_MODULE_NAME).ExtensionDelegate";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.RuanJP.Mr-Movie-Info.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 8.0;
+			};
+			name = Release;
+		};
 		C9C4E336270C30EC0065F822 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1250,6 +1539,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C948FF2C275760E500E3FFCE /* Build configuration list for PBXNativeTarget "WatchSuggestionsApp WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948FF2A275760E500E3FFCE /* Debug */,
+				C948FF2B275760E500E3FFCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C948FF2D275760E500E3FFCE /* Build configuration list for PBXNativeTarget "WatchSuggestionsApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C948FF27275760E500E3FFCE /* Debug */,
+				C948FF28275760E500E3FFCE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C9C4E309270C30EA0065F822 /* Build configuration list for PBXProject "Mr Movie Info" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
