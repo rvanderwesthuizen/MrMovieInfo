@@ -18,6 +18,7 @@ class MainTableViewController: UITableViewController {
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var searchFunctionalityView: UIView!
     @IBOutlet private weak var searchBarTextField: UITextField!
+    @IBOutlet private weak var suggestionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,10 @@ class MainTableViewController: UITableViewController {
         searchButton.backgroundColor = MyAppStyle.darkBackgroundColor
         searchButton.tintColor = MyAppStyle.accentColor
         searchButton.titleLabel?.font = MyAppStyle.buttonTextFont
+        
+        suggestionButton.backgroundColor = MyAppStyle.darkBackgroundColor
+        suggestionButton.tintColor = MyAppStyle.bodyTextColor
+        suggestionButton.titleLabel?.font = MyAppStyle.buttonTextFont
         
         searchFunctionalityView.backgroundColor = MyAppStyle.backgroundColor
         
@@ -61,6 +66,9 @@ class MainTableViewController: UITableViewController {
                 viewModel.initialSearch(forTitle: titleForSearch)
             }
         }
+    }
+    
+    @IBAction func didTapSuggestionButton(_ sender: UIButton) {
     }
     
     private func activateActivityIndicator() {
