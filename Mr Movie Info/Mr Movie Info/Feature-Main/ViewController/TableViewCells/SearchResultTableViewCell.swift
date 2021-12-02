@@ -29,10 +29,10 @@ class SearchResultTableViewCell: UITableViewCell {
     
     public func configure(with model: MovieDetails) {
         populateAndStyleLabel(swipeInfoLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: "Swipe left for more options")
-        populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title)
-        populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type)
-        populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year)
-        posterImageView.loadImage(urlString: model.poster)
+        populateAndStyleLabel(titleLabel, font: MyAppStyle.headingThreeFont, color: MyAppStyle.bodyTextColor, text: model.title ?? "N/A")
+        populateAndStyleLabel(typeLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.type ?? "N/A")
+        populateAndStyleLabel(yearLabel, font: MyAppStyle.smallBodyFont, color: MyAppStyle.bodyTextColor, text: model.year ?? "N/A")
+        posterImageView.loadImage(urlString: model.poster ?? "N/A")
     }
     
     private func populateAndStyleLabel(_ label: UILabel,font: UIFont, color: UIColor, text: String) {
