@@ -25,7 +25,7 @@
                                     <color key="titleColor" name="AccentColor"/>
                                     <color key="backgroundColor" name="DarkPrimaryColor"/>
                                     <connections>
-                                        <action selector="didTapAddToWatchlistButton" destination="AgC-eL-Hgc" id="jcF-fz-HaF"/>
+                                        <action selector="didTapViewMovieDetailsButton" destination="AgC-eL-Hgc" id="jcF-fz-HaF"/>
                                     </connections>
                                 </button>
                             </items>
@@ -33,10 +33,10 @@
                     </items>
                     <color key="backgroundColor" name="PrimaryColor"/>
                     <connections>
-                        <outlet property="addToWatchlistButton" destination="dh1-Z4-Dqs" id="SG7-JQ-Ztr"/>
                         <outlet property="posterImageView" destination="0H7-CO-7JZ" id="tgS-96-lAi"/>
                         <outlet property="suggestionLabel" destination="Ki7-n9-EZZ" id="f7M-s1-7AJ"/>
                         <outlet property="titleLabel" destination="AMd-yq-rs7" id="JWW-ak-PTC"/>
+                        <outlet property="viewMovieDetailsButton" destination="dh1-Z4-Dqs" id="SG7-JQ-Ztr"/>
                     </connections>
                 </controller>
             </objects>

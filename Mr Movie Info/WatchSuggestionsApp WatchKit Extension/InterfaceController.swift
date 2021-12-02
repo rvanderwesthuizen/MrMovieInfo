@@ -13,7 +13,7 @@ class InterfaceController: WKInterfaceController {
     
     @IBOutlet private weak var suggestionLabel: WKInterfaceLabel!
     @IBOutlet weak var titleLabel: WKInterfaceLabel!
-    @IBOutlet weak var addToWatchlistButton: WKInterfaceButton!
+    @IBOutlet weak var viewMovieDetailsButton: WKInterfaceButton!
     @IBOutlet weak var posterImageView: WKInterfaceImage!
     
     private var watchSession: WCSession?
@@ -30,7 +30,7 @@ class InterfaceController: WKInterfaceController {
     override func willActivate() { }
     override func didDeactivate() { }
     
-    @IBAction func didTapAddToWatchlistButton() {
+    @IBAction func didTapViewMovieDetailsButton() {
         sendMessage()
     }
     
@@ -51,7 +51,7 @@ extension InterfaceController: WCSessionDelegate {
         if let suggestion = message["suggestion"] as? [String] {
             movieTitle = suggestion[0]
             titleLabel.setText(suggestion[0])
-            addToWatchlistButton.setTitle("View details of\n\(suggestion[0])")
+            viewMovieDetailsButton.setTitle("View details of\n\(suggestion[0])")
             posterImageView.loadImage(urlString: suggestion[1])
         }
     }
