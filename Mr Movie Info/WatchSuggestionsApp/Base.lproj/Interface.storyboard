@@ -15,7 +15,7 @@
                         <label alignment="center" text="Suggestion" id="Ki7-n9-EZZ">
                             <color key="textColor" name="PrimaryTextColor"/>
                         </label>
-                        <imageView width="100" height="100" alignment="center" image="noImageFound" id="0H7-CO-7JZ"/>
+                        <imageView alignment="center" image="noImageFound" id="0H7-CO-7JZ"/>
                         <label alignment="center" text="Title" textAlignment="center" id="AMd-yq-rs7">
                             <color key="textColor" name="PrimaryTextColor"/>
                         </label>
