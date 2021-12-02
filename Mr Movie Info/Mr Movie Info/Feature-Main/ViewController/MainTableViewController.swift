@@ -81,7 +81,7 @@ class MainTableViewController: UITableViewController {
     }
     
     @IBAction func didTapSuggestionButton(_ sender: UIButton) {
-        viewModel.retrieveSuggestionDetails()
+        viewModel.retrieveSuggestion()
     }
     
     private func activateActivityIndicator() {
@@ -146,8 +146,9 @@ extension MainTableViewController: UITextFieldDelegate {
 }
 
 extension MainTableViewController: PodViewModelDelegate {
-    func didRetrieveSuggestionDetails(suggestion: SuggestionModel) {
-        watchSession?.sendMessage(["suggestion": suggestion], replyHandler: nil, errorHandler: nil)
+    func didRetrieveSuggestion(suggestion: MovieDetails) {
+        let message: [String:[String]] = ["suggestion": [suggestion.title ?? "N/A", suggestion.poster ?? "N/A"]]
+        sendMessage(message: message)
     }
     
     func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
@@ -173,13 +174,15 @@ extension MainTableViewController: WCSessionDelegate {
     
     func sessionDidDeactivate(_ session: WCSession) { }
     
+    func sendMessage(message: [String: [String]]) {
+        watchSession?.sendMessage(message, replyHandler: nil, errorHandler: nil)
+    }
+    
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async { [weak self] in
-            if let model = message["suggestion"] as? SuggestionModel {
+            if let _ = message["movieTitle"] as? String {
                 guard let movie = self?.viewModel.movieDetails else { return }
-                let database = DatabaseRepository()
-                database.addMovieToWatchlist(details: movie)
-                self?.showAlert(alertTitle: "Watch App", alertMessage: "\(model.title) added to watchlist", actionTitle: "OK")
+                self?.navigateToMovieDetailsView(with: movie)
             }
         }
     }

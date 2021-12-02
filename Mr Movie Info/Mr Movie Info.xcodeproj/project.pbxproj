@@ -10,6 +10,7 @@
 		40EB0E30F2E5D3BAA00E2B02 /* Pods_Mr_Movie_InfoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F313FF103670C8EFC2EFDE7 /* Pods_Mr_Movie_InfoTests.framework */; };
 		6EE9C8B72235731E2B935D98 /* Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A95AFE37B9EF47D4265D4CC5 /* Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework */; };
 		979B7C3CBC3E0F59D43C1A79 /* Pods_Mr_Movie_Info.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C14E460531A427BDB4D9E65 /* Pods_Mr_Movie_Info.framework */; };
+		C90AC5C9275886B200707175 /* WKInterfaceImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AC5C8275886B200707175 /* WKInterfaceImageExtension.swift */; };
 		C91CC8B9272C1F6A00F40E28 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C91CC8B8272C1F6A00F40E28 /* FirebaseAuth */; };
 		C91CC8BB272C1F6A00F40E28 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C91CC8BA272C1F6A00F40E28 /* FirebaseDatabase */; };
 		C948FF0E275760E100E3FFCE /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948FF0C275760E100E3FFCE /* Interface.storyboard */; };
@@ -138,6 +139,7 @@
 		5B8E4D214CD0E10997554C6B /* Pods-Mr Movie Info.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mr Movie Info.release.xcconfig"; path = "Target Support Files/Pods-Mr Movie Info/Pods-Mr Movie Info.release.xcconfig"; sourceTree = "<group>"; };
 		8C14E460531A427BDB4D9E65 /* Pods_Mr_Movie_Info.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mr_Movie_Info.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A95AFE37B9EF47D4265D4CC5 /* Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mr_Movie_Info_Mr_Movie_InfoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90AC5C8275886B200707175 /* WKInterfaceImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKInterfaceImageExtension.swift; sourceTree = "<group>"; };
 		C948FF0A275760E100E3FFCE /* WatchSuggestionsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchSuggestionsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C948FF0D275760E100E3FFCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		C948FF0F275760E300E3FFCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -307,6 +309,7 @@
 				C948FF1E275760E300E3FFCE /* ComplicationController.swift */,
 				C948FF20275760E500E3FFCE /* Assets.xcassets */,
 				C948FF22275760E500E3FFCE /* Info.plist */,
+				C90AC5C8275886B200707175 /* WKInterfaceImageExtension.swift */,
 			);
 			path = "WatchSuggestionsApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -1012,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C948FF1D275760E300E3FFCE /* ExtensionDelegate.swift in Sources */,
+				C90AC5C9275886B200707175 /* WKInterfaceImageExtension.swift in Sources */,
 				C948FF1B275760E300E3FFCE /* InterfaceController.swift in Sources */,
 				C948FF1F275760E300E3FFCE /* ComplicationController.swift in Sources */,
 			);
