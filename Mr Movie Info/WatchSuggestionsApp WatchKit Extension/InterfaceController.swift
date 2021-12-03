@@ -12,9 +12,9 @@ import WatchConnectivity
 class InterfaceController: WKInterfaceController {
     
     @IBOutlet private weak var suggestionLabel: WKInterfaceLabel!
-    @IBOutlet weak var titleLabel: WKInterfaceLabel!
-    @IBOutlet weak var viewMovieDetailsButton: WKInterfaceButton!
-    @IBOutlet weak var posterImageView: WKInterfaceImage!
+    @IBOutlet private weak var titleLabel: WKInterfaceLabel!
+    @IBOutlet private weak var viewMovieDetailsButton: WKInterfaceButton!
+    @IBOutlet private weak var posterImageView: WKInterfaceImage!
     
     private var watchSession: WCSession?
     private var movieTitle = ""
