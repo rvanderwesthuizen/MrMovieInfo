@@ -7,25 +7,38 @@
 
 import UIKit
 import SearchMDFramework
+import WatchConnectivity
 
 class MainTableViewController: UITableViewController {
     
     private lazy var viewModel = SearchViewModel(delegate: self)
     private var titleForSearch = "the+rookie"
+    private var watchSession: WCSession?
     
     @IBOutlet private weak var searchTextField: UITextField!
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var searchButton: UIButton!
     @IBOutlet private weak var searchFunctionalityView: UIView!
     @IBOutlet private weak var searchBarTextField: UITextField!
+    @IBOutlet private weak var suggestionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Search"
         styling()
         setupTextField()
+        setupWatchSession()
         activityIndicator.isHidden = true
         tableView.register(SearchResultTableViewCell.nib, forCellReuseIdentifier: SearchResultTableViewCell.identifier)
+        
+    }
+    
+    private func setupWatchSession() {
+        if WCSession.isSupported() {
+            watchSession = WCSession.default
+            watchSession?.delegate = self
+            watchSession?.activate()
+        }
     }
     
     private func styling() {
@@ -34,6 +47,10 @@ class MainTableViewController: UITableViewController {
         searchButton.backgroundColor = MyAppStyle.darkBackgroundColor
         searchButton.tintColor = MyAppStyle.accentColor
         searchButton.titleLabel?.font = MyAppStyle.buttonTextFont
+        
+        suggestionButton.backgroundColor = MyAppStyle.darkBackgroundColor
+        suggestionButton.tintColor = MyAppStyle.bodyTextColor
+        suggestionButton.titleLabel?.font = MyAppStyle.buttonTextFont
         
         searchFunctionalityView.backgroundColor = MyAppStyle.backgroundColor
         
@@ -61,6 +78,10 @@ class MainTableViewController: UITableViewController {
                 viewModel.initialSearch(forTitle: titleForSearch)
             }
         }
+    }
+    
+    @IBAction func didTapSuggestionButton(_ sender: UIButton) {
+        viewModel.retrieveSuggestion()
     }
     
     private func activateActivityIndicator() {
@@ -125,6 +146,11 @@ extension MainTableViewController: UITextFieldDelegate {
 }
 
 extension MainTableViewController: PodViewModelDelegate {
+    func didRetrieveSuggestion(suggestion: MovieDetails) {
+        let message: [String:[String]] = ["suggestion": [suggestion.title ?? "N/A", suggestion.poster ?? "N/A"]]
+        sendMessage(message: message)
+    }
+    
     func refreshViewContent(navigateToMovieDetailsFlag: Bool) {
         activityIndicator.stopAnimating()
         if navigateToMovieDetailsFlag {
@@ -138,5 +164,26 @@ extension MainTableViewController: PodViewModelDelegate {
     func didFailWithError(error: Error) {
         activityIndicator.stopAnimating()
         showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
+    }
+}
+
+extension MainTableViewController: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+    
+    func sessionDidBecomeInactive(_ session: WCSession) { }
+    
+    func sessionDidDeactivate(_ session: WCSession) { }
+    
+    func sendMessage(message: [String: [String]]) {
+        watchSession?.sendMessage(message, replyHandler: nil, errorHandler: nil)
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+        DispatchQueue.main.async { [weak self] in
+            if let _ = message["movieTitle"] as? String {
+                guard let movie = self?.viewModel.movieDetails else { return }
+                self?.navigateToMovieDetailsView(with: movie)
+            }
+        }
     }
 }

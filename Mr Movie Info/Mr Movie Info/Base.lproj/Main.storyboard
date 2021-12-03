@@ -19,11 +19,11 @@
                         <color key="backgroundColor" name="DarkPrimaryColor"/>
                         <color key="separatorColor" name="PrimaryColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="mZx-8l-bEH">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="105"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="147"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="192-JD-sZE">
-                                    <rect key="frame" x="10" y="10" width="394" height="35"/>
+                                    <rect key="frame" x="10" y="10" width="394" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="MRY-KW-zvS"/>
                                     </constraints>
@@ -31,7 +31,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ak-7D-dvL">
-                                    <rect key="frame" x="10" y="55" width="394" height="30"/>
+                                    <rect key="frame" x="10" y="60" width="394" height="30"/>
                                     <color key="backgroundColor" name="AccentColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="Mob-Aa-9GX"/>
@@ -48,20 +48,42 @@
                                         <action selector="didTapSearchButton:" destination="4Oy-zD-9hm" eventType="touchUpInside" id="aLk-ZU-odY"/>
                                     </connections>
                                 </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wMU-c1-6WX">
+                                    <rect key="frame" x="103" y="100" width="208.5" height="30"/>
+                                    <color key="backgroundColor" name="DarkPrimaryColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="30" id="xe1-mj-cdZ"/>
+                                    </constraints>
+                                    <color key="tintColor" name="PrimaryTextColor"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="Suggest something to watch"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="didTapSuggestionButton:" destination="4Oy-zD-9hm" eventType="touchUpInside" id="qnx-ZH-6p7"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" name="PrimaryColor"/>
                             <constraints>
                                 <constraint firstItem="192-JD-sZE" firstAttribute="leading" secondItem="mZx-8l-bEH" secondAttribute="leading" constant="10" id="0E7-n2-eZT"/>
-                                <constraint firstItem="9Ak-7D-dvL" firstAttribute="top" secondItem="192-JD-sZE" secondAttribute="bottom" constant="10" id="1Sz-XM-Uul"/>
+                                <constraint firstItem="wMU-c1-6WX" firstAttribute="top" secondItem="9Ak-7D-dvL" secondAttribute="bottom" constant="10" id="D0q-4z-TYq"/>
                                 <constraint firstItem="192-JD-sZE" firstAttribute="top" secondItem="mZx-8l-bEH" secondAttribute="top" constant="10" id="EhJ-C3-45D"/>
                                 <constraint firstAttribute="trailing" secondItem="9Ak-7D-dvL" secondAttribute="trailing" constant="10" id="JqQ-nh-fln"/>
                                 <constraint firstAttribute="trailing" secondItem="192-JD-sZE" secondAttribute="trailing" constant="10" id="cfN-09-mjd"/>
-                                <constraint firstAttribute="bottom" secondItem="9Ak-7D-dvL" secondAttribute="bottom" constant="20" id="on1-vr-Jb4"/>
+                                <constraint firstItem="wMU-c1-6WX" firstAttribute="centerX" secondItem="mZx-8l-bEH" secondAttribute="centerX" id="cvn-TA-NfZ"/>
+                                <constraint firstItem="9Ak-7D-dvL" firstAttribute="top" secondItem="192-JD-sZE" secondAttribute="bottom" constant="10" id="whC-1n-Mne"/>
                                 <constraint firstItem="9Ak-7D-dvL" firstAttribute="leading" secondItem="mZx-8l-bEH" secondAttribute="leading" constant="10" id="yUx-mP-xwH"/>
                             </constraints>
                         </view>
                         <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" id="4oE-vA-K5S">
-                            <rect key="frame" x="0.0" y="105" width="414" height="44"/>
+                            <rect key="frame" x="0.0" y="147" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="color" name="AccentColor"/>
                         </activityIndicatorView>
@@ -77,11 +99,12 @@
                         <outlet property="searchButton" destination="9Ak-7D-dvL" id="UWF-kH-f1E"/>
                         <outlet property="searchFunctionalityView" destination="mZx-8l-bEH" id="d1m-NN-ZWK"/>
                         <outlet property="searchTextField" destination="192-JD-sZE" id="Gxs-9R-6N0"/>
+                        <outlet property="suggestionButton" destination="wMU-c1-6WX" id="sdS-Qs-pMn"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wwz-nA-Pmk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1171" y="-227"/>
+            <point key="canvasLocation" x="1169.5652173913045" y="-227.00892857142856"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="Maj-9I-Kjt">
