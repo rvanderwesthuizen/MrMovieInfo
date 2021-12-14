@@ -14,7 +14,8 @@ Mr Movie Info is an app to go to for information on movies and series, search by
 - Getting data from restful API (OMDB API - http://www.omdbapi.com/)
 - MVVM Architecture
 - Swift
-- CocoaPods and SPM
+- Development pod (CocoaPods) - https://github.com/rvanderwesthuizen/MrMovieInfoSearchPod
+- SPM
 - Firebase (Realtime database, Authentication)
 - Unit testing
 - Objective-c
