@@ -1,0 +1,21 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'Mr Movie Info' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+pod 'SearchMDFramework', :path => '/Users/rvanderwesthuizen2/Documents/Development/Swift/MrMovieInfoSearchPod/OmdbSearchMovieDetails'
+
+  # Pods for Mr Movie Info
+
+  target 'Mr Movie InfoTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'Mr Movie InfoUITests' do
+    # Pods for testing
+  end
+
+end
