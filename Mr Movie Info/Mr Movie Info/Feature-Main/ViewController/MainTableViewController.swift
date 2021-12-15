@@ -163,7 +163,24 @@ extension MainTableViewController: PodViewModelDelegate {
     
     func didFailWithError(error: Error) {
         activityIndicator.stopAnimating()
-        showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
+        
+        guard let apiError = error as? APIError else {
+            showAlert(alertTitle: "Error", alertMessage: error.localizedDescription, actionTitle: "OK")
+            return
+        }
+        
+        var message = ""
+        
+        switch apiError {
+        case .movieNotFoundError:
+            message = "Movie not found."
+        case .ambiguousError:
+            message = "Please be more specific when searching."
+        default:
+            message = error.localizedDescription
+        }
+        
+        showAlert(alertTitle: "Error", alertMessage: message, actionTitle: "OK")
     }
 }
 

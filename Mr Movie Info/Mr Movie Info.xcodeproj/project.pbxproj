@@ -213,6 +213,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9F4196F34F5BC2098DE1065C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C948FF12275760E300E3FFCE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -710,6 +717,7 @@
 			buildPhases = (
 				C948FF08275760E100E3FFCE /* Resources */,
 				C948FF29275760E500E3FFCE /* Embed App Extensions */,
+				9F4196F34F5BC2098DE1065C /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -843,7 +851,7 @@
 			);
 			mainGroup = C9C4E305270C30EA0065F822;
 			packageReferences = (
-				C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */,
 			);
 			productRefGroup = C9C4E30F270C30EA0065F822 /* Products */;
 			projectDirPath = "";
@@ -1600,7 +1608,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
 			requirement = {
@@ -1613,12 +1621,12 @@
 /* Begin XCSwiftPackageProductDependency section */
 		C91CC8B8272C1F6A00F40E28 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseAuth;
 		};
 		C91CC8BA272C1F6A00F40E28 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = C91CC8B7272C1F6A00F40E28 /* XCRemoteSwiftPackageReference "firebase-ios-sdk.git" */;
 			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
